@@ -1,0 +1,462 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<!--
+This document was converted from RTF source: 
+By rtftohtml 4.19
+See http://www.sunpack.com/RTF
+Filename:Tjava14.rtf
+Application Directory:c:\TOOLS\RTF2HTML\
+Subject:
+Author:Bruce Eckel
+Operator:Bruce Eckel
+Document Comments:
+Version Comments:
+Comments:
+Keywords:
+Translation Date:02/04/2000
+Translation Time:23:26:28
+Translation Platform:Win32
+Number of Output files:27
+This File:AppendixB.html
+SplitDepth=1
+SkipNavPanel=1
+SkipLeadingToc=1
+SkipTrailingToc=1
+GenContents=1
+GenFrames=1
+GenIndex=1
+-->
+<HEAD lang="en"><META http-equiv="Content-Type" content="text/html">
+<TITLE>B: Comparing C++ and Java</TITLE>
+</HEAD>
+
+<BODY  BGCOLOR="#FFFFFF"><DIV ALIGN="CENTER">
+  <a href="http://www.MindView.net">
+  <img src="mindview-head.gif" alt="MindView Inc." BORDER = "0"></a>
+  <CENTER>
+    <FONT FACE="Verdana" size = "-1">
+    [ <a href="README-HTML.txt">Viewing Hints</a> ]
+    [ <a href="http://www.mindview.net/TIJ2/index.html">2nd Edition</a> ]
+    [ <a href="http://www.mindview.net/MailingList.html">Free Newsletter</a> ] <br>
+    [ <a href="http://www.mindview.net/Training.html">Seminars</a> ]
+    [ <a href="http://www.mindview.net/javaCD2.html">Seminars on CD ROM</a> ]
+    [ <a href="http://www.mindview.net/CPPServices/#ConsultingServices">Consulting</a> ]
+    </FONT>
+  <H2><FONT FACE="Verdana">
+  Thinking in Java, 1st edition</FONT></H2>
+  <H3><FONT FACE="Verdana">&copy;1998 by Bruce Eckel</FONT></H3>
+  
+    <FONT FACE="Verdana" size = "-1">
+     [ <a href="AppendixA.html">Previous Chapter</a> ] 
+    [ <a href="SimpleContents.html">Short TOC</a> ] 
+    [ <a href="Contents.html">Table of Contents</a> ] 
+    [ <a href="DocIndex.html">Index</a> ]
+     [ <a href="AppendixC.html">Next Chapter</a> ] 
+    </FONT>
+    
+  </CENTER>
+  </P></DIV><A NAME="_Toc407441463"></A><A NAME="_Toc408018847"></A><A NAME="Heading631"></A><FONT FACE = "Verdana"><H1 ALIGN="LEFT">
+B: Comparing C++ and Java</H1></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Verdana" SIZE=4>As a C++ programmer, you
+already have the basic idea of object-oriented programming, and the syntax of
+Java no doubt looks familiar to you. This makes sense since Java was derived
+from C++.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">However, there are a surprising
+number of differences between
+<A NAME="Index3112"></A><A NAME="Index3113"></A>C++ and Java. These differences
+are intended to be significant improvements, and if you understand the
+differences you&#8217;ll see why Java is such a beneficial programming language.
+This appendix takes you through the important features that distinguish Java
+from C++.</FONT><BR></P></DIV>
+<OL>
+<LI><FONT FACE="Georgia">	The biggest potential stumbling block is speed:
+interpreted Java runs in the range of 20 times slower than C. Nothing prevents
+the Java language from being compiled and there are just-in-time compilers
+appearing at this writing that offer significant speed-ups. It is not
+inconceivable that full native compilers will appear for the more popular
+platforms, but without those there are classes of problems that will be
+insoluble with Java because of the speed
+issue.</FONT><LI><FONT FACE="Georgia">	Java has both kinds of comments
+like C++ does.</FONT><LI><FONT FACE="Georgia">	Everything must be in a
+class. There are no global functions or global data. If you want the equivalent
+of globals, make <B>static</B> methods and <B>static</B> data within a class.
+There are no structs or enumerations or unions, only
+classes.</FONT><LI><FONT FACE="Georgia">	All method definitions are
+defined in the body of the class. Thus, in C++ it would look like all the
+functions are inlined, but they&#8217;re not (inlines are noted
+later).</FONT><LI><FONT FACE="Georgia">	Class definitions are roughly the
+same form in Java as in C++, but there&#8217;s no closing semicolon. There are
+no class declarations of the form <B>class foo,</B> only class
+definitions.</FONT>
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>class</font> aType {
+  <font color=#0000ff>void</font> aMethod(&#160;) { <font color=#009900>/* method body */</font> }
+}</PRE></FONT></BLOCKQUOTE>
+
+<LI><FONT FACE="Georgia">	There&#8217;s no scope resolution operator
+<B>::</B> in Java. Java uses the dot for everything, but can get away with it
+since you can define elements only within a class. Even the method definitions
+must always occur within a class, so there is no need for scope resolution there
+either. One place where you&#8217;ll notice the difference is in the calling of
+<B>static</B> methods: you say <B>ClassName.methodName(&#160;);</B>. In
+addition, <B>package</B> names are established using the dot, and to perform a
+kind of C++ <B>#include</B> you use the <B>import</B> keyword. For example:
+<B>import java.awt.*;</B>. (<B>#include</B> does not directly map to
+<B>import</B>, but it has a similar feel to
+it).</FONT><LI><FONT FACE="Georgia">	Java, like C++, has primitive types
+for efficient access. In Java, these are <B>boolean</B>, <B>char</B>,
+<B>byte</B>, <B>short</B>, <B>int</B>, <B>long</B>, <B>float</B>, and
+<B>double</B>. All the primitive types have specified sizes that are machine
+independent for portability. (This must have some impact on performance, varying
+with the machine.) Type-checking and type requirements are much tighter in Java.
+For example:</FONT><BR><FONT FACE="Georgia">1. Conditional expressions can
+be only<B> boolean</B>, not integral.</FONT><BR><FONT FACE="Georgia">2.
+The result of an expression like X + Y must be used; you can&#8217;t just say
+&#8220;X + Y&#8221; for the side
+effect.</FONT><LI><FONT FACE="Georgia">	The <B>char</B> type uses the
+international 16-bit Unicode character set, so it can automatically represent
+most national characters.</FONT><LI><FONT FACE="Georgia">	Static quoted
+strings are automatically converted into <B>String</B> objects. There is no
+independent static character array string like there is in C and
+C++.</FONT><LI><FONT FACE="Georgia">	Java adds the triple right shift
+<B>&gt;&gt;&gt;</B> to act as a &#8220;logical&#8221; right shift by inserting
+zeroes at the top end; the <B>&gt;&gt;</B> inserts the sign bit as it shifts (an
+&#8220;arithmetic&#8221; shift).</FONT><LI><FONT FACE="Georgia">	Although
+they look similar, arrays have a very different structure and behavior in Java
+than they do in C++. There&#8217;s a read-only <B>length</B> member that tells
+you how big the array is, and run-time checking throws an exception if you go
+out of bounds. All arrays are created on the heap, and you can assign one array
+to another (the array handle is simply copied). The array identifier is a
+first-class object, with all of the methods commonly available to all other
+objects.</FONT><LI><FONT FACE="Georgia">	All objects of non-primitive
+types can be created only via <B>new</B>. There&#8217;s no equivalent to
+creating non-primitive objects &#8220;on the stack&#8221; as in C++. All
+primitive types can be created only on the stack, without <B>new</B>. There are
+wrapper classes for all primitive classes so that you can create equivalent
+heap-based objects via <B>new</B>. (Arrays of primitives are a special case:
+they can be allocated via aggregate initialization as in C++, or by using
+<B>new.</B>)</FONT><LI><FONT FACE="Georgia">	No forward declarations are
+necessary in Java. If you want to use a class or a method before it is defined,
+you simply use it &#8211; the compiler ensures that the appropriate definition
+exists. Thus you don&#8217;t have any of the forward referencing issues that you
+do in C++.</FONT><LI><FONT FACE="Georgia">	Java has no preprocessor. If
+you want to use classes in another library, you say <B>import</B> and the name
+of the library. There are no preprocessor-like
+macros.</FONT><LI><FONT FACE="Georgia">	Java uses packages in place of
+namespaces. The name issue is taken care of by putting everything into a class
+and by using a facility called &#8220;packages&#8221; that performs the
+equivalent namespace breakup for class names. Packages also collect library
+components under a single library name. You simply <B>import</B> a package and
+the compiler takes care of the
+rest.</FONT><LI><FONT FACE="Georgia">	Object handles defined as class
+members are automatically initialized to <B>null</B>. Initialization of
+primitive class data members is guaranteed in Java; if you don&#8217;t
+explicitly initialize them they get a default value (a zero or equivalent). You
+can initialize them explicitly, either when you define them in the class or in
+the constructor. The syntax makes more sense than that for C++, and is
+consistent for <B>static</B> and non-<B>static</B> members alike. You
+don&#8217;t need to externally define storage for <B>static</B> members like you
+do in C++.</FONT><LI><FONT FACE="Georgia">	There are no Java pointers in
+the sense of C and C++. When you create an object with <B>new</B>, you get back
+a reference (which I&#8217;ve been calling a <I>handle</I> in this book). For
+example: </FONT><BR><TT><FONT FACE="Courier New">String s = new
+String(&#8220;howdy&#8221;);</FONT></TT><BR><FONT FACE="Georgia">However,
+unlike C++ references that must be initialized when created and cannot be
+rebound to a different location, Java references don&#8217;t have to be bound at
+the point of creation. They can also be rebound at will, which eliminates part
+of the need for pointers. The other reason for pointers in C and C++ is to be
+able to point at any place in memory whatsoever (which makes them unsafe, which
+is why Java doesn&#8217;t support them). Pointers are often seen as an efficient
+way to move through an array of primitive variables; Java arrays allow you to do
+that in a safer fashion. The ultimate solution for pointer problems is native
+methods (discussed in Appendix A). Passing pointers to methods isn&#8217;t a
+problem since there are no global functions, only classes, and you can pass
+references to objects.</FONT><BR><FONT FACE="Georgia">The Java language
+promoters initially said &#8220;No pointers!&#8221;, but when many programmers
+questioned how you can work without pointers, the promoters began saying
+&#8220;Restricted pointers.&#8221; You can make up your mind whether it&#8217;s
+&#8220;really&#8221; a pointer or not. In any event, there&#8217;s no pointer
+<I>arithmetic</I>.</FONT><LI><FONT FACE="Georgia">	Java has constructors
+that are similar to constructors in C++. You get a default constructor if you
+don&#8217;t define one, and if you define a non-default constructor,
+there&#8217;s no automatic default constructor defined for you, just like in
+C++. There are no copy constructors, since all arguments are passed by
+reference.</FONT><LI><FONT FACE="Georgia">	There are no destructors in
+Java. There is no &#8220;scope&#8221; of a variable per se, to indicate when the
+object&#8217;s lifetime is ended &#8211; the lifetime of an object is determined
+instead by the garbage collector. There is a <B>finalize(&#160;)</B> method
+that&#8217;s a member of each class, something like a C++ destructor, but
+<B>finalize(&#160;)</B> is called by the garbage collector and is supposed to be
+responsible only for releasing "resources" (such as open files, sockets, ports,
+URLs, etc). If you need something done at a specific point, you must create a
+special method and call it, not rely upon <B>finalize(&#160;)</B>. Put another
+way, all objects in C++ will be (or rather, should be) destroyed, but not all
+objects in Java are garbage collected. Because Java doesn&#8217;t support
+destructors, you must be careful to create a cleanup method if it&#8217;s
+necessary and to explicitly call all the cleanup methods for the base class and
+member objects in your class.</FONT><LI><FONT FACE="Georgia">	Java has
+method overloading that works virtually identically to C++ function
+overloading.</FONT><LI><FONT FACE="Georgia">	Java does not support default
+arguments.</FONT><LI><FONT FACE="Georgia">	There&#8217;s no <B>goto</B> in
+Java. The one unconditional jump mechanism is the <B>break </B><I>label</I> or
+<B>continue </B><I>label</I>, which is used to jump out of the middle of
+multiply-nested loops.</FONT><LI><FONT FACE="Georgia">	Java uses a
+singly-rooted hierarchy, so all objects are ultimately inherited from the root
+class <B>Object</B>. In C++, you can start a new inheritance tree anywhere, so
+you end up with a forest of trees. In Java you get a single ultimate hierarchy.
+This can seem restrictive, but it gives a great deal of power since you know
+that every object is guaranteed to have at least the <B>Object</B> interface.
+C++ appears to be the only OO language that does not impose a singly rooted
+hierarchy.</FONT><LI><FONT FACE="Georgia">	Java has no templates or other
+implementation of parameterized types. There is a set of collections:
+<B>Vector</B>, <B>Stack</B>, and <B>Hashtable</B> that hold <B>Object</B>
+references, and through which you can satisfy your collection needs, but these
+collections are not designed for efficiency like the C++ Standard Template
+Library (STL). The new collections in Java 1.2 are more complete, but still
+don&#8217;t have the same kind of efficiency as template implementations would
+allow.</FONT><LI><FONT FACE="Georgia">	Garbage collection means memory
+leaks are much harder to cause in Java, but not impossible. (If you make native
+method calls that allocate storage, these are typically not tracked by the
+garbage collector.) However, many memory leaks and resouce leaks can be tracked
+to a badly written <B>finalize(&#160;) </B>or to not releasing a resource at the
+end of the block where it is allocated (a place where a destructor would
+certainly come in handy). The garbage collector is a huge improvement over C++,
+and makes a lot of programming problems simply vanish. It might make Java
+unsuitable for solving a small subset of problems that cannot tolerate a garbage
+collector, but the advantage of a garbage collector seems to greatly outweigh
+this potential drawback.</FONT><LI><FONT FACE="Georgia">	Java has built-in
+multithreading support. There&#8217;s a <B>Thread</B> class that you inherit to
+create a new thread (you override the <B>run(&#160;)</B> method). Mutual
+exclusion occurs at the level of objects using the <B>synchronized</B> keyword
+as a type qualifier for methods. Only one thread may use a <B>synchronized</B>
+method of a particular object at any one time. Put another way, when a
+<B>synchronized</B> method is entered, it first &#8220;locks&#8221; the object
+against any other <B>synchronized</B> method using that object and
+&#8220;unlocks&#8221; the object only upon exiting the method. There are no
+explicit locks; they happen automatically. You&#8217;re still responsible for
+implementing more sophisticated synchronization between threads by creating your
+own &#8220;monitor&#8221; class. Recursive <B>synchronized</B> methods work
+correctly. Time slicing is not guaranteed between equal priority
+threads.</FONT><LI><FONT FACE="Georgia">	Instead of controlling blocks of
+declarations like C++ does, the access specifiers (<B>public</B>,
+<B>private</B>, and <B>protected</B>) are placed on each definition for each
+member of a class. Without an explicit access specifier, an element defaults to
+&#8220;friendly,&#8221; which means that it is accessible to other elements in
+the same package (equivalent to them all being C++ <B>friend</B>s) but
+inaccessible outside the package. The class, and each method within the class,
+has an access specifier to determine whether it&#8217;s visible outside the
+file. Sometimes the <B>private </B>keyword is used less in Java because
+&#8220;friendly&#8221; access is often more useful than excluding access from
+other classes in the same package. (However, with multithreading the proper use
+of <B>private</B> is essential.) The Java <B>protected</B> keyword means
+&#8220;accessible to inheritors <I>and</I> to others in this package.&#8221;
+There is no equivalent to the C++ <B>protected </B>keyword that means
+&#8220;accessible to inheritors<I> only</I>&#8221; (<B>private protected</B>
+used to do this, but the use of that keyword pair was
+removed).</FONT><LI><FONT FACE="Georgia">	Nested classes. In C++, nesting
+a class is an aid to name hiding and code organization (but C++ namespaces
+eliminate the need for name hiding). Java packaging provides the equivalence of
+namespaces, so that isn&#8217;t an issue. Java 1.1<A NAME="Index3114"></A> has
+<I>inner classes</I> that look just like nested classes. However, an object of
+an inner class secretly keeps a handle to the object of the outer class that was
+involved in the creation of the inner class object. This means that the inner
+class object may access members of the outer class object without qualification,
+as if those members belonged directly to the inner class object. This provides a
+much more elegant solution to the problem of callbacks, solved with pointers to
+members in C++.</FONT><LI><FONT FACE="Georgia">	Because of inner classes
+described in the previous point, there are no pointers to members in
+Java.</FONT><LI><FONT FACE="Georgia">	No <B>inline</B> methods. The Java
+compiler might decide on its own to inline a method, but you don&#8217;t have
+much control over this. You can suggest inlining in Java by using the
+<B>final</B> keyword for a method. However, <B>inline</B> functions are only
+suggestions to the C++ compiler as
+well.</FONT><LI><FONT FACE="Georgia">	Inheritance in Java has the same
+effect as in C++, but the syntax is different. Java uses the <B>extends</B>
+keyword to indicate inheritance from a base class and the <B>super</B> keyword
+to specify methods to be called in the base class that have the same name as the
+method you&#8217;re in. (However, the <B>super</B> keyword in Java allows you to
+access methods only in the parent class, one level up in the hierarchy.)
+Base-class scoping in C++ allows you to access methods that are deeper in the
+hierarchy). The base-class constructor is also called using the <B>super</B>
+keyword. As mentioned before, all classes are ultimately automatically inherited
+from <B>Object</B>.<B> </B>There&#8217;s no explicit constructor initializer
+list like in C++, but the compiler forces you to perform all base-class
+initialization at the beginning of the constructor body and it won&#8217;t let
+you perform these later in the body. Member initialization is guaranteed through
+a combination of automatic initialization and exceptions for uninitialized
+object handles.</FONT>
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>public</font> <font color=#0000ff>class</font> Foo <font color=#0000ff>extends</font> Bar {
+  <font color=#0000ff>public</font> Foo(String msg) {
+    <font color=#0000ff>super</font>(msg); <font color=#009900>// Calls base constructor</font>
+  }
+  <font color=#0000ff>public</font> baz(<font color=#0000ff>int</font> i) { <font color=#009900>// Override</font>
+    <font color=#0000ff>super</font>.baz(i); <font color=#009900>// Calls base method</font>
+  }
+}</PRE></FONT></BLOCKQUOTE>
+
+<LI><FONT FACE="Georgia">	Inheritance in Java doesn&#8217;t change the
+protection level of the members in the base class. You cannot specify
+<B>public</B>, <B>private</B>, or <B>protected</B> inheritance in Java, as you
+can in C++. Also, overridden methods in a derived class cannot reduce the access
+of the method in the base class. For example, if a method is <B>public</B> in
+the base class and you override it, your overridden method must also be
+<B>public</B> (the compiler checks for
+this).</FONT><LI><FONT FACE="Georgia">	Java provides the <B>interface</B>
+keyword, which creates the equivalent of an abstract base class filled with
+abstract methods and with no data members. This makes a clear distinction
+between something designed to be just an interface and an extension of existing
+functionality via the <B>extends</B> keyword. It&#8217;s worth noting that the
+<B>abstract</B> keyword produces a similar effect in that you can&#8217;t create
+an object of that class. An <B>abstract</B> class <I>may</I> contain abstract
+methods (although it isn&#8217;t required to contain any), but it is also able
+to contain implementations, so it is restricted to single inheritance. Together
+with interfaces, this scheme prevents the need for some mechanism like virtual
+base classes in C++.</FONT><BR><FONT FACE="Georgia">To create a version of
+the <B>interface</B> that can be instantiated, use the <B>implements
+</B>keyword, whose syntax looks like inheritance:</FONT>
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>public</font> <font color=#0000ff>interface</font> Face {
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> smile();
+}
+<font color=#0000ff>public</font> <font color=#0000ff>class</font> Baz <font color=#0000ff>extends</font> Bar <font color=#0000ff>implements</font> Face {
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> smile(&#160;) {
+    System.out.println(<font color=#004488>"a warm smile"</font>);
+  }
+}</PRE></FONT></BLOCKQUOTE>
+
+<LI><FONT FACE="Georgia">	There&#8217;s no <B>virtual</B> keyword in Java
+because all non-<B>static</B> methods always use dynamic binding. In Java, the
+programmer doesn&#8217;t have to decide whether to use dynamic binding. The
+reason <B>virtual</B> exists in C++ is so you can leave it off for a slight
+increase in efficiency when you&#8217;re tuning for performance (or, put another
+way, &#8220;If you don&#8217;t use it, you don&#8217;t pay for it&#8221;), which
+often results in confusion and unpleasant surprises. The <B>final</B> keyword
+provides some latitude for efficiency tuning &#8211; it tells the compiler that
+this method cannot be overridden, and thus that it may be statically bound (and
+made inline, thus using the equivalent of a C++ non-<B>virtual</B> call). These
+optimizations are up to the compiler.</FONT><LI><FONT FACE="Georgia">	Java
+doesn&#8217;t provide multiple inheritance (MI), at least not in the same sense
+that C++ does. Like <B>protected</B>, MI seems like a good idea but you know you
+need it only when you are face to face with a certain design problem. Since Java
+uses a singly-rooted hierarchy, you&#8217;ll probably run into fewer situations
+in which MI is necessary. The <B>interface</B> keyword takes care of combining
+multiple interfaces.</FONT><LI><FONT FACE="Georgia">	Run-time type
+identification functionality is quite similar to that in C++. To get information
+about handle <B>X,</B> you can say, for
+example:</FONT><BR><TT><FONT FACE="Courier New">X.getClass().getName();</FONT></TT><BR><FONT FACE="Georgia">To
+perform a type-safe downcast you
+say:</FONT><BR><TT><FONT FACE="Courier New">derived d =
+(derived)base;</FONT></TT><BR><FONT FACE="Georgia">just like an old-style
+C cast. The compiler automatically invokes the dynamic casting mechanism without
+requiring extra syntax. Although this doesn&#8217;t have the benefit of easy
+location of casts as in C++ &#8220;new casts,&#8221; Java checks usage and
+throws exceptions so it won&#8217;t allow bad casts like C++ does.
+</FONT><LI><FONT FACE="Georgia">	Exception handling in Java is different
+because there are no destructors. A <B>finally</B> clause can be added to force
+execution of statements that perform necessary cleanup. All exceptions in Java
+are inherited from the base class <B>Throwable</B>, so you&#8217;re guaranteed a
+common interface.</FONT>
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>public</font> <font color=#0000ff>void</font> f(Obj b) <font color=#0000ff>throws</font> IOException {
+  myresource mr = b.createResource();
+  <font color=#0000ff>try</font> {
+    mr.UseResource();
+  } <font color=#0000ff>catch</font> (MyException e) { 
+    <font color=#009900>// handle my exception</font>
+  } <font color=#0000ff>catch</font> (Throwable e) { 
+    <font color=#009900>// handle all other exceptions</font>
+  } <font color=#0000ff>finally</font> {
+    mr.dispose(); <font color=#009900>// special cleanup</font>
+  }
+}</PRE></FONT></BLOCKQUOTE>
+
+<LI><FONT FACE="Georgia">	Exception specifications in Java are vastly
+superior to those in C++. Instead of the C++ approach of calling a function at
+run-time when the wrong exception is thrown, Java exception specifications are
+checked and enforced at compile-time. In addition, overridden methods must
+conform to the exception specification of the base-class version of that method:
+they can throw the specified exceptions or exceptions derived from those. This
+provides much more robust exception-handling
+code.</FONT><LI><FONT FACE="Georgia">	Java has method overloading, but no
+operator overloading. The <B>String</B> class does use the <B>+</B> and <B>+=
+</B>operators to concatenate strings and <B>String </B>expressions use automatic
+type conversion, but that&#8217;s a special built-in
+case.</FONT><A NAME="OLE_LINK7"></A><LI><FONT FACE="Georgia">	The
+<B>const</B> issues in C++ are avoided in Java by convention. You pass only
+handles to objects and local copies are never made for you automatically. If you
+want the equivalent of C++&#8217;s pass-by-value, <A NAME="OLE_LINK8"></A>you
+call <B>clone(&#160;)</B> to produce a local copy of the argument (although the
+<B>clone(&#160;) </B>mechanism is somewhat poorly designed &#8211; see Chapter
+12). There&#8217;s no copy-constructor that&#8217;s automatically called. To
+create a compile-time constant value, you say, for example:</FONT>
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>static</font> <font color=#0000ff>final</font> <font color=#0000ff>int</font> SIZE = 255;
+<font color=#0000ff>static</font> <font color=#0000ff>final</font> <font color=#0000ff>int</font> BSIZE = 8 * SIZE;</PRE></FONT></BLOCKQUOTE>
+
+<LI><FONT FACE="Georgia">	Because of security issues, programming an
+&#8220;application&#8221; is quite different from programming an
+&#8220;applet.&#8221; A significant issue is that an applet won&#8217;t let you
+write to disk, because that would allow a program downloaded from an unknown
+machine to trash your disk. This changes somewhat with Java
+1.1<A NAME="Index3115"></A> digital signing, which allows you to unequivocally
+<I>know</I> everyone that wrote all the programs that have special access to
+your system (one of which might have trashed your disk; you still have to figure
+out which one and what to do about it.). Java 1.2 also promises more power for
+applets</FONT><LI><FONT FACE="Georgia">	Since Java can be too restrictive
+in some cases, you could be prevented from doing important tasks such as
+directly accessing hardware. Java solves this with <I>native methods</I> that
+allow you to call a function written in another language (currently only C and
+C++ are supported). Thus, you can always solve a platform-specific problem (in a
+relatively non-portable fashion, but then that code is isolated). Applets cannot
+call native methods, only
+applications.</FONT><LI><FONT FACE="Georgia">	Java has built-in support
+for comment documentation, so the source code file can also contain its own
+documentation, which is stripped out and reformatted into HTML via a separate
+program. This is a boon for documentation maintenance and
+use.</FONT><LI><FONT FACE="Georgia">	Java contains standard libraries for
+solving specific tasks. C++ relies on non-standard third-party libraries. These
+tasks include (or will soon
+include):</FONT><BR><FONT FACE="Georgia">&#8211;
+Networking</FONT><BR><FONT FACE="Georgia">&#8211; Database Connection (via
+JDBC)</FONT><BR><FONT FACE="Georgia">&#8211;
+Multithreading</FONT><BR><FONT FACE="Georgia">&#8211; Distributed Objects
+(via RMI and CORBA)</FONT><BR><FONT FACE="Georgia">&#8211;
+Compression</FONT><BR><FONT FACE="Georgia">&#8211;
+Commerce</FONT><BR><FONT FACE="Georgia">The availability and standard
+nature of these libraries allow for more rapid application
+development.</FONT><LI><FONT FACE="Georgia">	Java 1.1 includes the Java
+Beans standard, which is a way to create components that can be used in visual
+programming environments. This promotes visual components that can be used under
+all vendor&#8217;s development environments. Since you aren&#8217;t tied to a
+particular vendor&#8217;s design for visual components, this should result in
+greater selection and availability of components. In addition, the design for
+Java Beans is simpler for programmers to understand; vendor-specific component
+frameworks tend to involve a steeper learning
+curve.</FONT><LI><FONT FACE="Georgia">	If the access to a Java handle
+fails, an exception is thrown. This test doesn&#8217;t have to occur right
+before the use of a handle; the Java specification just says that the exception
+must somehow be thrown. Many C++ runtime systems can also throw exceptions for
+bad pointers.</FONT><LI><FONT FACE="Georgia">	Generally, Java is more
+robust, via:</FONT><BR><FONT FACE="Georgia">&#8211; Object handles
+initialized to <B>null</B> (a
+keyword)</FONT><BR><FONT FACE="Georgia">&#8211; Handles are always checked
+and exceptions are thrown for
+failures</FONT><BR><FONT FACE="Georgia">&#8211; All array accesses are
+checked for bounds violations</FONT><BR><FONT FACE="Georgia">&#8211;
+Automatic garbage collection prevents memory
+leaks</FONT><BR><FONT FACE="Georgia">&#8211; Clean, relatively fool-proof
+exception handling</FONT><BR><FONT FACE="Georgia">&#8211; Simple language
+support for multithreading</FONT><BR><FONT FACE="Georgia">&#8211; Bytecode
+verification of network
+applets</FONT></OL><DIV ALIGN="LEFT"><P><A NAME="Appendix_C"></A><A NAME="_Toc375545509"></A><BR></P></DIV>
+
+<DIV ALIGN="CENTER">
+    <FONT FACE="Verdana" size = "-1">
+     [ <a href="AppendixA.html">Previous Chapter</a> ] 
+    [ <a href="SimpleContents.html">Short TOC</a> ] 
+    [ <a href="Contents.html">Table of Contents</a> ] 
+    [ <a href="DocIndex.html">Index</a> ]
+     [ <a href="AppendixC.html">Next Chapter</a> ] 
+    </FONT>
+    <BR>
+ Last Update:02/04/2000</P></DIV>
+
+</BODY>
+
+</HTML>

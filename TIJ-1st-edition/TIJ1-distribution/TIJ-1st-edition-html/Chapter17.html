@@ -1,0 +1,1824 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<!--
+This document was converted from RTF source: 
+By rtftohtml 4.19
+See http://www.sunpack.com/RTF
+Filename:Tjava14.rtf
+Application Directory:c:\TOOLS\RTF2HTML\
+Subject:
+Author:Bruce Eckel
+Operator:Bruce Eckel
+Document Comments:
+Version Comments:
+Comments:
+Keywords:
+Translation Date:02/04/2000
+Translation Time:23:26:21
+Translation Platform:Win32
+Number of Output files:27
+This File:Chapter17.html
+SplitDepth=1
+SkipNavPanel=1
+SkipLeadingToc=1
+SkipTrailingToc=1
+GenContents=1
+GenFrames=1
+GenIndex=1
+-->
+<HEAD lang="en"><META http-equiv="Content-Type" content="text/html">
+<TITLE>17: Projects</TITLE>
+</HEAD>
+
+<BODY  BGCOLOR="#FFFFFF"><DIV ALIGN="CENTER">
+  <a href="http://www.MindView.net">
+  <img src="mindview-head.gif" alt="MindView Inc." BORDER = "0"></a>
+  <CENTER>
+    <FONT FACE="Verdana" size = "-1">
+    [ <a href="README-HTML.txt">Viewing Hints</a> ]
+    [ <a href="http://www.mindview.net/TIJ2/index.html">2nd Edition</a> ]
+    [ <a href="http://www.mindview.net/MailingList.html">Free Newsletter</a> ] <br>
+    [ <a href="http://www.mindview.net/Training.html">Seminars</a> ]
+    [ <a href="http://www.mindview.net/javaCD2.html">Seminars on CD ROM</a> ]
+    [ <a href="http://www.mindview.net/CPPServices/#ConsultingServices">Consulting</a> ]
+    </FONT>
+  <H2><FONT FACE="Verdana">
+  Thinking in Java, 1st edition</FONT></H2>
+  <H3><FONT FACE="Verdana">&copy;1998 by Bruce Eckel</FONT></H3>
+  
+    <FONT FACE="Verdana" size = "-1">
+     [ <a href="Chapter16.html">Previous Chapter</a> ] 
+    [ <a href="SimpleContents.html">Short TOC</a> ] 
+    [ <a href="Contents.html">Table of Contents</a> ] 
+    [ <a href="DocIndex.html">Index</a> ]
+     [ <a href="AppendixA.html">Next Chapter</a> ] 
+    </FONT>
+    
+  </CENTER>
+  </P></DIV><A NAME="_Toc407441461"></A><A NAME="_Toc408018809"></A><A NAME="Heading570"></A><FONT FACE = "Verdana"><H1 ALIGN="LEFT">
+17: Projects</H1></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Verdana" SIZE=4>This chapter includes a
+set of projects that build on the material presented in this book or otherwise
+didn&#8217;t fit in earlier chapters.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Most of these projects are
+significantly more complex than the examples in the rest of the book, and they
+often demonstrate new techniques and uses of class
+libraries.</FONT><A NAME="_Toc375545502"></A><A NAME="_Toc408018810"></A><BR></P></DIV>
+<A NAME="Heading571"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Text processing<BR><A NAME="Index2999"></A></H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">If you come from a C or C++
+background, you might be skeptical at first of Java&#8217;s power when it comes
+to handling text. Indeed, one drawback is that execution speed is slower and
+that could hinder some of your efforts. However, the tools (in particular the
+<A NAME="Index3000"></A><B>String</B> class) are quite powerful, as the examples
+in this section show (and performance improvements have been promised for
+Java).</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">As you&#8217;ll see, these examples
+were created to solve problems that arose in the creation of this book. However,
+they are not restricted to that and the solutions they offer can easily be
+adapted to other situations. In addition, they show the power of Java in an area
+that has not previously been emphasized in this
+book.</FONT><A NAME="_Toc375545503"></A><A NAME="_Toc408018811"></A><BR></P></DIV>
+<A NAME="Heading572"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Extracting code
+listings<BR><A NAME="Index3001"></A><A NAME="Index3002"></A><A NAME="Index3003"></A><A NAME="Index3004"></A></H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You&#8217;ve no doubt noticed that
+each complete code listing (not code fragment) in this book begins and ends with
+special comment tag marks &#8216;<B>//:</B>&#8217; and
+&#8216;<B>///:~</B>&#8217;. This meta-information is included so that the code
+can be automatically extracted from the book into compilable source-code files.
+In my previous book, I had a system that allowed me to automatically incorporate
+tested code files into the book. In this book, however, I discovered that it was
+often easier to paste the code into the book once it was initially tested and,
+since it&#8217;s hard to get right the first time, to perform edits to the code
+within the book. But how to extract it and test the code? This program is the
+answer, and it could come in handy when you set out to solve a text processing
+problem. It also demonstrates many of the <B>String</B> class
+features.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">I first save the entire book in
+ASCII text format into a separate file. The <B>CodePackager</B> program has two
+modes (which you can see described in <B>usageString</B>): if you use the
+<B>-p</B> flag, it expects to see an input file containing the ASCII text from
+the book. It will go through this file and use the comment tag marks to extract
+the code, and it uses the file name on the first line to determine the name of
+the file. In addition, it looks for the <B>package</B> statement in case it
+needs to put the file into a special directory (chosen via the path indicated by
+the <B>package</B> statement).</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">But that&#8217;s not all. It also
+watches for the change in chapters by keeping track of the package names. Since
+all packages for each chapter begin with <B>c02</B>, <B>c03</B>, <B>c04</B>,
+etc. to indicate the chapter where they belong<B> </B>(except for those
+beginning with <B>com</B>, which are ignored for the purpose of keeping track of
+chapters), as long as the first listing in each chapter contains a
+<B>package</B> statement with the chapter number, the <B>CodePackager</B>
+program can keep track of when the chapter changed and put all the subsequent
+files in the new chapter subdirectory.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">As each file is extracted, it is
+placed into a <B>SourceCodeFile</B> object that is then placed into a
+collection. (This process will be more thoroughly described later.) These
+<B>SourceCodeFile</B> objects could simply be stored in files, but that brings
+us to the second use for this project. If you invoke <B>CodePackager</B>
+<I>without</I> the <B>-p</B> flag it expects a &#8220;packed&#8221; file as
+input, which it will then extract into separate files. So the <B>-p</B> flag
+means that the extracted files will be found &#8220;packed&#8221; into this
+single file.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Why bother with the packed file?
+Because different computer platforms have different ways of storing text
+information in files. A big issue is the end-of-line character or characters,
+but other issues can also exist. However, Java has a special type of IO stream
+&#8211; the <A NAME="Index3005"></A><A NAME="Index3006"></A><B>DataOutputStream
+</B>&#8211; which promises that, regardless of what machine the data is coming
+from, the storage of that data will be in a form that can be correctly retrieved
+by any other machine by using a
+<A NAME="Index3007"></A><A NAME="Index3008"></A><B>DataInputStream</B>. That is,
+Java handles all of the <A NAME="Index3009"></A>platform-specific details, which
+is a large part of the promise of Java. So the <B>-p</B> flag stores everything
+into a single file in a universal format. You download this file and the Java
+program from the Web, and when you run <B>CodePackager</B> on this file
+<I>without</I> the <B>-p</B> flag the files will all be extracted to appropriate
+places on your system. (You can specify an alternate subdirectory; otherwise the
+subdirectories will just be created in the current directory.) To ensure that no
+system-specific formats remain, <B>File</B> objects are used everywhere a path
+or a file is described. In addition, there&#8217;s a sanity check: an empty file
+is placed in each subdirectory; the name of that file indicates how many files
+you should find in that subdirectory.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Here is the code, which will be
+described in detail at the end of the listing:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>//: CodePackager.java</font>
+<font color=#009900>// "Packs" and "unpacks" the code in "Thinking </font>
+<font color=#009900>// in Java" for cross-platform distribution.</font>
+<font color=#009900>/* Commented so CodePackager sees it and starts
+   a new chapter directory, but so you don't 
+   have to worry about the directory where this
+   program lives:
+package c17;
+*/</font>
+<font color=#0000ff>import</font> java.util.*;
+<font color=#0000ff>import</font> java.io.*;
+
+<font color=#0000ff>class</font> Pr {
+  <font color=#0000ff>static</font> <font color=#0000ff>void</font> error(String e) {
+    System.err.println(<font color=#004488>"ERROR: "</font> + e);
+    System.exit(1);
+  }
+}
+
+<font color=#0000ff>class</font> IO {
+  <font color=#0000ff>static</font> BufferedReader disOpen(File f) {
+    BufferedReader in = <font color=#0000ff>null</font>;
+    <font color=#0000ff>try</font> {
+      in = <font color=#0000ff>new</font> BufferedReader(
+        <font color=#0000ff>new</font> FileReader(f));
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"could not open "</font> + f);
+    }
+    <font color=#0000ff>return</font> in;
+  }
+  <font color=#0000ff>static</font> BufferedReader disOpen(String fname) {
+    <font color=#0000ff>return</font> disOpen(<font color=#0000ff>new</font> File(fname));
+  }
+  <font color=#0000ff>static</font> DataOutputStream dosOpen(File f) {
+    DataOutputStream in = <font color=#0000ff>null</font>;
+    <font color=#0000ff>try</font> {
+      in = <font color=#0000ff>new</font> DataOutputStream(
+        <font color=#0000ff>new</font> BufferedOutputStream(
+          <font color=#0000ff>new</font> FileOutputStream(f)));
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"could not open "</font> + f);
+    }
+    <font color=#0000ff>return</font> in;
+  }
+  <font color=#0000ff>static</font> DataOutputStream dosOpen(String fname) {
+    <font color=#0000ff>return</font> dosOpen(<font color=#0000ff>new</font> File(fname));
+  }
+  <font color=#0000ff>static</font> PrintWriter psOpen(File f) {
+    PrintWriter in = <font color=#0000ff>null</font>;
+    <font color=#0000ff>try</font> {
+      in = <font color=#0000ff>new</font> PrintWriter(
+        <font color=#0000ff>new</font> BufferedWriter(
+          <font color=#0000ff>new</font> FileWriter(f)));
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"could not open "</font> + f);
+    }
+    <font color=#0000ff>return</font> in;
+  }
+  <font color=#0000ff>static</font> PrintWriter psOpen(String fname) {
+    <font color=#0000ff>return</font> psOpen(<font color=#0000ff>new</font> File(fname));
+  }
+  <font color=#0000ff>static</font> <font color=#0000ff>void</font> close(Writer os) {
+    <font color=#0000ff>try</font> {
+      os.close();
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"closing "</font> + os);
+    }
+  }
+  <font color=#0000ff>static</font> <font color=#0000ff>void</font> close(DataOutputStream os) {
+    <font color=#0000ff>try</font> {
+      os.close();
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"closing "</font> + os);
+    }
+  }
+  <font color=#0000ff>static</font> <font color=#0000ff>void</font> close(Reader os) {
+    <font color=#0000ff>try</font> {
+      os.close();
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"closing "</font> + os);
+    }
+  }
+}
+
+<font color=#0000ff>class</font> SourceCodeFile {
+  <font color=#0000ff>public</font> <font color=#0000ff>static</font> <font color=#0000ff>final</font> String 
+    startMarker = <font color=#004488>"</font><font color=#004488>/</font><font color=#004488>/:"</font>, <font color=#009900>// Start of source file</font>
+    endMarker = <font color=#004488>"} </font><font color=#004488>/</font><font color=#004488>/</font><font color=#004488>/:~"</font>, <font color=#009900>// End of source</font>
+    endMarker2 = <font color=#004488>"}; </font><font color=#004488>/</font><font color=#004488>/</font><font color=#004488>/:~"</font>, <font color=#009900>// C++ file end</font>
+    beginContinue = <font color=#004488>"} </font><font color=#004488>/</font><font color=#004488>/</font><font color=#004488>/:Continued"</font>,
+    endContinue = <font color=#004488>"</font><font color=#004488>/</font><font color=#004488>/</font><font color=#004488>/:Continuing"</font>,
+    packMarker = <font color=#004488>"###"</font>, <font color=#009900>// Packed file header tag</font>
+    eol = <font color=#009900>// Line separator on current system</font>
+      System.getProperty(<font color=#004488>"line.separator"</font>),
+    filesep = <font color=#009900>// System's file path separator</font>
+      System.getProperty(<font color=#004488>"file.separator"</font>);
+  <font color=#0000ff>public</font> <font color=#0000ff>static</font> String copyright = <font color=#004488>""</font>;
+  <font color=#0000ff>static</font> {
+    <font color=#0000ff>try</font> {
+      BufferedReader cr =
+        <font color=#0000ff>new</font> BufferedReader(
+          <font color=#0000ff>new</font> FileReader(<font color=#004488>"Copyright.txt"</font>));
+      String crin;
+      <font color=#0000ff>while</font>((crin = cr.readLine()) != <font color=#0000ff>null</font>)
+        copyright += crin + <font color=#004488>"\n"</font>;
+      cr.close();
+    } <font color=#0000ff>catch</font>(Exception e) {
+      copyright = <font color=#004488>""</font>;
+    }
+  }
+  <font color=#0000ff>private</font> String filename, dirname,
+    contents = <font color=#0000ff>new</font> String();
+  <font color=#0000ff>private</font> <font color=#0000ff>static</font> String chapter = <font color=#004488>"c02"</font>;
+  <font color=#009900>// The file name separator from the old system:</font>
+  <font color=#0000ff>public</font> <font color=#0000ff>static</font> String oldsep;
+  <font color=#0000ff>public</font> String toString() {
+    <font color=#0000ff>return</font> dirname + filesep + filename;
+  }
+  <font color=#009900>// Constructor for parsing from document file:</font>
+  <font color=#0000ff>public</font> SourceCodeFile(String firstLine, 
+      BufferedReader in) {
+    dirname = chapter;
+    <font color=#009900>// Skip past marker:</font>
+    filename = firstLine.substring(
+        startMarker.length()).trim();
+    <font color=#009900>// Find space that terminates file name:</font>
+    <font color=#0000ff>if</font>(filename.indexOf(' ') != -1)
+      filename = filename.substring(
+          0, filename.indexOf(' '));
+    System.out.println(<font color=#004488>"found: "</font> + filename);
+    contents = firstLine + eol;
+    <font color=#0000ff>if</font>(copyright.length() != 0)
+      contents += copyright + eol;
+    String s;
+    <font color=#0000ff>boolean</font> foundEndMarker = <font color=#0000ff>false</font>;
+    <font color=#0000ff>try</font> {
+      <font color=#0000ff>while</font>((s = in.readLine()) != <font color=#0000ff>null</font>) {
+        <font color=#0000ff>if</font>(s.startsWith(startMarker))
+          Pr.error(<font color=#004488>"No end of file marker for "</font> +
+            filename);
+        <font color=#009900>// For this program, no spaces before </font>
+        <font color=#009900>// the "package" keyword are allowed</font>
+        <font color=#009900>// in the input source code:</font>
+        <font color=#0000ff>else</font> <font color=#0000ff>if</font>(s.startsWith(<font color=#004488>"package"</font>)) {
+          <font color=#009900>// Extract package name:</font>
+          String pdir = s.substring(
+            s.indexOf(' ')).trim();
+          pdir = pdir.substring(
+            0, pdir.indexOf(';')).trim();
+          <font color=#009900>// Capture the chapter from the package</font>
+          <font color=#009900>// ignoring the 'com' subdirectories:</font>
+          <font color=#0000ff>if</font>(!pdir.startsWith(<font color=#004488>"com"</font>)) {
+            <font color=#0000ff>int</font> firstDot = pdir.indexOf('.');
+            <font color=#0000ff>if</font>(firstDot != -1)
+              chapter = 
+                pdir.substring(0,firstDot);
+            <font color=#0000ff>else</font>
+              chapter = pdir;
+          }
+          <font color=#009900>// Convert package name to path name:</font>
+          pdir = pdir.replace(
+            '.', filesep.charAt(0));
+          System.out.println(<font color=#004488>"package "</font> + pdir);
+          dirname = pdir;
+        }
+        contents += s + eol;
+        <font color=#009900>// Move past continuations:</font>
+        <font color=#0000ff>if</font>(s.startsWith(beginContinue))
+          <font color=#0000ff>while</font>((s = in.readLine()) != <font color=#0000ff>null</font>)
+            <font color=#0000ff>if</font>(s.startsWith(endContinue)) {
+              contents += s + eol;
+              <font color=#0000ff>break</font>;
+            }
+        <font color=#009900>// Watch for end of code listing:</font>
+        <font color=#0000ff>if</font>(s.startsWith(endMarker) ||
+           s.startsWith(endMarker2)) {
+          foundEndMarker = <font color=#0000ff>true</font>;
+          <font color=#0000ff>break</font>;
+        }
+      }
+      <font color=#0000ff>if</font>(!foundEndMarker)
+        Pr.error(
+          <font color=#004488>"End marker not found before EOF"</font>);
+      System.out.println(<font color=#004488>"Chapter: "</font> + chapter);
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"Error reading line"</font>);
+    }
+  }
+  <font color=#009900>// For recovering from a packed file:</font>
+  <font color=#0000ff>public</font> SourceCodeFile(BufferedReader pFile) {
+    <font color=#0000ff>try</font> {
+      String s = pFile.readLine();
+      <font color=#0000ff>if</font>(s == <font color=#0000ff>null</font>) <font color=#0000ff>return</font>;
+      <font color=#0000ff>if</font>(!s.startsWith(packMarker))
+        Pr.error(<font color=#004488>"Can't find "</font> + packMarker
+          + <font color=#004488>" in "</font> + s);
+      s = s.substring(
+        packMarker.length()).trim();
+      dirname = s.substring(0, s.indexOf('#'));
+      filename = s.substring(s.indexOf('#') + 1);
+      dirname = dirname.replace(
+        oldsep.charAt(0), filesep.charAt(0));
+      filename = filename.replace(
+        oldsep.charAt(0), filesep.charAt(0));
+      System.out.println(<font color=#004488>"listing: "</font> + dirname 
+        + filesep + filename);
+      <font color=#0000ff>while</font>((s = pFile.readLine()) != <font color=#0000ff>null</font>) {
+        <font color=#009900>// Watch for end of code listing:</font>
+        <font color=#0000ff>if</font>(s.startsWith(endMarker) ||
+           s.startsWith(endMarker2)) {
+          contents += s;
+          <font color=#0000ff>break</font>;
+        }
+        contents += s + eol;
+      }
+    } <font color=#0000ff>catch</font>(IOException e) {
+      System.err.println(<font color=#004488>"Error reading line"</font>);
+    }
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>boolean</font> hasFile() { 
+    <font color=#0000ff>return</font> filename != <font color=#0000ff>null</font>; 
+  }
+  <font color=#0000ff>public</font> String directory() { <font color=#0000ff>return</font> dirname; }
+  <font color=#0000ff>public</font> String filename() { <font color=#0000ff>return</font> filename; }
+  <font color=#0000ff>public</font> String contents() { <font color=#0000ff>return</font> contents; }
+  <font color=#009900>// To write to a packed file:</font>
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> writePacked(DataOutputStream out) {
+    <font color=#0000ff>try</font> {
+      out.writeBytes(
+        packMarker + dirname + <font color=#004488>"#"</font> 
+        + filename + eol);
+      out.writeBytes(contents);
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"writing "</font> + dirname + 
+        filesep + filename);
+    }
+  }
+  <font color=#009900>// To generate the actual file:</font>
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> writeFile(String rootpath) {
+    File path = <font color=#0000ff>new</font> File(rootpath, dirname);
+    path.mkdirs();
+    PrintWriter p =
+      IO.psOpen(<font color=#0000ff>new</font> File(path, filename));
+    p.print(contents);
+    IO.close(p);
+  }
+}
+
+<font color=#0000ff>class</font> DirMap {
+  <font color=#0000ff>private</font> Hashtable t = <font color=#0000ff>new</font> Hashtable();
+  <font color=#0000ff>private</font> String rootpath;
+  DirMap() {
+    rootpath = System.getProperty(<font color=#004488>"user.dir"</font>);
+  }
+  DirMap(String alternateDir) {
+    rootpath = alternateDir;
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> add(SourceCodeFile f){
+    String path = f.directory();
+    <font color=#0000ff>if</font>(!t.containsKey(path))
+      t.put(path, <font color=#0000ff>new</font> Vector());
+    ((Vector)t.get(path)).addElement(f);
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> writePackedFile(String fname) {
+    DataOutputStream packed = IO.dosOpen(fname);
+    <font color=#0000ff>try</font> {
+      packed.writeBytes(<font color=#004488>"###Old Separator:"</font> +
+        SourceCodeFile.filesep + <font color=#004488>"###\n"</font>);
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"Writing separator to "</font> + fname);
+    }
+    Enumeration e = t.keys();
+    <font color=#0000ff>while</font>(e.hasMoreElements()) {
+      String dir = (String)e.nextElement();
+      System.out.println(
+        <font color=#004488>"Writing directory "</font> + dir);
+      Vector v = (Vector)t.get(dir);
+      <font color=#0000ff>for</font>(<font color=#0000ff>int</font> i = 0; i &lt; v.size(); i++) {
+        SourceCodeFile f = 
+          (SourceCodeFile)v.elementAt(i);
+        f.writePacked(packed);
+      }
+    }
+    IO.close(packed);
+  }
+  <font color=#009900>// Write all the files in their directories:</font>
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> write() {
+    Enumeration e = t.keys();
+    <font color=#0000ff>while</font>(e.hasMoreElements()) {
+      String dir = (String)e.nextElement();
+      Vector v = (Vector)t.get(dir);
+      <font color=#0000ff>for</font>(<font color=#0000ff>int</font> i = 0; i &lt; v.size(); i++) {
+        SourceCodeFile f = 
+          (SourceCodeFile)v.elementAt(i);
+        f.writeFile(rootpath);
+      }
+      <font color=#009900>// Add file indicating file quantity</font>
+      <font color=#009900>// written to this directory as a check:</font>
+      IO.close(IO.dosOpen(
+        <font color=#0000ff>new</font> File(<font color=#0000ff>new</font> File(rootpath, dir),
+          Integer.toString(v.size())+<font color=#004488>".files"</font>)));
+    }
+  }
+}
+
+<font color=#0000ff>public</font> <font color=#0000ff>class</font> CodePackager {
+  <font color=#0000ff>private</font> <font color=#0000ff>static</font> <font color=#0000ff>final</font> String usageString =
+  <font color=#004488>"usage: java CodePackager packedFileName"</font> +
+  <font color=#004488>"\nExtracts source code files from packed \n"</font> +
+  <font color=#004488>"version of Tjava.doc sources into "</font> +
+  <font color=#004488>"directories off current directory\n"</font> +
+  <font color=#004488>"java CodePackager packedFileName newDir\n"</font> +
+  <font color=#004488>"Extracts into directories off newDir\n"</font> +
+  <font color=#004488>"java CodePackager -p source.txt packedFile"</font> +
+  <font color=#004488>"\nCreates packed version of source files"</font> +
+  <font color=#004488>"\nfrom text version of Tjava.doc"</font>;
+  <font color=#0000ff>private</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> usage() {
+    System.err.println(usageString);
+    System.exit(1);
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> main(String[] args) {
+    <font color=#0000ff>if</font>(args.length == 0) usage();
+    <font color=#0000ff>if</font>(args[0].equals(<font color=#004488>"-p"</font>)) {
+      <font color=#0000ff>if</font>(args.length != 3)
+        usage();
+      createPackedFile(args);
+    }
+    <font color=#0000ff>else</font> {
+      <font color=#0000ff>if</font>(args.length &gt; 2)
+        usage();
+      extractPackedFile(args);
+    }
+  }
+  <font color=#0000ff>private</font> <font color=#0000ff>static</font> String currentLine; 
+  <font color=#0000ff>private</font> <font color=#0000ff>static</font> BufferedReader in;
+  <font color=#0000ff>private</font> <font color=#0000ff>static</font> DirMap dm;
+  <font color=#0000ff>private</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> 
+  createPackedFile(String[] args) {
+    dm = <font color=#0000ff>new</font> DirMap();
+    in = IO.disOpen(args[1]);
+    <font color=#0000ff>try</font> {
+      <font color=#0000ff>while</font>((currentLine = in.readLine()) 
+          != <font color=#0000ff>null</font>) {
+        <font color=#0000ff>if</font>(currentLine.startsWith(
+            SourceCodeFile.startMarker)) {
+          dm.add(<font color=#0000ff>new</font> SourceCodeFile(
+                   currentLine, in));
+        }
+        <font color=#0000ff>else</font> <font color=#0000ff>if</font>(currentLine.startsWith(
+            SourceCodeFile.endMarker))
+          Pr.error(<font color=#004488>"file has no start marker"</font>);
+        <font color=#009900>// Else ignore the input line</font>
+      }
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"Error reading "</font> + args[1]);
+    }
+    IO.close(in);
+    dm.writePackedFile(args[2]);
+  }
+  <font color=#0000ff>private</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> 
+  extractPackedFile(String[] args) {
+    <font color=#0000ff>if</font>(args.length == 2) <font color=#009900>// Alternate directory</font>
+      dm = <font color=#0000ff>new</font> DirMap(args[1]);
+    <font color=#0000ff>else</font> <font color=#009900>// Current directory</font>
+      dm = <font color=#0000ff>new</font> DirMap();
+    in = IO.disOpen(args[0]);
+    String s = <font color=#0000ff>null</font>;
+    <font color=#0000ff>try</font> {
+       s = in.readLine();
+    } <font color=#0000ff>catch</font>(IOException e) {
+      Pr.error(<font color=#004488>"Cannot read from "</font> + in);
+    }
+    <font color=#009900>// Capture the separator used in the system</font>
+    <font color=#009900>// that packed the file:</font>
+    <font color=#0000ff>if</font>(s.indexOf(<font color=#004488>"###Old Separator:"</font>) != -1 ) {
+      String oldsep = s.substring(
+        <font color=#004488>"###Old Separator:"</font>.length());
+      oldsep = oldsep.substring(
+        0, oldsep. indexOf('#'));
+      SourceCodeFile.oldsep = oldsep;
+    }
+    SourceCodeFile sf = <font color=#0000ff>new</font> SourceCodeFile(in);
+    <font color=#0000ff>while</font>(sf.hasFile()) {
+      dm.add(sf);
+      sf = <font color=#0000ff>new</font> SourceCodeFile(in);
+    }
+    dm.write();
+  }
+} <font color=#009900>///:~</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You&#8217;ll first notice the
+<B>package</B> statement that is commented out. Since this is the first program
+in the chapter, the <B>package </B>statement is necessary to tell
+<B>CodePackager </B>that the chapter has changed, but putting it in a package
+would be a problem. When you create a <B>package</B>, you tie the resulting
+program to a particular directory structure, which is fine for most of the
+examples in this book. Here, however, the <B>CodePackager</B> program must be
+compiled and run from an arbitrary directory, so the <B>package</B> statement is
+commented out. It will still <I>look</I> like an ordinary <B>package</B>
+statement to <B>CodePackager</B>, though, since the program isn&#8217;t
+sophisticated enough to detect multi-line comments. (It has no need for such
+sophistication, a fact that comes in handy here.)</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The first two classes are
+support/utility classes designed to make the rest of the program more consistent
+to write and easier to read. The first, <B>Pr</B>, is similar to the ANSI C
+library <B>perror</B>, since it prints an error message (but also exits the
+program). The second class encapsulates the creation of files, a process that
+was shown in Chapter 10 as one that rapidly becomes verbose and annoying. In
+Chapter 10, the proposed solution created new classes, but here <B>static
+</B>method calls are used. Within those methods the appropriate exceptions are
+caught and dealt with. These methods make the rest of the code much cleaner to
+read.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The first class that helps solve
+the problem is <B>SourceCodeFile</B>, which represents all the information
+(including the contents, file name, and directory) for one source code file in
+the book. It also contains a set of <B>String</B> constants representing the
+markers that start and end a file, a marker used inside the packed file, the
+current system&#8217;s end-of-line separator and file path separator (notice the
+use of <B>System.getProperty(&#160;)</B> to get the local version), and a
+copyright notice, which is extracted from the following file
+<B>Copyright.txt</B>.</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>//////////////////////////////////////////////////</font>
+<font color=#009900>// Copyright (c) Bruce Eckel, 1998</font>
+<font color=#009900>// Source code file from the book "Thinking in Java"</font>
+<font color=#009900>// All rights reserved EXCEPT as allowed by the</font>
+<font color=#009900>// following statements: You may freely use this file</font>
+<font color=#009900>// for your own work (personal or commercial),</font>
+<font color=#009900>// including modifications and distribution in</font>
+<font color=#009900>// executable form only. Permission is granted to use</font>
+<font color=#009900>// this file in classroom situations, including its</font>
+<font color=#009900>// use in presentation materials, as long as the book</font>
+<font color=#009900>// "Thinking in Java" is cited as the source. </font>
+<font color=#009900>// Except in classroom situations, you may not copy</font>
+<font color=#009900>// and distribute this code; instead, the sole</font>
+<font color=#009900>// distribution point is http://www.BruceEckel.com </font>
+<font color=#009900>// (and official mirror sites) where it is</font>
+<font color=#009900>// freely available. You may not remove this</font>
+<font color=#009900>// copyright and notice. You may not distribute</font>
+<font color=#009900>// modified versions of the source code in this</font>
+<font color=#009900>// package. You may not use this file in printed</font>
+<font color=#009900>// media without the express permission of the</font>
+<font color=#009900>// author. Bruce Eckel makes no representation about</font>
+<font color=#009900>// the suitability of this software for any purpose.</font>
+<font color=#009900>// It is provided "as is" without express or implied</font>
+<font color=#009900>// warranty of any kind, including any implied</font>
+<font color=#009900>// warranty of merchantability, fitness for a</font>
+<font color=#009900>// particular purpose or non-infringement. The entire</font>
+<font color=#009900>// risk as to the quality and performance of the</font>
+<font color=#009900>// software is with you. Bruce Eckel and the</font>
+<font color=#009900>// publisher shall not be liable for any damages</font>
+<font color=#009900>// suffered by you or any third party as a result of</font>
+<font color=#009900>// using or distributing software. In no event will</font>
+<font color=#009900>// Bruce Eckel or the publisher be liable for any</font>
+<font color=#009900>// lost revenue, profit, or data, or for direct,</font>
+<font color=#009900>// indirect, special, consequential, incidental, or</font>
+<font color=#009900>// punitive damages, however caused and regardless of</font>
+<font color=#009900>// the theory of liability, arising out of the use of</font>
+<font color=#009900>// or inability to use software, even if Bruce Eckel</font>
+<font color=#009900>// and the publisher have been advised of the</font>
+<font color=#009900>// possibility of such damages. Should the software</font>
+<font color=#009900>// prove defective, you assume the cost of all</font>
+<font color=#009900>// necessary servicing, repair, or correction. If you</font>
+<font color=#009900>// think you've found an error, please email all</font>
+<font color=#009900>// modified files with clearly commented changes to:</font>
+<font color=#009900>// Bruce@EckelObjects.com. (please use the same</font>
+<font color=#009900>// address for non-code errors found in the book).</font>
+<font color=#009900>//////////////////////////////////////////////////</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">When extracting files from a packed
+file, the file separator of the system that packed the file is also noted, so it
+can be replaced with the correct one for the local system.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The subdirectory name for the
+current chapter is kept in the field <B>chapter</B>, which is initialized to
+<B>c02</B>. (You&#8217;ll notice that the listing in Chapter 2 doesn&#8217;t
+contain a package statement.) The only time that the <B>chapter</B> field
+changes is when a <B>package</B> statement is discovered in the current
+file.</FONT><BR></P></DIV>
+<A NAME="Heading573"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+Building a packed file</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The first constructor is used to
+extract a file from the ASCII text version of this book. The calling code (which
+appears further down in the listing) reads each line in until it finds one that
+matches the beginning of a listing. At that point, it creates a new
+<B>SourceCodeFile</B> object, passing it the first line (which has already been
+read by the calling code) and the
+<A NAME="Index3010"></A><A NAME="Index3011"></A><B>BufferedReader</B> object
+from which to extract the rest of the source code listing.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">At this point, you begin to see
+heavy use of the <B>String</B> methods. To extract the file name, the overloaded
+version of
+<A NAME="Index3012"></A><A NAME="Index3013"></A><B>substring(&#160;)</B> is
+called that takes the starting offset and goes to the end of the <B>String</B>.
+This starting index is produced by finding the
+<A NAME="Index3014"></A><A NAME="Index3015"></A><B>length(&#160;)</B> of the
+<B>startMarker</B>.<B>
+<A NAME="Index3016"></A><A NAME="Index3017"></A>trim(&#160;)</B> removes white
+space from both ends of the <B>String</B>. The first line can also have words
+after the name of the file; these are detected using
+<A NAME="Index3018"></A><A NAME="Index3019"></A><B>indexOf(&#160;)</B>, which
+returns -1 if it cannot find the character you&#8217;re looking for and the
+value where the first instance of that character is found if it does. Notice
+there is also an overloaded version of <B>indexOf(&#160;)</B> that takes a
+<B>String</B> instead of a character.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Once the file name is parsed and
+stored, the first line is placed into the <B>contents</B> <B>String</B> (which
+is used to hold the entire text of the source code listing). At this point, the
+rest of the lines are read and concatenated into the <B>contents</B>
+<B>String</B>. It&#8217;s not quite that simple, since certain situations
+require special handling. One case is error checking: if you run into a
+<B>startMarker</B>, it means that no end marker was placed at the end of the
+listing that&#8217;s currently being collected. This is an error condition that
+aborts the program.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The second special case is the
+<B>package</B> keyword. Although Java is a free-form language, this program
+requires that the <B>package</B> keyword be at the beginning of the line. When
+the <B>package</B> keyword is seen, the package name is extracted by looking for
+the space at the beginning and the semicolon at the end. (Note that this could
+also have been performed in a single operation by using the overloaded
+<B>substring(&#160;)</B> that takes both the starting and ending indexes.) Then
+the dots in the package name are replaced by the file separator, although an
+assumption is made here that the file separator is only one character long. This
+is probably true on all systems, but it&#8217;s a place to look if there are
+problems.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The default behavior is to
+concatenate each line to <B>contents</B>, along with the end-of-line string,
+until the <B>endMarker</B> is discovered, which indicates that the constructor
+should terminate. If the end of the file is encountered before the
+<B>endMarker</B> is seen, that&#8217;s an error.</FONT><BR></P></DIV>
+<A NAME="Heading574"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+Extracting from a packed file</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The second constructor is used to
+recover the source code files from a packed file. Here, the calling method
+doesn&#8217;t have to worry about skipping over the intermediate text. The file
+contains all the source-code files, placed end-to-end. All you need to hand to
+this constructor is the <B>BufferedReader</B> where the information is coming
+from, and the constructor takes it from there. There is some meta-information,
+however, at the beginning of each listing, and this is denoted by the
+<B>packMarker</B>. If the <B>packMarker</B> isn&#8217;t there, it means the
+caller is mistakenly trying to use this constructor where it isn&#8217;t
+appropriate.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Once the <B>packMarker</B> is
+found, it is stripped off and the directory name (terminated by a
+&#8216;<B>#</B>&#8217;) and the file name (which goes to the end of the line)
+are extracted. In both cases, the old separator character is replaced by the one
+that is current to this machine using the <B>String
+<A NAME="Index3020"></A><A NAME="Index3021"></A>replace(&#160;)</B> method. The
+old separator is placed at the beginning of the packed file, and you&#8217;ll
+see how that is extracted later in the listing.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The rest of the constructor is
+quite simple. It reads and concatenates each line to the <B>contents</B> until
+the <B>endMarker</B> is found.</FONT><BR></P></DIV>
+<A NAME="Heading575"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+Accessing and writing the listings</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The next set of methods are simple
+accessors: <B>directory(&#160;)</B>, <B>filename(&#160;)</B> (notice the method
+can have the same spelling and capitalization as the field) and
+<B>contents(&#160;)</B>, and <B>hasFile(&#160;)</B> to indicate whether this
+object contains a file or not. (The need for this will be seen
+later.)</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The final three methods are
+concerned with writing this code listing into a file, either a packed file via
+<B>writePacked(&#160;)</B> or a Java source file via <B>writeFile(&#160;)</B>.
+All <B>writePacked(&#160;)</B> needs is the <B>DataOutputStream,</B> which was
+opened elsewhere, and represents the file that&#8217;s being written. It puts
+the header information on the first line and then calls
+<B>writeBytes(&#160;)</B> to write <B>contents</B> in a &#8220;universal&#8221;
+format.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">When writing the Java source file,
+the file must be created. This is done via <B>IO.psOpen(&#160;)</B>, handing it
+a <A NAME="Index3022"></A><A NAME="Index3023"></A><B>File</B> object that
+contains not only the file name but also the path. But the question now is: does
+this path exist? The user has the option of placing all the source code
+directories into a completely different subdirectory, which might not even
+exist. So before each file is written,
+<A NAME="Index3024"></A><A NAME="Index3025"></A><A NAME="Index3026"></A><B>File.mkdirs(&#160;)</B>
+is called with the path that you want to write the file into. This will make the
+entire path all at once.</FONT><BR></P></DIV>
+<A NAME="Heading576"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+Containing the entire collection of listings</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">It&#8217;s convenient to organize
+the listings as subdirectories while the whole collection is being built in
+memory. One reason is another sanity check: as each subdirectory of listings is
+created, an additional file is added whose name contains the number of files in
+that directory.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The <B>DirMap</B> class produces
+this effect and demonstrates the concept of a &#8220;multimap.&#8221; This is
+implemented using a
+<A NAME="Index3027"></A><A NAME="Index3028"></A><B>Hashtable</B> whose keys are
+the subdirectories being created and whose values are
+<A NAME="Index3029"></A><B>Vector</B> objects containing the
+<B>SourceCodeFile</B> objects in that particular directory. Thus, instead of
+mapping a key to a single value, the &#8220;multimap&#8221; maps a key to a set
+of values via the associated <B>Vector</B>. Although this sounds complex,
+it&#8217;s remarkably straightforward to implement. You&#8217;ll see that most
+of the size of the <B>DirMap</B> class is due to the portions that write to
+files, not to the &#8220;multimap&#8221; implementation.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">There are two ways you can make a
+<B>DirMap</B>: the default constructor assumes that you want the directories to
+branch off of the current one, and the second constructor lets you specify an
+alternate absolute path for the starting directory.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The <B>add(&#160;)</B> method is
+where quite a bit of dense action occurs. First, the <B>directory(&#160;)</B> is
+extracted from the <B>SourceCodeFile</B> you want to add, and then the
+<B>Hashtable</B> is examined to see if it contains that key already. If not, a
+new <B>Vector</B> is added to the <B>Hashtable</B> and associated with that key.
+At this point, the <B>Vector</B> is there, one way or another, and it is
+extracted so the <B>SourceCodeFile</B> can be added. Because
+<A NAME="Index3030"></A><A NAME="Index3031"></A><B>Vector</B>s can be easily
+combined with <B>Hashtable</B>s like this, the power of both is
+amplified.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Writing a packed file involves
+opening the file to write (as a
+<A NAME="Index3032"></A><A NAME="Index3033"></A><B>DataOutputStream</B> so the
+data is universally recoverable) and writing the header information about the
+old separator on the first line. Next, an <B>Enumeration</B> of the
+<B>Hashtable</B> keys is produced and stepped through to select each directory
+and to fetch the <B>Vector</B> associated with that directory so each
+<B>SourceCodeFile</B> in that <B>Vector</B> can be written to the packed
+file.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Writing the Java source files to
+their directories in <B>write(&#160;) </B>is almost identical to
+<B>writePackedFile(&#160;)</B> since both methods simply call the appropriate
+method in <B>SourceCodeFile</B>. Here, however, the root path is passed into
+<B>SourceCodeFile.writeFile(&#160;)</B> and when all the files have been written
+the additional file with the name containing the number of files is also
+written.</FONT><BR></P></DIV>
+<A NAME="Heading577"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+The main program</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The previously described classes
+are used within <B>CodePackager</B>. First you see the usage string that gets
+printed whenever the end user invokes the program incorrectly, along with the
+<B>usage(&#160;)</B> method that calls it and exits the program. All
+<B>main(&#160;)</B> does is determine whether you want to create a packed file
+or extract from one, then it ensures the arguments are correct and calls the
+appropriate method.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">When a packed file is created,
+it&#8217;s assumed to be made in the current directory, so the <B>DirMap</B> is
+created using the default constructor. After the file is opened each line is
+read and examined for particular conditions:</FONT><BR></P></DIV>
+<OL>
+<LI><FONT FACE="Georgia">	If the line starts with the starting marker for
+a source code listing, a new <B>SourceCodeFile</B> object is created. The
+constructor reads in the rest of the source listing. The handle that results is
+directly added to the <B>DirMap</B>.</FONT><LI><FONT FACE="Georgia">	If
+the line starts with the end marker for a source code listing, something has
+gone wrong, since end markers should be found only by the <B>SourceCodeFile</B>
+constructor.</FONT></OL><DIV ALIGN="LEFT"><P><FONT FACE="Georgia">When
+extracting a packed file, the extraction can be into the current directory or
+into an alternate directory, so the <B>DirMap</B> object is created accordingly.
+The file is opened and the first line is read. The old file path separator
+information is extracted from this line. Then the input is used to create the
+first <B>SourceCodeFile</B> object, which is added to the <B>DirMap</B>. New
+<B>SourceCodeFile</B> objects are created and added as long as they contain a
+file. (The last one created will simply return when it runs out of input and
+then <B>hasFile(&#160;)</B> will return
+false.)</FONT><A NAME="_Toc375545504"></A><A NAME="_Toc408018812"></A><BR></P></DIV>
+<A NAME="Heading578"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Checking capitalization
+style<BR><A NAME="Index3034"></A><A NAME="Index3035"></A></H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Although the previous example can
+come in handy as a guide for some project of your own that involves text
+processing, this project will be directly useful because it performs a style
+check to make sure that your capitalization conforms to the de-facto Java style.
+It opens each <B>.java</B> file in the current directory and extracts all the
+class names and identifiers, then shows you if any of them don&#8217;t meet the
+Java style.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">For the program to operate
+correctly, you must first build a class name repository to hold all the class
+names in the standard Java library. You do this by moving into all the source
+code subdirectories for the standard Java library and running
+<B>ClassScanner</B> in each subdirectory. Provide as arguments the name of the
+repository file (using the same path and name each time) and the <B>-a</B>
+command-line option to indicate that the class names should be added to the
+repository.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">To use the program to check your
+code, run it and hand it the path and name of the repository to use. It will
+check all the classes and identifiers in the current directory and tell you
+which ones don&#8217;t follow the typical Java capitalization
+style.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You should be aware that the
+program isn&#8217;t perfect; there a few times when it will point out what it
+thinks is a problem but on looking at the code you&#8217;ll see that nothing
+needs to be changed. This is a little annoying, but it&#8217;s still much easier
+than trying to find all these cases by staring at your code.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The explanation immediately follows
+the listing:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>//: ClassScanner.java</font>
+<font color=#009900>// Scans all files in directory for classes</font>
+<font color=#009900>// and identifiers, to check capitalization.</font>
+<font color=#009900>// Assumes properly compiling code listings.</font>
+<font color=#009900>// Doesn't do everything right, but is a very</font>
+<font color=#009900>// useful aid.</font>
+<font color=#0000ff>import</font> java.io.*;
+<font color=#0000ff>import</font> java.util.*;
+
+<font color=#0000ff>class</font> MultiStringMap <font color=#0000ff>extends</font> Hashtable {
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> add(String key, String value) {
+    <font color=#0000ff>if</font>(!containsKey(key))
+      put(key, <font color=#0000ff>new</font> Vector());
+    ((Vector)get(key)).addElement(value);
+  }
+  <font color=#0000ff>public</font> Vector getVector(String key) {
+    <font color=#0000ff>if</font>(!containsKey(key)) {
+      System.err.println(
+        <font color=#004488>"ERROR: can't find key: "</font> + key);
+      System.exit(1);
+    }
+    <font color=#0000ff>return</font> (Vector)get(key);
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> printValues(PrintStream p) {
+    Enumeration k = keys();
+    <font color=#0000ff>while</font>(k.hasMoreElements()) {
+      String oneKey = (String)k.nextElement();
+      Vector val = getVector(oneKey);
+      <font color=#0000ff>for</font>(<font color=#0000ff>int</font> i = 0; i &lt; val.size(); i++)
+        p.println((String)val.elementAt(i));
+    }
+  }
+}
+
+<font color=#0000ff>public</font> <font color=#0000ff>class</font> ClassScanner {
+  <font color=#0000ff>private</font> File path;
+  <font color=#0000ff>private</font> String[] fileList;
+  <font color=#0000ff>private</font> Properties classes = <font color=#0000ff>new</font> Properties();
+  <font color=#0000ff>private</font> MultiStringMap 
+    classMap = <font color=#0000ff>new</font> MultiStringMap(),
+    identMap = <font color=#0000ff>new</font> MultiStringMap();
+  <font color=#0000ff>private</font> StreamTokenizer in;
+  <font color=#0000ff>public</font> ClassScanner() {
+    path = <font color=#0000ff>new</font> File(<font color=#004488>"."</font>);
+    fileList = path.list(<font color=#0000ff>new</font> JavaFilter());
+    <font color=#0000ff>for</font>(<font color=#0000ff>int</font> i = 0; i &lt; fileList.length; i++) {
+      System.out.println(fileList[i]);
+      scanListing(fileList[i]);
+    }
+  }
+  <font color=#0000ff>void</font> scanListing(String fname) {
+    <font color=#0000ff>try</font> {
+      in = <font color=#0000ff>new</font> StreamTokenizer(
+          <font color=#0000ff>new</font> BufferedReader(
+            <font color=#0000ff>new</font> FileReader(fname)));
+      <font color=#009900>// Doesn't seem to work:</font>
+      <font color=#009900>// in.slashStarComments(true);</font>
+      <font color=#009900>// in.slashSlashComments(true);</font>
+      in.ordinaryChar('/');
+      in.ordinaryChar('.');
+      in.wordChars('_', '_');
+      in.eolIsSignificant(<font color=#0000ff>true</font>);
+      <font color=#0000ff>while</font>(in.nextToken() != 
+            StreamTokenizer.TT_EOF) {
+        <font color=#0000ff>if</font>(in.ttype == '/')
+          eatComments();
+        <font color=#0000ff>else</font> <font color=#0000ff>if</font>(in.ttype == 
+                StreamTokenizer.TT_WORD) {
+          <font color=#0000ff>if</font>(in.sval.equals(<font color=#004488>"class"</font>) || 
+             in.sval.equals(<font color=#004488>"interface"</font>)) {
+            <font color=#009900>// Get class name:</font>
+               <font color=#0000ff>while</font>(in.nextToken() != 
+                     StreamTokenizer.TT_EOF
+                     &amp;&amp; in.ttype != 
+                     StreamTokenizer.TT_WORD)
+                 ;
+               classes.put(in.sval, in.sval);
+               classMap.add(fname, in.sval);
+          }
+          <font color=#0000ff>if</font>(in.sval.equals(<font color=#004488>"import"</font>) ||
+             in.sval.equals(<font color=#004488>"package"</font>))
+            discardLine();
+          <font color=#0000ff>else</font> <font color=#009900>// It's an identifier or keyword</font>
+            identMap.add(fname, in.sval);
+        }
+      }
+    } <font color=#0000ff>catch</font>(IOException e) {
+      e.printStackTrace();
+    }
+  }
+  <font color=#0000ff>void</font> discardLine() {
+    <font color=#0000ff>try</font> {
+      <font color=#0000ff>while</font>(in.nextToken() != 
+            StreamTokenizer.TT_EOF
+            &amp;&amp; in.ttype != 
+            StreamTokenizer.TT_EOL)
+        ; <font color=#009900>// Throw away tokens to end of line</font>
+    } <font color=#0000ff>catch</font>(IOException e) {
+      e.printStackTrace();
+    }
+  }
+  <font color=#009900>// StreamTokenizer's comment removal seemed</font>
+  <font color=#009900>// to be broken. This extracts them:</font>
+  <font color=#0000ff>void</font> eatComments() {
+    <font color=#0000ff>try</font> {
+      <font color=#0000ff>if</font>(in.nextToken() != 
+         StreamTokenizer.TT_EOF) {
+        <font color=#0000ff>if</font>(in.ttype == '/')
+          discardLine();
+        <font color=#0000ff>else</font> <font color=#0000ff>if</font>(in.ttype != '*')
+          in.pushBack();
+        <font color=#0000ff>else</font> 
+          <font color=#0000ff>while</font>(<font color=#0000ff>true</font>) {
+            <font color=#0000ff>if</font>(in.nextToken() == 
+              StreamTokenizer.TT_EOF)
+              <font color=#0000ff>break</font>;
+            <font color=#0000ff>if</font>(in.ttype == '*')
+              <font color=#0000ff>if</font>(in.nextToken() != 
+                StreamTokenizer.TT_EOF
+                &amp;&amp; in.ttype == '/')
+                <font color=#0000ff>break</font>;
+          }
+      }
+    } <font color=#0000ff>catch</font>(IOException e) {
+      e.printStackTrace();
+    }
+  }
+  <font color=#0000ff>public</font> String[] classNames() {
+    String[] result = <font color=#0000ff>new</font> String[classes.size()];
+    Enumeration e = classes.keys();
+    <font color=#0000ff>int</font> i = 0;
+    <font color=#0000ff>while</font>(e.hasMoreElements())
+      result[i++] = (String)e.nextElement();
+    <font color=#0000ff>return</font> result;
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> checkClassNames() {
+    Enumeration files = classMap.keys();
+    <font color=#0000ff>while</font>(files.hasMoreElements()) {
+      String file = (String)files.nextElement();
+      Vector cls = classMap.getVector(file);
+      <font color=#0000ff>for</font>(<font color=#0000ff>int</font> i = 0; i &lt; cls.size(); i++) {
+        String className = 
+          (String)cls.elementAt(i);
+        <font color=#0000ff>if</font>(Character.isLowerCase(
+             className.charAt(0)))
+          System.out.println(
+            <font color=#004488>"class capitalization error, file: "</font>
+            + file + <font color=#004488>", class: "</font> 
+            + className);
+      }
+    }
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> checkIdentNames() {
+    Enumeration files = identMap.keys();
+    Vector reportSet = <font color=#0000ff>new</font> Vector();
+    <font color=#0000ff>while</font>(files.hasMoreElements()) {
+      String file = (String)files.nextElement();
+      Vector ids = identMap.getVector(file);
+      <font color=#0000ff>for</font>(<font color=#0000ff>int</font> i = 0; i &lt; ids.size(); i++) {
+        String id = 
+          (String)ids.elementAt(i);
+        <font color=#0000ff>if</font>(!classes.contains(id)) {
+          <font color=#009900>// Ignore identifiers of length 3 or</font>
+          <font color=#009900>// longer that are all uppercase</font>
+          <font color=#009900>// (probably static final values):</font>
+          <font color=#0000ff>if</font>(id.length() &gt;= 3 &amp;&amp;
+             id.equals(
+               id.toUpperCase()))
+            <font color=#0000ff>continue</font>;
+          <font color=#009900>// Check to see if first char is upper:</font>
+          <font color=#0000ff>if</font>(Character.isUpperCase(id.charAt(0))){
+            <font color=#0000ff>if</font>(reportSet.indexOf(file + id)
+                == -1){ <font color=#009900>// Not reported yet</font>
+              reportSet.addElement(file + id);
+              System.out.println(
+                <font color=#004488>"Ident capitalization error in:"</font>
+                + file + <font color=#004488>", ident: "</font> + id);
+            }
+          }
+        }
+      }
+    }
+  }
+  <font color=#0000ff>static</font> <font color=#0000ff>final</font> String usage =
+    <font color=#004488>"Usage: \n"</font> + 
+    <font color=#004488>"ClassScanner classnames -a\n"</font> +
+    <font color=#004488>"\tAdds all the class names in this \n"</font> +
+    <font color=#004488>"\tdirectory to the repository file \n"</font> +
+    <font color=#004488>"\tcalled 'classnames'\n"</font> +
+    <font color=#004488>"ClassScanner classnames\n"</font> +
+    <font color=#004488>"\tChecks all the java files in this \n"</font> +
+    <font color=#004488>"\tdirectory for capitalization errors, \n"</font> +
+    <font color=#004488>"\tusing the repository file 'classnames'"</font>;
+  <font color=#0000ff>private</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> usage() {
+    System.err.println(usage);
+    System.exit(1);
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> main(String[] args) {
+    <font color=#0000ff>if</font>(args.length &lt; 1 || args.length &gt; 2)
+      usage();
+    ClassScanner c = <font color=#0000ff>new</font> ClassScanner();
+    File old = <font color=#0000ff>new</font> File(args[0]);
+    <font color=#0000ff>if</font>(old.exists()) {
+      <font color=#0000ff>try</font> {
+        <font color=#009900>// Try to open an existing </font>
+        <font color=#009900>// properties file:</font>
+        InputStream oldlist =
+          <font color=#0000ff>new</font> BufferedInputStream(
+            <font color=#0000ff>new</font> FileInputStream(old));
+        c.classes.load(oldlist);
+        oldlist.close();
+      } <font color=#0000ff>catch</font>(IOException e) {
+        System.err.println(<font color=#004488>"Could not open "</font>
+          + old + <font color=#004488>" for reading"</font>);
+        System.exit(1);
+      }
+    }
+    <font color=#0000ff>if</font>(args.length == 1) {
+      c.checkClassNames();
+      c.checkIdentNames();
+    }
+    <font color=#009900>// Write the class names to a repository:</font>
+    <font color=#0000ff>if</font>(args.length == 2) {
+      <font color=#0000ff>if</font>(!args[1].equals(<font color=#004488>"-a"</font>))
+        usage();
+      <font color=#0000ff>try</font> {
+        BufferedOutputStream out =
+          <font color=#0000ff>new</font> BufferedOutputStream(
+            <font color=#0000ff>new</font> FileOutputStream(args[0]));
+        c.classes.save(out,
+          <font color=#004488>"Classes found by ClassScanner.java"</font>);
+        out.close();
+      } <font color=#0000ff>catch</font>(IOException e) {
+        System.err.println(
+          <font color=#004488>"Could not write "</font> + args[0]);
+        System.exit(1);
+      }
+    }
+  }
+}
+
+<font color=#0000ff>class</font> JavaFilter <font color=#0000ff>implements</font> FilenameFilter {
+  <font color=#0000ff>public</font> <font color=#0000ff>boolean</font> accept(File dir, String name) {
+    <font color=#009900>// Strip path information:</font>
+    String f = <font color=#0000ff>new</font> File(name).getName();
+    <font color=#0000ff>return</font> f.trim().endsWith(<font color=#004488>".java"</font>);
+  }
+} <font color=#009900>///:~</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The class <B>MultiStringMap</B> is
+a tool that allows you to map a group of strings onto each key entry. As in the
+previous example, it uses a
+<A NAME="Index3036"></A><A NAME="Index3037"></A><B>Hashtable</B> (this time with
+inheritance) with the key as the single string that&#8217;s mapped onto the
+<B>Vector</B> value. The <B>add(&#160;)</B> method simply checks to see if
+there&#8217;s a key already in the <B>Hashtable</B>, and if not it puts one
+there. The <B>getVector(&#160;)</B> method produces a <B>Vector</B> for a
+particular key, and <B>printValues(&#160;)</B>, which is primarily useful for
+debugging, prints out all the values <B>Vector</B> by
+<B>Vector</B>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">To keep life simple, the class
+names from the standard Java libraries are all put into a
+<A NAME="Index3038"></A><B>Properties</B> object (from the standard Java
+library). Remember that a <B>Properties</B> object is a <B>Hashtable</B> that
+holds only<B> String</B> objects for both the key and value entries. However, it
+can be saved to disk and restored from disk in one method call, so it&#8217;s
+ideal for the repository of names. Actually, we need only a list of names, and a
+<B>Hashtable</B> can&#8217;t accept <B>null</B> for either its key or its value
+entry. So the same object will be used for both the key and the
+value.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">For the classes and identifiers
+that are discovered for the files in a particular directory, two
+<B>MultiStringMap</B>s are used: <B>classMap </B>and <B>identMap</B>. Also, when
+the program starts up it loads the standard class name repository into the
+<B>Properties </B>object called <B>classes</B>, and when a new class name is
+found in the local directory that is also added to <B>classes </B>as well as to
+<B>classMap</B>. This way, <B>classMap</B> can be used to step through all the
+classes in the local directory, and <B>classes</B> can be used to see if the
+current token is a class name (which indicates a definition of an object or
+method is beginning, so grab the next tokens &#8211; until a semicolon &#8211;
+and put them into <B>identMap</B>).</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The default constructor for
+<B>ClassScanner</B> creates a list of file names (using the <B>JavaFilter</B>
+implementation of
+<A NAME="Index3039"></A><A NAME="Index3040"></A><B>FilenameFilter</B>, as
+described in Chapter 10). Then it calls <B>scanListing(&#160;)</B> for each file
+name.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Inside <B>scanListing(&#160;)</B>
+the source code file is opened and turned into a
+<A NAME="Index3041"></A><A NAME="Index3042"></A><B>StreamTokenizer</B>. In the
+documentation, passing <B>true </B>to <B>slashStarComments(&#160;)</B> and
+<B>slashSlashComments(&#160;)</B> is supposed to strip those comments out, but
+this seems to be a bit flawed (it doesn&#8217;t quite work in Java
+1.0<A NAME="Index3043"></A>). Instead, those lines are commented out and the
+comments are extracted by another method. To do this, the &#8216;<B>/</B>&#8217;
+must be captured as an ordinary character rather than letting the
+<B>StreamTokenizer</B> absorb it as part of a comment, and the
+<B>ordinaryChar(&#160;)</B> method tells the <B>StreamTokenizer </B>to<B> </B>do
+this. This is also true for dots (&#8216;<B>.</B>&#8217;), since we want to have
+the method calls pulled apart into individual identifiers. However, the
+underscore, which is ordinarily treated by <B>StreamTokenizer</B> as an
+individual character, should be left as part of identifiers since it appears in
+such <B>static</B> <B>final</B> values as <B>TT_EOF</B> etc., used in this very
+program. The <B>wordChars(&#160;) </B>method takes a range of characters you
+want to add to those that are left inside a token that is being parsed as a
+word. Finally, when parsing for one-line comments or discarding a line we need
+to know when an end-of-line occurs, so by calling <B>eolIsSignificant(true)</B>
+the eol will show up rather than being absorbed by the
+<B>StreamTokenizer</B>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The rest of
+<B>scanListing(&#160;)</B> reads and reacts to tokens until the end of the file,
+signified when <B>nextToken(&#160;)</B> returns the <B>final static </B>value
+<B>StreamTokenizer.TT_EOF</B>. </FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">If the token is a
+<B>&#8216;</B>/<B>&#8217;</B> it is potentially a comment, so
+<B>eatComments(&#160;)</B> is called to deal with it. The only other situation
+we&#8217;re interested in here is if it&#8217;s a word, of which there are some
+special cases.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">If the word is <B>class</B> or
+<B>interface</B> then the next token represents a class or interface name, and
+it is put into <B>classes</B> and <B>classMap</B>. If the word is <B>import</B>
+or <B>package</B>, then we don&#8217;t want the rest of the line. Anything else
+must be an identifier (which we&#8217;re interested in) or a keyword (which
+we&#8217;re not, but they&#8217;re all lowercase anyway so it won&#8217;t spoil
+things to put those in). These are added to <B>identMap</B>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The <B>discardLine(&#160;)</B>
+method is a simple tool that looks for the end of a line. Note that any time you
+get a new token, you must check for the end of the file.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The <B>eatComments(&#160;)</B>
+method is called whenever a forward slash is encountered in the main parsing
+loop. However, that doesn&#8217;t necessarily mean a comment has been found, so
+the next token must be extracted to see if it&#8217;s another forward slash (in
+which case the line is discarded) or an asterisk. But if it&#8217;s neither of
+those, it means the token you&#8217;ve just pulled out is needed back in the
+main parsing loop! Fortunately, the
+<A NAME="Index3044"></A><A NAME="Index3045"></A><B>pushBack(&#160;)</B> method
+allows you to &#8220;push back&#8221; the current token onto the input stream so
+that when the main parsing loop calls
+<A NAME="Index3046"></A><A NAME="Index3047"></A><B>nextToken(&#160;)</B> it will
+get the one you just pushed back.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">For convenience, the
+<B>classNames(&#160;)</B> method produces an array of all the names in the
+<B>classes</B> collection. This method is not used in the program but is helpful
+for debugging.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The next two methods are the ones
+in which the actual checking takes place. In <B>checkClassNames(&#160;)</B>, the
+class names are extracted from the <B>classMap</B> (which, remember, contains
+only the names in this directory, organized by file name so the file name can be
+printed along with the errant class name). This is accomplished by pulling each
+associated <B>Vector</B> and stepping through that, looking to see if the first
+character is lower case. If so, the appropriate error message is
+printed.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">In <B>checkIdentNames(&#160;)</B>,
+a similar approach is taken: each identifier name is extracted from
+<B>identMap</B>. If the name is not in the <B>classes</B> list, it&#8217;s
+assumed to be an identifier or keyword. A special case is checked: if the
+identifier length is 3 or more <I>and</I> all the characters are uppercase, this
+identifier is ignored because it&#8217;s probably a <B>static</B> <B>final</B>
+value such as <B>TT_EOF</B>. Of course, this is not a perfect algorithm, but it
+assumes that you&#8217;ll eventually notice any all-uppercase identifiers that
+are out of place.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Instead of reporting every
+identifier that starts with an uppercase character, this method keeps track of
+which ones have already been reported in a <B>Vector</B> called
+<B>reportSet(&#160;)</B>. This treats the <B>Vector</B> as a &#8220;set&#8221;
+that tells you whether an item is already in the set. The item is produced by
+concatenating the file name and identifier. If the element isn&#8217;t in the
+set, it&#8217;s added and then the report is made.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The rest of the listing is
+comprised of <B>main(&#160;)</B>, which busies itself by handling the command
+line arguments and figuring out whether you&#8217;re building a repository of
+class names from the standard Java library or checking the validity of code
+you&#8217;ve written. In both cases it makes a <B>ClassScanner</B>
+object.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Whether you&#8217;re building a
+repository or using one, you must try to open the existing repository. By making
+a <A NAME="Index3048"></A><A NAME="Index3049"></A><B>File</B> object and testing
+for existence, you can decide whether to open the file and <B>load(&#160;)</B>
+the <B>Properties</B> list <B>classes</B> inside <B>ClassScanner</B>. (The
+classes from the repository add to, rather than overwrite, the classes found by
+the <B>ClassScanner</B> constructor.) If you provide only one command-line
+argument it means that you want to perform a check of the class names and
+identifier names, but if you provide two arguments (the second being
+&#8220;<B>-a</B>&#8221;)<B> </B>you&#8217;re building a class name repository.
+In this case, an output file is opened and the method
+<B>Properties.save(&#160;)</B> is used to write the list into a file, along with
+a string that provides header file
+information.</FONT><A NAME="_Toc408018813"></A><BR></P></DIV>
+<A NAME="Heading579"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+A method lookup tool<BR><A NAME="Index3050"></A></H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Chapter 11 introduced the Java 1.1
+concept of <A NAME="Index3051"></A><A NAME="Index3052"></A><I>reflection</I> and
+used that feature to look up methods for a particular class &#8211; either the
+entire list of methods or a subset of those whose names match a keyword you
+provide. The magic of this is that it can automatically show you <I>all</I> the
+methods for a class without forcing you to walk up the inheritance hierarchy
+examining the base classes at each level. Thus, it provides a valuable
+timesaving tool for programming: because the names of most Java method names are
+made nicely verbose and descriptive, you can search for the method names that
+contain a particular word of interest. When you find what you think you&#8217;re
+looking for, check the online documentation.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">However, by Chapter 11 you
+hadn&#8217;t seen the AWT, so that tool was developed as a command-line
+application. Here is the more useful GUI version, which dynamically updates the
+output as you type and also allows you to cut and paste from the
+output:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>//: DisplayMethods.java</font>
+<font color=#009900>// Display the methods of any class inside</font>
+<font color=#009900>// a window. Dynamically narrows your search.</font>
+<font color=#0000ff>import</font> java.awt.*;
+<font color=#0000ff>import</font> java.awt.event.*;
+<font color=#0000ff>import</font> java.applet.*;
+<font color=#0000ff>import</font> java.lang.reflect.*;
+<font color=#0000ff>import</font> java.io.*;
+
+<font color=#0000ff>public</font> <font color=#0000ff>class</font> DisplayMethods <font color=#0000ff>extends</font> Applet {
+  Class cl;
+  Method[] m;
+  Constructor[] ctor;
+  String[] n = <font color=#0000ff>new</font> String[0];
+  TextField 
+    name = <font color=#0000ff>new</font> TextField(40),
+    searchFor = <font color=#0000ff>new</font> TextField(30);
+  Checkbox strip = 
+    <font color=#0000ff>new</font> Checkbox(<font color=#004488>"Strip Qualifiers"</font>);
+  TextArea results = <font color=#0000ff>new</font> TextArea(40, 65);
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> init() {
+    strip.setState(<font color=#0000ff>true</font>);
+    name.addTextListener(<font color=#0000ff>new</font> NameL());
+    searchFor.addTextListener(<font color=#0000ff>new</font> SearchForL());
+    strip.addItemListener(<font color=#0000ff>new</font> StripL());
+    Panel 
+      top = <font color=#0000ff>new</font> Panel(),
+      lower = <font color=#0000ff>new</font> Panel(),
+      p = <font color=#0000ff>new</font> Panel();
+    top.add(<font color=#0000ff>new</font> Label(<font color=#004488>"Qualified class name:"</font>));
+    top.add(name);
+    lower.add(
+      <font color=#0000ff>new</font> Label(<font color=#004488>"String to search for:"</font>));
+    lower.add(searchFor);
+    lower.add(strip);
+    p.setLayout(<font color=#0000ff>new</font> BorderLayout());
+    p.add(top, BorderLayout.NORTH);
+    p.add(lower, BorderLayout.SOUTH);
+    setLayout(<font color=#0000ff>new</font> BorderLayout());
+    add(p, BorderLayout.NORTH);
+    add(results, BorderLayout.CENTER);
+  }
+  <font color=#0000ff>class</font> NameL <font color=#0000ff>implements</font> TextListener {
+    <font color=#0000ff>public</font> <font color=#0000ff>void</font> textValueChanged(TextEvent e) {
+      String nm = name.getText().trim();
+      <font color=#0000ff>if</font>(nm.length() == 0) {
+        results.setText(<font color=#004488>"No match"</font>);
+        n = <font color=#0000ff>new</font> String[0];
+        <font color=#0000ff>return</font>;
+      }
+      <font color=#0000ff>try</font> {
+        cl = Class.forName(nm);
+      } <font color=#0000ff>catch</font> (ClassNotFoundException ex) {
+        results.setText(<font color=#004488>"No match"</font>);
+        <font color=#0000ff>return</font>;
+      }
+      m = cl.getMethods();
+      ctor = cl.getConstructors();
+      <font color=#009900>// Convert to an array of Strings:</font>
+      n = <font color=#0000ff>new</font> String[m.length + ctor.length];
+      <font color=#0000ff>for</font>(<font color=#0000ff>int</font> i = 0; i &lt; m.length; i++)
+        n[i] = m[i].toString();
+      <font color=#0000ff>for</font>(<font color=#0000ff>int</font> i = 0; i &lt; ctor.length; i++)
+        n[i + m.length] = ctor[i].toString();
+      reDisplay();
+    }
+  }
+  <font color=#0000ff>void</font> reDisplay() {
+    <font color=#009900>// Create the result set:</font>
+    String[] rs = <font color=#0000ff>new</font> String[n.length];
+    String find = searchFor.getText();
+    <font color=#0000ff>int</font> j = 0;
+    <font color=#009900>// Select from the list if find exists:</font>
+    <font color=#0000ff>for</font> (<font color=#0000ff>int</font> i = 0; i &lt; n.length; i++) {
+      <font color=#0000ff>if</font>(find == <font color=#0000ff>null</font>)
+        rs[j++] = n[i];
+      <font color=#0000ff>else</font> <font color=#0000ff>if</font>(n[i].indexOf(find) != -1)
+          rs[j++] = n[i];
+    }
+    results.setText(<font color=#004488>""</font>);
+    <font color=#0000ff>if</font>(strip.getState() == <font color=#0000ff>true</font>)
+      <font color=#0000ff>for</font> (<font color=#0000ff>int</font> i = 0; i &lt; j; i++)
+        results.append(
+          StripQualifiers.strip(rs[i]) + <font color=#004488>"\n"</font>);
+    <font color=#0000ff>else</font> <font color=#009900>// Leave qualifiers on</font>
+      <font color=#0000ff>for</font> (<font color=#0000ff>int</font> i = 0; i &lt; j; i++)
+        results.append(rs[i] + <font color=#004488>"\n"</font>);
+  }
+  <font color=#0000ff>class</font> StripL <font color=#0000ff>implements</font> ItemListener {
+    <font color=#0000ff>public</font> <font color=#0000ff>void</font> itemStateChanged(ItemEvent e) {
+      reDisplay();
+    }
+  }
+  <font color=#0000ff>class</font> SearchForL <font color=#0000ff>implements</font> TextListener {
+    <font color=#0000ff>public</font> <font color=#0000ff>void</font> textValueChanged(TextEvent e) {
+      reDisplay();
+    }
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> main(String[] args) {
+    DisplayMethods applet = <font color=#0000ff>new</font> DisplayMethods();
+    Frame aFrame = <font color=#0000ff>new</font> Frame(<font color=#004488>"Display Methods"</font>);
+    aFrame.addWindowListener(
+      <font color=#0000ff>new</font> WindowAdapter() {
+        <font color=#0000ff>public</font> <font color=#0000ff>void</font> windowClosing(WindowEvent e) {
+          System.exit(0);
+        }
+      });
+    aFrame.add(applet, BorderLayout.CENTER);
+    aFrame.setSize(500,750);
+    applet.init();
+    applet.start();
+    aFrame.setVisible(<font color=#0000ff>true</font>);
+  }
+}
+
+<font color=#0000ff>class</font> StripQualifiers {
+  <font color=#0000ff>private</font> StreamTokenizer st;
+  <font color=#0000ff>public</font> StripQualifiers(String qualified) {
+      st = <font color=#0000ff>new</font> StreamTokenizer(
+        <font color=#0000ff>new</font> StringReader(qualified));
+      st.ordinaryChar(' ');
+  }
+  <font color=#0000ff>public</font> String getNext() {
+    String s = <font color=#0000ff>null</font>;
+    <font color=#0000ff>try</font> {
+      <font color=#0000ff>if</font>(st.nextToken() !=
+            StreamTokenizer.TT_EOF) {
+        <font color=#0000ff>switch</font>(st.ttype) {
+          <font color=#0000ff>case</font> StreamTokenizer.TT_EOL:
+            s = <font color=#0000ff>null</font>;
+            <font color=#0000ff>break</font>;
+          <font color=#0000ff>case</font> StreamTokenizer.TT_NUMBER:
+            s = Double.toString(st.nval);
+            <font color=#0000ff>break</font>;
+          <font color=#0000ff>case</font> StreamTokenizer.TT_WORD:
+            s = <font color=#0000ff>new</font> String(st.sval);
+            <font color=#0000ff>break</font>;
+          <font color=#0000ff>default</font>: <font color=#009900>// single character in ttype</font>
+            s = String.valueOf((<font color=#0000ff>char</font>)st.ttype);
+        }
+      }
+    } <font color=#0000ff>catch</font>(IOException e) {
+      System.out.println(e);
+    }
+    <font color=#0000ff>return</font> s;
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>static</font> String strip(String qualified) {
+    StripQualifiers sq = 
+      <font color=#0000ff>new</font> StripQualifiers(qualified);
+    String s = <font color=#004488>""</font>, si;
+    <font color=#0000ff>while</font>((si = sq.getNext()) != <font color=#0000ff>null</font>) {
+      <font color=#0000ff>int</font> lastDot = si.lastIndexOf('.');
+      <font color=#0000ff>if</font>(lastDot != -1)
+        si = si.substring(lastDot + 1);
+      s += si;
+    }
+    <font color=#0000ff>return</font> s;
+  }
+} <font color=#009900>///:~</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Some things you&#8217;ve seen
+before. As with many of the GUI programs in this book, this is created to
+perform both as an application and as an applet. Also, the
+<B>StripQualifiers</B> class is exactly the same as it was in Chapter
+11.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The GUI contains a <B>TextField</B>
+<B>name </B>in which you can enter the fully-qualified class name you want to
+look up, and another one, <B>searchFor</B>, in which you can enter the optional
+text to search for within the list of methods. The <B>Checkbox</B> allows you to
+say whether you want to use the fully-qualified names in the output or if you
+want the qualification stripped off. Finally, the results are displayed in a
+<B>TextArea</B>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You&#8217;ll notice that there are
+no buttons or other components by which to indicate that you want the search to
+start. That&#8217;s because both of the <B>TextField</B>s and the
+<B>Checkbox</B> are monitored by their listener objects. Whenever you make a
+change, the list is immediately updated. If you change the text within the
+<B>name </B>field, the new text is captured in <B>class NameL</B>. If the text
+isn&#8217;t empty, it is used inside
+<A NAME="Index3053"></A><A NAME="Index3054"></A><B>Class.forName(&#160;)</B> to
+try to look up the class. As you&#8217;re typing, of course, the name will be
+incomplete and <B>Class.forName(&#160;)</B> will fail, which means that it
+throws an exception. This is trapped and the <B>TextArea</B> is set to &#8220;No
+match&#8221;. But as soon as you type in a correct name (capitalization counts),
+<B>Class.forName(&#160;)</B> is successful and <B>getMethods(&#160;)</B> and
+<B>getConstructors(&#160;)</B> will return arrays of <B>Method</B> and
+<B>Constructor</B> objects, respectively. Each of the objects in these arrays is
+turned into a <B>String</B> via <B>toString(&#160;)</B> (this produces the
+complete method or constructor signature) and both lists are combined into
+<B>n</B>, a single <B>String</B> array. The array <B>n</B> is a member of
+<B>class DisplayMethods</B> and is used in updating the display whenever
+<B>reDisplay(&#160;)</B> is called.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">If you change the <B>Checkbox</B>
+or <B>searchFor</B> components, their listeners simply call
+<B>reDisplay(&#160;)</B>. <B>reDisplay(&#160;)</B> creates a temporary array of
+<B>String</B> called <B>rs</B> (for &#8220;result set&#8221;). The result set is
+either copied directly from <B>n</B> if there is no <B>find</B> word, or
+conditionally copied from the <B>String</B>s in <B>n</B> that contain the
+<B>find</B> word. Finally, the <B>strip</B> <B>Checkbox</B> is interrogated to
+see if the user wants the names to be stripped (the default is
+&#8220;yes&#8221;). If so, <B>StripQualifiers.strip(&#160;)</B> does the job; if
+not, the list is simply displayed.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">In <B>init(&#160;)</B>, you might
+think that there&#8217;s a lot of busy work involved in setting up the layout.
+In fact, it is possible to lay out the components with less work, but the
+advantage of using <B>BorderLayout</B>s this way is that it allows the user to
+resize the window and make &#8211; in particular &#8211; the <B>TextArea</B>
+larger, which means you can resize to allow you to see longer names without
+scrolling.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You might find that you&#8217;ll
+keep this tool running while you&#8217;re programming, since it provides one of
+the best &#8220;first lines of attack&#8221; when you&#8217;re trying to figure
+out what method to call.</FONT><A NAME="_Toc408018814"></A><BR></P></DIV>
+<A NAME="Heading580"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Complexity theory<BR><A NAME="Index3055"></A></H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This program was modified from code
+originally created by Larry O&#8217;Brien, and is based on the
+&#8220;Boids&#8221; program created by Craig Reynolds in 1986 to demonstrate an
+aspect of complexity theory called &#8220;emergence.&#8221;</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The goal here is to produce a
+reasonably lifelike reproduction of <A NAME="Index3056"></A>flocking or
+<A NAME="Index3057"></A><A NAME="Index3058"></A>herding behavior in animals by
+establishing a small set of simple rules for each animal. Each animal can look
+at the entire scene and all the other animals in the scene, but it reacts only
+to a set of nearby &#8220;flockmates.&#8221; The animal moves according to three
+simple steering behaviors: </FONT><BR></P></DIV>
+<OL>
+<LI><FONT FACE="Georgia">	Separation: Avoid crowding local
+flockmates.</FONT><LI><FONT FACE="Georgia">	Alignment: Follow the average
+heading of local flockmates.</FONT><LI><FONT FACE="Georgia">	Cohesion:
+Move toward the center of the group of local flockmates.
+</FONT></OL><DIV ALIGN="LEFT"><P><FONT FACE="Georgia">More elaborate models
+can include obstacles and the ability for the animals to predict collisions and
+avoid them, so the animals can flow around fixed objects in the environment. In
+addition, the animals might also be given a goal, which can cause the herd to
+follow a desired path. For simplicity, obstacle avoidance and goal-seeking is
+not included in the model presented here.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><A NAME="Index3059"></A><FONT FACE="Georgia">Emergence
+means that, despite the limited nature of computers and the simplicity of the
+steering rules, the result seems realistic. That is, remarkably lifelike
+behavior &#8220;emerges&#8221; from this simple model.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The program is presented as a
+combined application/applet:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>//: FieldOBeasts.java</font>
+<font color=#009900>// Demonstration of complexity theory; simulates </font>
+<font color=#009900>// herding behavior in animals. Adapted from</font>
+<font color=#009900>// a program by Larry O'Brien lobrien@msn.com</font>
+<font color=#0000ff>import</font> java.awt.*;
+<font color=#0000ff>import</font> java.awt.event.*;
+<font color=#0000ff>import</font> java.applet.*;
+<font color=#0000ff>import</font> java.util.*;
+
+<font color=#0000ff>class</font> Beast {
+  <font color=#0000ff>int</font>
+    x, y,            <font color=#009900>// Screen position</font>
+    currentSpeed;    <font color=#009900>// Pixels per second</font>
+  <font color=#0000ff>float</font> currentDirection;  <font color=#009900>// Radians</font>
+  Color color;      <font color=#009900>// Fill color</font>
+  FieldOBeasts field; <font color=#009900>// Where the Beast roams</font>
+  <font color=#0000ff>static</font> <font color=#0000ff>final</font> <font color=#0000ff>int</font> GSIZE = 10; <font color=#009900>// Graphic size</font>
+
+  <font color=#0000ff>public</font> Beast(FieldOBeasts f, <font color=#0000ff>int</font> x, <font color=#0000ff>int</font> y, 
+      <font color=#0000ff>float</font> cD, <font color=#0000ff>int</font> cS, Color c) {
+    field = f;
+    <font color=#0000ff>this</font>.x = x;
+    <font color=#0000ff>this</font>.y = y;
+    currentDirection = cD;
+    currentSpeed = cS;
+    color = c;
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> step() {
+    <font color=#009900>// You move based on those within your sight:</font>
+    Vector seen = field.beastListInSector(<font color=#0000ff>this</font>);
+    <font color=#009900>// If you're not out in front</font>
+    <font color=#0000ff>if</font>(seen.size() &gt; 0) {
+      <font color=#009900>// Gather data on those you see</font>
+      <font color=#0000ff>int</font> totalSpeed = 0;
+      <font color=#0000ff>float</font> totalBearing = 0.0f;
+      <font color=#0000ff>float</font> distanceToNearest = 100000.0f;
+      Beast nearestBeast = 
+        (Beast)seen.elementAt(0);
+      Enumeration e = seen.elements();
+      <font color=#0000ff>while</font>(e.hasMoreElements()) {
+        Beast aBeast = (Beast) e.nextElement();
+        totalSpeed += aBeast.currentSpeed;
+        <font color=#0000ff>float</font> bearing = 
+          aBeast.bearingFromPointAlongAxis(
+            x, y, currentDirection);
+        totalBearing += bearing;
+        <font color=#0000ff>float</font> distanceToBeast = 
+          aBeast.distanceFromPoint(x, y);
+        <font color=#0000ff>if</font>(distanceToBeast &lt; distanceToNearest) {
+          nearestBeast = aBeast;
+          distanceToNearest = distanceToBeast;
+        }
+      }
+      <font color=#009900>// Rule 1: Match average speed of those </font>
+      <font color=#009900>// in the list:</font>
+      currentSpeed = totalSpeed / seen.size();
+      <font color=#009900>// Rule 2: Move towards the perceived</font>
+      <font color=#009900>// center of gravity of the herd:</font>
+      currentDirection = 
+        totalBearing / seen.size();
+      <font color=#009900>// Rule 3: Maintain a minimum distance </font>
+      <font color=#009900>// from those around you:</font>
+      <font color=#0000ff>if</font>(distanceToNearest &lt;= 
+         field.minimumDistance) {
+        currentDirection = 
+          nearestBeast.currentDirection;
+        currentSpeed = nearestBeast.currentSpeed;
+        <font color=#0000ff>if</font>(currentSpeed &gt; field.maxSpeed) {
+          currentSpeed = field.maxSpeed;
+        }
+      }
+    } 
+    <font color=#0000ff>else</font> {  <font color=#009900>// You are in front, so slow down</font>
+      currentSpeed = 
+        (<font color=#0000ff>int</font>)(currentSpeed * field.decayRate);
+    }
+    <font color=#009900>// Make the beast move:</font>
+    x += (<font color=#0000ff>int</font>)(Math.cos(currentDirection) 
+               * currentSpeed);
+    y += (<font color=#0000ff>int</font>)(Math.sin(currentDirection)
+               * currentSpeed);
+    x %= field.xExtent;
+    y %= field.yExtent;
+    <font color=#0000ff>if</font>(x &lt; 0)
+      x += field.xExtent;
+    <font color=#0000ff>if</font>(y &lt; 0)
+      y += field.yExtent;
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>float</font> bearingFromPointAlongAxis (
+      <font color=#0000ff>int</font> originX, <font color=#0000ff>int</font> originY, <font color=#0000ff>float</font> axis) {
+    <font color=#009900>// Returns bearing angle of the current Beast</font>
+    <font color=#009900>// in the world coordiante system</font>
+    <font color=#0000ff>try</font> {
+      <font color=#0000ff>double</font> bearingInRadians = 
+        Math.atan(
+          (<font color=#0000ff>this</font>.y - originY) / 
+          (<font color=#0000ff>this</font>.x - originX));
+      <font color=#009900>// Inverse tan has two solutions, so you </font>
+      <font color=#009900>// have to correct for other quarters:</font>
+      <font color=#0000ff>if</font>(x &lt; originX) {  
+        <font color=#0000ff>if</font>(y &lt; originY) {
+          bearingInRadians += - (<font color=#0000ff>float</font>)Math.PI;
+        } 
+        <font color=#0000ff>else</font> {
+          bearingInRadians = 
+            (<font color=#0000ff>float</font>)Math.PI - bearingInRadians;
+        }
+      }
+      <font color=#009900>// Just subtract the axis (in radians):</font>
+      <font color=#0000ff>return</font> (<font color=#0000ff>float</font>) (axis - bearingInRadians);
+    } <font color=#0000ff>catch</font>(ArithmeticException aE) {
+      <font color=#009900>// Divide by 0 error possible on this</font>
+      <font color=#0000ff>if</font>(x &gt; originX) {
+          <font color=#0000ff>return</font> 0;
+      } 
+      <font color=#0000ff>else</font>
+        <font color=#0000ff>return</font> (<font color=#0000ff>float</font>) Math.PI;
+    }
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>float</font> distanceFromPoint(<font color=#0000ff>int</font> x1, <font color=#0000ff>int</font> y1){
+    <font color=#0000ff>return</font> (<font color=#0000ff>float</font>) Math.sqrt(
+      Math.pow(x1 - x, 2) + 
+      Math.pow(y1 - y, 2));
+  }
+  <font color=#0000ff>public</font> Point position() { 
+    <font color=#0000ff>return</font> <font color=#0000ff>new</font> Point(x, y);
+  }
+  <font color=#009900>// Beasts know how to draw themselves:</font>
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> draw(Graphics g) {
+    g.setColor(color);
+    <font color=#0000ff>int</font> directionInDegrees = (<font color=#0000ff>int</font>)(
+      (currentDirection * 360) / (2 * Math.PI));
+    <font color=#0000ff>int</font> startAngle = directionInDegrees - 
+      FieldOBeasts.halfFieldOfView;
+    <font color=#0000ff>int</font> endAngle = 90;
+    g.fillArc(x, y, GSIZE, GSIZE, 
+      startAngle, endAngle);
+  }
+}
+
+<font color=#0000ff>public</font> <font color=#0000ff>class</font> FieldOBeasts <font color=#0000ff>extends</font> Applet 
+    <font color=#0000ff>implements</font> Runnable {
+  <font color=#0000ff>private</font> Vector beasts;
+  <font color=#0000ff>static</font> <font color=#0000ff>float</font> 
+    fieldOfView = 
+      (<font color=#0000ff>float</font>) (Math.PI / 4), <font color=#009900>// In radians</font>
+    <font color=#009900>// Deceleration % per second:</font>
+    decayRate = 1.0f, 
+    minimumDistance = 10f; <font color=#009900>// In pixels</font>
+  <font color=#0000ff>static</font> <font color=#0000ff>int</font>
+    halfFieldOfView = (<font color=#0000ff>int</font>)(
+      (fieldOfView * 360) / (2 * Math.PI)),
+    xExtent = 0,
+    yExtent = 0,
+    numBeasts = 50,
+    maxSpeed = 20; <font color=#009900>// Pixels/second</font>
+  <font color=#0000ff>boolean</font> uniqueColors = <font color=#0000ff>true</font>;
+  Thread thisThread;
+  <font color=#0000ff>int</font> delay = 25;
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> init() {
+    <font color=#0000ff>if</font> (xExtent == 0 &amp;&amp; yExtent == 0) {
+      xExtent = Integer.parseInt(
+        getParameter(<font color=#004488>"xExtent"</font>));
+      yExtent = Integer.parseInt(
+        getParameter(<font color=#004488>"yExtent"</font>));
+    }
+    beasts = 
+      makeBeastVector(numBeasts, uniqueColors);
+    <font color=#009900>// Now start the beasts a-rovin':</font>
+    thisThread = <font color=#0000ff>new</font> Thread(<font color=#0000ff>this</font>);
+    thisThread.start();
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> run() {
+    <font color=#0000ff>while</font>(<font color=#0000ff>true</font>) {
+      <font color=#0000ff>for</font>(<font color=#0000ff>int</font> i = 0; i &lt; beasts.size(); i++){
+        Beast b = (Beast) beasts.elementAt(i);
+        b.step();
+      }
+      <font color=#0000ff>try</font> {
+        thisThread.sleep(delay);
+      } <font color=#0000ff>catch</font>(InterruptedException ex){}
+      repaint(); <font color=#009900>// Otherwise it won't update</font>
+    }
+  }
+  Vector makeBeastVector(
+      <font color=#0000ff>int</font> quantity, <font color=#0000ff>boolean</font> uniqueColors) {
+    Vector newBeasts = <font color=#0000ff>new</font> Vector();
+    Random generator = <font color=#0000ff>new</font> Random();
+    <font color=#009900>// Used only if uniqueColors is on:</font>
+    <font color=#0000ff>double</font> cubeRootOfBeastNumber = 
+      Math.pow((<font color=#0000ff>double</font>)numBeasts, 1.0 / 3.0);
+    <font color=#0000ff>float</font> colorCubeStepSize = 
+      (<font color=#0000ff>float</font>) (1.0 / cubeRootOfBeastNumber);
+    <font color=#0000ff>float</font> r = 0.0f;
+    <font color=#0000ff>float</font> g = 0.0f;
+    <font color=#0000ff>float</font> b = 0.0f;
+    <font color=#0000ff>for</font>(<font color=#0000ff>int</font> i = 0; i &lt; quantity; i++) {
+      <font color=#0000ff>int</font> x = 
+        (<font color=#0000ff>int</font>) (generator.nextFloat() * xExtent);
+      <font color=#0000ff>if</font>(x &gt; xExtent - Beast.GSIZE) 
+        x -= Beast.GSIZE;
+      <font color=#0000ff>int</font> y = 
+        (<font color=#0000ff>int</font>) (generator.nextFloat() * yExtent);
+      <font color=#0000ff>if</font>(y &gt; yExtent - Beast.GSIZE) 
+        y -= Beast.GSIZE;
+      <font color=#0000ff>float</font> direction = (<font color=#0000ff>float</font>)(
+        generator.nextFloat() * 2 * Math.PI);
+      <font color=#0000ff>int</font> speed = (<font color=#0000ff>int</font>)(
+        generator.nextFloat() * (<font color=#0000ff>float</font>)maxSpeed);
+      <font color=#0000ff>if</font>(uniqueColors) {
+        r += colorCubeStepSize;
+        <font color=#0000ff>if</font>(r &gt; 1.0) {
+          r -= 1.0f;
+          g += colorCubeStepSize;
+          <font color=#0000ff>if</font>( g &gt; 1.0) {
+            g -= 1.0f;
+            b += colorCubeStepSize;
+            <font color=#0000ff>if</font>(b &gt; 1.0) 
+              b -= 1.0f;
+          }
+        }
+      }
+      newBeasts.addElement(
+        <font color=#0000ff>new</font> Beast(<font color=#0000ff>this</font>, x, y, direction, speed, 
+          <font color=#0000ff>new</font> Color(r,g,b)));
+    }
+    <font color=#0000ff>return</font> newBeasts;
+  }
+  <font color=#0000ff>public</font> Vector beastListInSector(Beast viewer) {
+    Vector output = <font color=#0000ff>new</font> Vector();
+    Enumeration e = beasts.elements();
+    Beast aBeast = (Beast)beasts.elementAt(0);
+    <font color=#0000ff>int</font> counter = 0;
+    <font color=#0000ff>while</font>(e.hasMoreElements()) {
+      aBeast = (Beast) e.nextElement();
+      <font color=#0000ff>if</font>(aBeast != viewer) {
+        Point p = aBeast.position();
+        Point v = viewer.position();
+        <font color=#0000ff>float</font> bearing = 
+          aBeast.bearingFromPointAlongAxis(
+            v.x, v.y, viewer.currentDirection);
+        <font color=#0000ff>if</font>(Math.abs(bearing) &lt; fieldOfView / 2)
+         output.addElement(aBeast);
+      }
+    }
+    <font color=#0000ff>return</font> output;
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> paint(Graphics g)  {
+    Enumeration e = beasts.elements();
+    <font color=#0000ff>while</font>(e.hasMoreElements()) {
+      ((Beast)e.nextElement()).draw(g);
+    }
+  }
+  <font color=#0000ff>public</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> main(String[] args)   {
+    FieldOBeasts field = <font color=#0000ff>new</font> FieldOBeasts();
+    field.xExtent = 640;
+    field.yExtent = 480;
+    Frame frame = <font color=#0000ff>new</font> Frame(<font color=#004488>"Field 'O Beasts"</font>);
+    <font color=#009900>// Optionally use a command-line argument</font>
+    <font color=#009900>// for the sleep time:</font>
+    <font color=#0000ff>if</font>(args.length &gt;= 1)
+      field.delay = Integer.parseInt(args[0]);
+    frame.addWindowListener(
+      <font color=#0000ff>new</font> WindowAdapter() {
+        <font color=#0000ff>public</font> <font color=#0000ff>void</font> windowClosing(WindowEvent e) {
+          System.exit(0);
+        }
+      });
+    frame.add(field, BorderLayout.CENTER);
+    frame.setSize(640,480);
+    field.init();
+    field.start();
+    frame.setVisible(<font color=#0000ff>true</font>);
+  }
+} <font color=#009900>///:~</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Although this isn&#8217;t a perfect
+reproduction of the behavior in Craig Reynold&#8217;s &#8220;Boids&#8221;
+example, it exhibits its own fascinating characteristics, which you can modify
+by adjusting the numbers. You can find out more about the modeling of flocking
+behavior and see a spectacular 3-D version of Boids at Craig Reynold&#8217;s
+page <I>http://www.hmt.com/cwr/boids.html</I>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">To run this program as an applet,
+put the following applet tag in an HTML file:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>&lt;applet
+code=FieldOBeasts
+width=640
+height=480&gt;
+&lt;param name=xExtent value = <font color=#004488>"640"</font>&gt;
+&lt;param name=yExtent value = <font color=#004488>"480"</font>&gt;
+&lt;/applet&gt;</PRE></FONT></BLOCKQUOTE><DIV ALIGN="LEFT"><P><A NAME="_Toc408018815"></A><BR></P></DIV>
+<A NAME="Heading581"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Summary</H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This chapter shows some of the more
+sophisticated things that you can do with Java. It also makes the point that
+while Java must certainly have its limits, those limits are primarily relegated
+to performance. (When the text-processing programs were written, for example,
+C++ versions were much faster &#8211; this might be due partly to an inefficient
+implementation of the IO library, which should change in time.) The limits of
+Java <I>do not</I> seem to be in the area of expressiveness. Not only does it
+seem possible to express just about everything you can imagine, but Java seems
+oriented toward making that expression easy to write and read. Therefore you
+don&#8217;t run into the wall of complexity that often occurs with languages
+that are more trivial to use than Java (at least they seem that way, at first).
+And with Java 1.2<A NAME="Index3060"></A>&#8217;s JFC/Swing library, even the
+expressiveness and ease of use of the AWT is improving
+dramatically.</FONT><A NAME="_Toc408018816"></A><BR></P></DIV>
+<A NAME="Heading582"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Exercises</H2></FONT>
+<OL>
+<LI><FONT FACE="Verdana" SIZE=5>	</FONT><FONT FACE="Georgia">(Challenging)
+Rewrite <B>FieldOBeasts.java</B> so that its state can be persistent. Implement
+buttons to allow you to save and recall different state files and continue
+running them where they left off. Use <B>CADState.java</B> from Chapter 10 as an
+example of how to do
+this.</FONT><LI><FONT FACE="Verdana" SIZE=5>	</FONT><FONT FACE="Georgia">(Term
+project) Taking <B>FieldOBeasts.java</B> as a starting point, build an
+automobile traffic simulation
+system.</FONT><LI><FONT FACE="Verdana" SIZE=5>	</FONT><FONT FACE="Georgia">(Term
+project) Using <B>ClassScanner.java</B> as a starting point, build a tool that
+points out methods and fields that are defined but never
+used.</FONT><LI><FONT FACE="Verdana" SIZE=5>	</FONT><FONT FACE="Georgia">(Term
+project) Using JDBC, build a contact management program using a flat-file
+database containing names, addresses, telephone numbers, email addresses, etc.
+You should be able to easily add new names to the database. When typing in the
+name to be looked up, use automatic name completion as shown in
+<B>VLookup.java</B> in Chapter
+15.</FONT><A NAME="Appendix_A"></A><A NAME="_Toc375545505"></A></OL>
+<DIV ALIGN="CENTER">
+    <FONT FACE="Verdana" size = "-1">
+     [ <a href="Chapter16.html">Previous Chapter</a> ] 
+    [ <a href="SimpleContents.html">Short TOC</a> ] 
+    [ <a href="Contents.html">Table of Contents</a> ] 
+    [ <a href="DocIndex.html">Index</a> ]
+     [ <a href="AppendixA.html">Next Chapter</a> ] 
+    </FONT>
+    <BR>
+ Last Update:02/04/2000</P></DIV>
+
+</BODY>
+
+</HTML>

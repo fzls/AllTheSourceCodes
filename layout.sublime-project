@@ -1,0 +1,18 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.dev",
+				"*.layout",
+				"*.rc",
+				"*.res",
+				"*.win",
+				"*.htm",
+				"*.url"
+			],
+			"path": "/E/Programing"
+		}
+	]
+}

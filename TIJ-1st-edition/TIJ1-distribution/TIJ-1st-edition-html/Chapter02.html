@@ -1,0 +1,1455 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<!--
+This document was converted from RTF source: 
+By rtftohtml 4.19
+See http://www.sunpack.com/RTF
+Filename:Tjava14.rtf
+Application Directory:c:\TOOLS\RTF2HTML\
+Subject:
+Author:Bruce Eckel
+Operator:Bruce Eckel
+Document Comments:
+Version Comments:
+Comments:
+Keywords:
+Translation Date:02/04/2000
+Translation Time:23:24:36
+Translation Platform:Win32
+Number of Output files:27
+This File:Chapter02.html
+SplitDepth=1
+SkipNavPanel=1
+SkipLeadingToc=1
+SkipTrailingToc=1
+GenContents=1
+GenFrames=1
+GenIndex=1
+-->
+<HEAD lang="en"><META http-equiv="Content-Type" content="text/html">
+<TITLE>2: Everything is an object</TITLE>
+</HEAD>
+
+<BODY  BGCOLOR="#FFFFFF"><DIV ALIGN="CENTER">
+  <a href="http://www.MindView.net">
+  <img src="mindview-head.gif" alt="MindView Inc." BORDER = "0"></a>
+  <CENTER>
+    <FONT FACE="Verdana" size = "-1">
+    [ <a href="README-HTML.txt">Viewing Hints</a> ]
+    [ <a href="http://www.mindview.net/TIJ2/index.html">2nd Edition</a> ]
+    [ <a href="http://www.mindview.net/MailingList.html">Free Newsletter</a> ] <br>
+    [ <a href="http://www.mindview.net/Training.html">Seminars</a> ]
+    [ <a href="http://www.mindview.net/javaCD2.html">Seminars on CD ROM</a> ]
+    [ <a href="http://www.mindview.net/CPPServices/#ConsultingServices">Consulting</a> ]
+    </FONT>
+  <H2><FONT FACE="Verdana">
+  Thinking in Java, 1st edition</FONT></H2>
+  <H3><FONT FACE="Verdana">&copy;1998 by Bruce Eckel</FONT></H3>
+  
+    <FONT FACE="Verdana" size = "-1">
+     [ <a href="Chapter01.html">Previous Chapter</a> ] 
+    [ <a href="SimpleContents.html">Short TOC</a> ] 
+    [ <a href="Contents.html">Table of Contents</a> ] 
+    [ <a href="DocIndex.html">Index</a> ]
+     [ <a href="Chapter03.html">Next Chapter</a> ] 
+    </FONT>
+    
+  </CENTER>
+  </P></DIV><A NAME="OLE_LINK5"></A><A NAME="Chapter_2"></A><A NAME="_Toc375545216"></A><A NAME="_Toc407441446"></A><A NAME="_Toc408018417"></A><A NAME="Heading60"></A><FONT FACE = "Verdana"><H1 ALIGN="LEFT">
+2: Everything<BR>is an object</H1></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Verdana" SIZE=4>Although it is based on
+C++, Java is more of a &#8220;pure&#8221; object-oriented
+language.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Both C++ and Java are hybrid
+languages, but in Java the designers felt that the hybridization was not as
+important as it was in C++. A hybrid language allows multiple programming
+styles; the reason C++ is hybrid is to support backward compatibility with the C
+language. Because C++ is a superset of the C language, it includes many of that
+language&#8217;s undesirable features which can make some aspects of C++ overly
+complicated.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The Java language assumes that you
+want to do only object-oriented programming. This means that before you can
+begin you must shift your mindset into an object-oriented world (unless
+it&#8217;s already there)<I>.</I> The benefit of this initial effort is the
+ability to program in a language that is simpler to learn and to use than many
+other OOP languages. In this chapter we&#8217;ll see the basic components of a
+Java program and we&#8217;ll learn that everything in Java is an object, even a
+Java
+program.</FONT><A NAME="_Toc375545217"></A><A NAME="_Toc408018418"></A><BR></P></DIV>
+<A NAME="Heading61"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+You manipulate objects <BR>with handles </H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Each programming language has its
+own means of manipulating data. Sometimes the programmer must constantly be
+aware of what type of manipulation is going on. Are you manipulating the object
+directly or are you dealing with some kind of indirect representation (a pointer
+in C or C++) that must be treated with a special syntax?</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">All this is simplified in Java. You
+treat everything as an object, so there is a single consistent syntax that you
+use everywhere. Although you <I>treat </I>everything as an object, the
+identifier you manipulate is actually a &#8220;handle&#8221; to an object. (You
+might see this called a <I>reference</I> or even a pointer in other discussions
+of Java.) You might imagine this scene as a television (the object) with your
+remote control (the handle). As long as you&#8217;re holding this handle, you
+have a connection to the television, but when someone says &#8220;change the
+channel&#8221; or &#8220;lower the volume,&#8221; what you&#8217;re manipulating
+is the handle, which in turn modifies the object. If you want to move around the
+room and still control the television, you take the remote/handle with you, not
+the television.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Also, the remote control can stand
+on its own, with no television. That is, just because you have a handle
+doesn&#8217;t mean there&#8217;s necessarily an object connected to it. So if
+you want to hold a word or sentence, you create a <B>String</B>
+handle:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>String s;</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">But here you&#8217;ve created
+<I>only</I> the handle, not an object. If you decided to send a message to
+<B>s</B> at this point, you&#8217;ll get an error (at run-time) because <B>s</B>
+isn&#8217;t actually attached to anything (there&#8217;s no television). A safer
+practice, then, is always to initialize a handle when you create
+it:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>String s = <font color=#004488>"asdf"</font>;</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">However, this uses a special case:
+strings can be initialized with quoted text. Normally, you must use a more
+general type of initialization for
+objects.</FONT><A NAME="_Toc375545218"></A><A NAME="_Toc408018419"></A><BR></P></DIV>
+<A NAME="Heading62"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+You must create <BR>all the objects</H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">When you create a handle, you want
+to connect it with a new object. You do so, in general, with the <B>new</B>
+keyword. <B>new</B> says, &#8220;Make me a new one of these objects.&#8221; So
+in the above example, you can say:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>String s = <font color=#0000ff>new</font> String(<font color=#004488>"asdf"</font>);</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Not only does this mean &#8220;Make
+me a new <B>String</B>,&#8221; but it also gives information about <I>how</I> to
+make the <B>String</B> by supplying an initial character
+string.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Of course, <B>String</B> is not the
+only type that exists. Java comes with a plethora of ready-made types.
+What&#8217;s more important is that you can create your own types. In fact,
+that&#8217;s the fundamental activity in Java programming, and it&#8217;s what
+you&#8217;ll be learning about in the rest of this
+book.</FONT><A NAME="_Toc375545219"></A><A NAME="_Toc408018420"></A><BR></P></DIV>
+<A NAME="Heading63"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Where storage lives</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">It&#8217;s useful to visualize some
+aspects of how things are laid out while the program is running, in particular
+how memory is arranged. There are six different places to store
+data:</FONT><BR></P></DIV>
+<OL>
+<LI><FONT FACE="Georgia"><B>	Registers</B>. This is the fastest storage
+because it exists in a place different from that of other storage: inside the
+processor. However, the number of registers is severely limited, so registers
+are allocated by the compiler according to its needs. You don&#8217;t have
+direct control, nor do you see any evidence in your programs that registers even
+exist.</FONT><LI><FONT FACE="Georgia"><B>	The stack</B>. This lives in the
+general RAM (random-access memory) area, but has direct support from the
+processor via its <I>stack pointer</I>. The stack pointer is moved down to
+create new memory and moved up to release that memory. This is an extremely fast
+and efficient way to allocate storage, second only to registers. The Java
+compiler must know, while it is creating the program, the exact size and
+lifetime of all the data that is stored on the stack, because it must generate
+the code to move the stack pointer up and down. This constraint places limits on
+the flexibility of your programs, so while some Java storage exists on the stack
+&#8211; in particular, object handles &#8211; Java objects are not placed on the
+stack.</FONT><LI><FONT FACE="Georgia"><B>	The heap</B>. This is a
+general-purpose pool of memory (also in the RAM area) where all Java objects
+live. The nice thing about the heap is that, unlike the stack, the compiler
+doesn&#8217;t need to know how much storage it needs to allocate from the heap
+or how long that storage must stay on the heap. Thus, there&#8217;s a great deal
+of flexibility in using storage on the heap. Whenever you need to create an
+object, you simply write the code to create it using <B>new </B>and the storage
+is allocated on the heap when that code is executed. And of course there&#8217;s
+a price you pay for this flexibility: it takes more time to allocate heap
+storage.</FONT><LI><FONT FACE="Georgia"><B>	Static storage</B>.
+&#8220;Static&#8221; is used here in the sense of &#8220;in a fixed
+location&#8221; (although it&#8217;s also in RAM). Static storage contains data
+that is available for the entire time a program is running. You can use the
+<B>static</B> keyword to specify that a particular element of an object is
+static, but Java objects themselves are never placed in static
+storage.</FONT><LI><FONT FACE="Georgia"><B>	Constant storage</B>. Constant
+values are often placed directly in the program code, which is safe since they
+can never change. Sometimes constants are cordoned off by themselves so that
+they can be optionally placed in read-only memory
+(ROM).</FONT><LI><FONT FACE="Georgia"><B>	Non-RAM storage</B>. If data
+lives completely outside a program it can exist while the program is not
+running, outside the control of the program. The two primary examples of this
+are <I>streamed objects,</I> in which objects are turned into streams of bytes,
+generally to be sent to another machine, and <I>persistent objects, </I>in which
+the objects are placed on disk so they will hold their state even when the
+program is terminated. The trick with these types of storage is turning the
+objects into something that can exist on the other medium, and yet can be
+resurrected into a regular RAM-based object when necessary. Java
+1.1<A NAME="Index72"></A> provides support for <I>lightweight persistence</I>,
+and future versions of Java might provide more complete solutions for
+persistence.</FONT><A NAME="_Toc375545220"></A><A NAME="_Toc408018421"></A></OL><A NAME="Heading64"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Special case: primitive types</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">There is a group of types that gets
+special treatment; you can think of these as &#8220;primitive&#8221; types that
+you use quite often in your programming. The reason for the special treatment is
+that to create an object with <B>new</B>, especially a small, simple variable,
+isn&#8217;t very efficient because <B>new</B> places objects on the heap. For
+these types Java falls back on the approach taken by C and C++. That is, instead
+of creating the variable using <B>new</B>, an &#8220;automatic&#8221; variable
+is created that <I>is not a handle</I>. The variable holds the value, and
+it&#8217;s placed on the stack so it&#8217;s much more
+efficient.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Java determines the size of each
+primitive type. These sizes don&#8217;t change from one machine architecture to
+another as they do in most languages. This size invariance is one reason Java
+programs are so portable.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><TABLE BORDER>
+<TR VALIGN="TOP">
+<TH WIDTH=76 COLSPAN=1 ROWSPAN=1 VALIGN="TOP">
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Primitive type</FONT><BR></P></DIV>
+</TH>
+<TH WIDTH=45 COLSPAN=1 ROWSPAN=1 VALIGN="TOP">
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Size</FONT><BR></P></DIV>
+</TH>
+<TH WIDTH=67 COLSPAN=1 ROWSPAN=1 VALIGN="TOP">
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Minimum</FONT><BR></P></DIV>
+</TH>
+<TH WIDTH=77 COLSPAN=1 ROWSPAN=1 VALIGN="TOP">
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Maximum</FONT><BR></P></DIV>
+</TH>
+<TH WIDTH=64 COLSPAN=1 ROWSPAN=1 VALIGN="TOP">
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Wrapper type</FONT><BR></P></DIV>
+</TH>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">boolean</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">1-bit</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">&#8211;</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">&#8211;</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Boolean</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">char</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">16-bit</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Unicode 0</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Unicode 2<SUP>16</SUP>-
+1</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Character</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">byte </FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">8-bit</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">-128</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">+127</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Byte</B></FONT><A NAME="fnB11" HREF="#fn11">[11]</A><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">short</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">16-bit</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">-2<SUP>15</SUP></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">+2<SUP>15</SUP> &#8211;
+1</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Short<SUP>1</SUP></B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">int</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">32-bit</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">-2<SUP>31</SUP></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">+2<SUP>31</SUP> &#8211;
+1</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Integer</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">long</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">64-bit</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">-2<SUP>63</SUP></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">+2<SUP>63</SUP> &#8211;
+1</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Long</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">float</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">32-bit</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">IEEE754</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">IEEE754</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Float</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">double</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">64-bit </FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">IEEE754</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">IEEE754</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Double</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">void</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">&#8211;</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">&#8211;</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">&#8211;</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Void</B><SUP>1</SUP></FONT><BR></P></DIV>
+</TD>
+</TR>
+</TABLE></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">All numeric types are signed, so
+don&#8217;t go looking for unsigned types.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The primitive data types also have
+&#8220;wrapper&#8221;<I> </I>classes for them. That means that if you want to
+make a non-primitive object on the heap to represent that primitive type, you
+use the associated wrapper. For example:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>char</font> c = 'x';
+Character C = <font color=#0000ff>new</font> Character(c);</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">or you could also
+use:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>Character C = <font color=#0000ff>new</font> Character('x');</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The reasons for doing this will be
+shown in a later chapter.</FONT><BR></P></DIV>
+<A NAME="Heading65"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+High-precision numbers</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Java 1.1<A NAME="Index73"></A> has
+added two classes for performing high-precision arithmetic: <B>BigInteger</B>
+and <B>BigDecimal</B>. Although these approximately fit into the same category
+as the &#8220;wrapper&#8221; classes, neither one has a primitive
+analogue.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Both classes have methods that
+provide analogues for the operations that you perform on primitive types. That
+is, you can do anything with a <B>BigInteger</B> or <B>BigDecimal </B>that you
+can with an <B>int</B> or <B>float</B>, it&#8217;s just that you must use method
+calls instead of operators. Also, since there&#8217;s more involved, the
+operations will be slower. You&#8217;re exchanging speed for
+accuracy.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>BigInteger</B> supports
+arbitrary-precision integers. This means that you can accurately represent
+integral values of any size without losing any information during
+operations.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>BigDecimal</B> is for
+arbitrary-precision fixed-point numbers; you can use these for accurate monetary
+calculations, for example.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Consult your online documentation
+for details about the constructors and methods you can call for these two
+classes.</FONT><A NAME="_Toc375545221"></A><A NAME="_Toc408018422"></A><BR></P></DIV>
+<A NAME="Heading66"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Arrays in Java</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Virtually all programming languages
+support arrays. Using arrays in C and C++ is perilous because those arrays are
+only blocks of memory. If a program accesses the array outside of its memory
+block or uses the memory before initialization (common programming errors) there
+will be unpredictable
+results.</FONT><A NAME="fnB12" HREF="#fn12">[12]</A><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">One of the primary goals of Java is
+safety, so many of the problems that plague programmers in C and C++ are not
+repeated in Java. A Java array is guaranteed to be initialized and cannot be
+accessed outside of its range. The range checking comes at the price of having a
+small amount of memory overhead on each array as well as verifying the index at
+run time, but the assumption is that the safety and increased productivity is
+worth the expense.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">When you create an array of
+objects, you are really creating an array of handles, and each of those handles
+is automatically initialized to a special value with its own keyword:
+<A NAME="Index74"></A><A NAME="Index75"></A><B>null</B>. When Java sees
+<B>null</B>, it recognizes that the handle in question isn&#8217;t pointing to
+an object.<B> </B>You must assign an object to each handle before you use it,
+and if you try to use a handle that&#8217;s still <B>null,</B> the problem will
+be reported at run-time. Thus, typical array errors are prevented in
+Java.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You can also create an array of
+primitives. Again, the compiler guarantees initialization because it zeroes the
+memory for that array.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Arrays will be covered in detail in
+later
+chapters.</FONT><A NAME="_Toc375545222"></A><A NAME="_Toc408018423"></A><BR></P></DIV>
+<A NAME="Heading67"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+You never need to <BR>destroy an object</H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">In most programming languages, the
+concept of the lifetime of a variable occupies a significant portion of the
+programming effort. How long does the variable last? If you are supposed to
+destroy it, when should you? Confusion over variable lifetimes can lead to a lot
+of bugs, and this section shows how Java greatly simplifies the issue by doing
+all the cleanup work for
+you.</FONT><A NAME="_Toc375545223"></A><A NAME="_Toc408018424"></A><BR></P></DIV>
+<A NAME="Heading68"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Scoping</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Most procedural languages have the
+concept of <I>scope</I>. This determines both the visibility and lifetime of the
+names defined within that scope. In C, C++ and Java, scope is determined by the
+placement of curly braces <B>{}</B>. So for example:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>{
+  <font color=#0000ff>int</font> x = 12;
+  <font color=#009900>/* only x available */</font>
+  {
+    <font color=#0000ff>int</font> q = 96;
+    <font color=#009900>/* both x &amp; q available */</font>
+  }
+  <font color=#009900>/* only x available */</font>
+  <font color=#009900>/* q &#8220;out of scope&#8221; */</font>
+}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">A variable defined within a scope
+is available only to the end of that scope.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Indentation makes Java code easier
+to read. Since Java is a free form language, the extra spaces, tabs and carriage
+returns do not affect the resulting program.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Note that you <I>cannot</I> do the
+following, even though it is legal in C and C++:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>{
+  <font color=#0000ff>int</font> x = 12;
+  {
+    <font color=#0000ff>int</font> x = 96; <font color=#009900>/* illegal */</font>
+  }
+}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The compiler will announce that the
+variable <B>x </B>has already been defined. Thus the C and C++ ability to
+&#8220;hide&#8221; a variable in a larger scope is not allowed because the Java
+designers thought that it led to confusing
+programs.</FONT><A NAME="_Toc375545224"></A><A NAME="_Toc408018425"></A><BR></P></DIV>
+<A NAME="Heading69"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Scope of objects</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Java objects do not have the same
+lifetimes as primitives. When you create a Java object using <B>new</B>, it
+hangs around past the end of the scope. Thus if you use:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>{
+  String s = <font color=#0000ff>new</font> String(<font color=#004488>"a string"</font>);
+} <font color=#009900>/* end of scope */</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">the handle <B>s</B> vanishes at the
+end of the scope. However, the <B>String</B> object that <B>s</B> was pointing
+to is still occupying memory. In this bit of code, there is no way to access the
+object because the only handle to it is out of scope. In later chapters
+you&#8217;ll see how the handle to the object can be passed around and
+duplicated during the course of a program.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">It turns out that because objects
+created with <B>new</B> stay around for as long as you want them, a whole slew
+of programming problems simply vanish in C++ and Java. The hardest problems seem
+to occur in C++ because you don&#8217;t get any help from the language in making
+sure that the objects are available when they&#8217;re needed. And more
+importantly, in C++ you must make sure that you destroy the objects when
+you&#8217;re done with them.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">That brings up an interesting
+question. If Java leaves the objects lying around, what keeps them from filling
+up memory and halting your program? This is exactly the kind of problem that
+would occur in C++. This is where a bit of magic happens. Java has a <I>garbage
+collector</I>, which looks at all the objects that were created with <B>new</B>
+and figures out which ones are not being referenced anymore. Then it releases
+the memory for those objects, so the memory can be used for new objects. This
+means that you never need to worry about reclaiming memory yourself. You simply
+create objects, and when you no longer need them they will go away by
+themselves. This eliminates a certain class of programming problem: the
+so-called &#8220;memory leak,&#8221; in which a programmer forgets to release
+memory.</FONT><A NAME="_Toc375545225"></A><A NAME="_Toc408018426"></A><BR></P></DIV>
+<A NAME="Heading70"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Creating new <BR>data types: class</H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">If everything is an object, what
+determines how a particular class of object looks and behaves? Put another way,
+what establishes the <I>type</I> of an object? You might expect there to be a
+keyword called &#8220;type&#8221; and that certainly would have made sense.
+Historically, however, most object-oriented languages have used the keyword
+<B>class</B> to mean &#8220;I&#8217;m about to tell you what a new type of
+object looks like.&#8221; The <B>class</B> keyword (which is so common that it
+will not be emboldened throughout the book) is followed by the name of the new
+type. For example:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>class</font> ATypeName { <font color=#009900>/* class body goes here */</font> }</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This introduces a new type, so you
+can now create an object of this type using <B>new</B>:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>ATypeName a = <font color=#0000ff>new</font> ATypeName();</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">In <B>ATypeName</B>, the class body
+consists only of a comment (the stars and slashes and what is inside, which will
+be discussed later in this chapter) so there is not too much that you can do
+with it. In fact, you cannot tell it to do much of anything (that is, you cannot
+send it any interesting messages) until you define some methods for
+it.</FONT><A NAME="_Toc375545226"></A><A NAME="_Toc408018427"></A><BR></P></DIV>
+<A NAME="Heading71"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Fields and methods</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">When you define a class (and all
+you do in Java is define classes, make objects of those classes and send
+messages to those objects), you can put two types of elements in your class:
+data members (sometimes called <I>fields</I>) and member functions (typically
+called <I>methods</I>). A data member is an object (that you communicate with
+via its handle) of any type. It can also be one of the primitive types (which
+isn&#8217;t a handle). If it is a handle to an object, you must initialize that
+handle to connect it to an actual object (using <B>new</B>, as seen earlier) in
+a special function called a <I>constructor</I> (described fully in Chapter 4).
+If it is a primitive type you can initialize it directly at the point of
+definition in the class. (As you&#8217;ll see later, handles can also be
+initialized at the point of definition.)</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Each object keeps its own storage
+for its data members; the data members are not shared among objects. Here is an
+example of a class with some data members:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>class</font> DataOnly {
+  <font color=#0000ff>int</font> i;
+  <font color=#0000ff>float</font> f;
+  <font color=#0000ff>boolean</font> b;
+}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This class doesn&#8217;t <I>do</I>
+anything, but you can create an object:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>DataOnly d = <font color=#0000ff>new</font> DataOnly();</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You can assign values to the data
+members, but you must first know how to refer to a member of an object. This is
+accomplished by stating the name of the object handle, followed by a period
+(dot), followed by the name of the member inside the object
+(<B>objectHandle.member</B>). For example:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>d.i = 47;
+d.f = 1.1f;
+d.b = <font color=#0000ff>false</font>;</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">It is also possible that your
+object might contain other objects that contain data you&#8217;d like to modify.
+For this, you just keep &#8220;connecting the dots.&#8221; For
+example:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>myPlane.leftTank.capacity = 100;</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The <B>DataOnly </B>class cannot do
+much of anything except hold data, because it has no member functions (methods).
+To understand how those work, you must first understand <I>arguments</I> and
+<I>return values</I>, which will be described shortly.</FONT><BR></P></DIV>
+<A NAME="Heading72"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+Default values for primitive members</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">When a primitive data type is a
+member of a class, it is guaranteed to get a default value if you do not
+initialize it:</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><TABLE BORDER>
+<TR VALIGN="TOP">
+<TH WIDTH=81 COLSPAN=1 ROWSPAN=1 VALIGN="TOP">
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Primitive type</FONT><BR></P></DIV>
+</TH>
+<TH WIDTH=84 COLSPAN=1 ROWSPAN=1 VALIGN="TOP">
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Default</FONT><BR></P></DIV>
+</TH>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Boolean</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>false</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Char</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">&#8216;\u0000&#8217;
+(<B>null</B>)</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>byte</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>(byte)0</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>short</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>(short)0</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>int</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>0</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>long</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>0L</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>float</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>0.0f</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>double</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>0.0d</B></FONT><BR></P></DIV>
+</TD>
+</TR>
+</TABLE></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Note carefully that the default
+values are what Java guarantees when the variable is used <I>as a member of a
+class</I>. This ensures that member variables of primitive types will always be
+initialized (something C++ doesn&#8217;t do), reducing a source of bugs.
+</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">However, this guarantee
+doesn&#8217;t apply to &#8220;local&#8221; variables &#8211; those that are not
+fields of a class. Thus, if within a function definition you
+have:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>int</font> x;</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Then <B>x</B> will get some random
+value (as in C and C++); it will not automatically be initialized to zero. You
+are responsible for assigning an appropriate value before you use <B>x</B>. If
+you forget, Java definitely improves on C++: you get a compile-time error
+telling you the variable might not have been initialized. (Many C++ compilers
+will warn you about uninitialized variables, but in Java these are
+errors.)</FONT><A NAME="_Toc375545227"></A><A NAME="_Toc408018428"></A><BR></P></DIV>
+<A NAME="Heading73"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Methods, arguments <BR>and return values</H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Up until now, the term
+<I>function</I> has been used to describe a named subroutine. The term that is
+more commonly used in Java is <I>method,</I> as in &#8220;a way to do
+something.&#8221; If you want, you can continue thinking in terms of functions.
+It&#8217;s really only a syntactic difference, but from now on
+&#8220;method&#8221; will be used in this book rather than
+&#8220;function.&#8221;</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Methods in Java determine the
+messages an object can receive. In this section you will learn how simple it is
+to define a method.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The fundamental parts of a method
+are the name, the arguments, the return type, and the body. Here is the basic
+form:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>returnType methodName( <font color=#009900>/* argument list */</font> ) {
+  <font color=#009900>/* Method body */</font>
+}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The return type is the type of the
+value that pops out of the method after you call it. The method name, as you
+might imagine, identifies the method. The argument list gives the types and
+names for the information you want to pass into the method.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Methods in Java can be created only
+as part of a class. A method can be called only for an
+object,</FONT><A NAME="fnB13" HREF="#fn13">[13]</A><FONT FACE="Georgia">
+and that object must be able to perform that method call. If you try to call the
+wrong method for an object, you&#8217;ll get an error message at compile time.
+You call a method for an object by naming the object followed by a period (dot),
+followed by the name of the method and its argument list, like this:
+<B>objectName.methodName(arg1, arg2, arg3)</B>. For example, suppose you have a
+method <B>f(&#160;)</B> that takes no arguments and returns a value of type
+<B>int</B>. Then, if you have an object called <B>a</B> for which
+<B>f(&#160;)</B> can be called, you can say this:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>int</font> x = a.f();</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The type of the return value must
+be compatible with the type of <B>x</B>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This act of calling a method is
+commonly referred to as <I>sending a message to an object</I>. In the above
+example, the message is <B>f(&#160;)</B> and the object is <B>a</B>.
+Object-oriented programming is often summarized as simply &#8220;sending
+messages to
+objects.&#8221;</FONT><A NAME="_Toc375545228"></A><A NAME="_Toc408018429"></A><BR></P></DIV>
+<A NAME="Heading74"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+The argument list</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The method argument list specifies
+what information you pass into the method. As you might guess, this information
+&#8211; like everything else in Java &#8211; takes the form of objects. So, what
+you must specify in the argument list are the types of the objects to pass in
+and the name to use for each one. As in any situation in Java where you seem to
+be handing objects around, you are actually passing
+handles.</FONT><A NAME="fnB14" HREF="#fn14">[14]</A><FONT FACE="Georgia">
+The type of the handle must be correct, however. If the argument is supposed to
+be a <B>String</B>, what you pass in must be a string.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Consider a method that takes a
+string as its argument. Here is the definition, which must be placed within a
+class definition for it to compile:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>int</font> storage(String s) {
+  <font color=#0000ff>return</font> s.length() * 2;
+}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This method tells you how many
+bytes are required to hold the information in a particular <B>String. </B>(Each
+<B>char </B>in a <B>String </B>is 16 bits, or two bytes, long, to support
+Unicode characters.) The argument is of type <B>String</B> and is called
+<B>s</B>. Once <B>s</B> is passed into the method, you can treat it just like
+any other object. (You can send messages to it.) Here, the <B>length(&#160;)</B>
+method is called, which is one of the methods for <B>String</B>s; it returns the
+number of characters in a string.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You can also see the use of the
+<B>return</B> keyword, which does two things. First, it means &#8220;leave the
+method, I&#8217;m done.&#8221; Second, if the method produces a value, that
+value is placed right after the <B>return</B> statement. In this case, the
+return value is produced by evaluating the expression <B>s.length(&#160;) *
+2</B>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You can return any type you want,
+but if you don&#8217;t want to return anything at all, you do so by indicating
+that the method returns <B>void</B>. Here are some examples:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>boolean</font> flag() { <font color=#0000ff>return</font> <font color=#0000ff>true</font>; }
+<font color=#0000ff>float</font> naturalLogBase() { <font color=#0000ff>return</font> 2.718; }
+<font color=#0000ff>void</font> nothing() { <font color=#0000ff>return</font>; }
+<font color=#0000ff>void</font> nothing2() {}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">When the return type is
+<B>void</B>, then the <B>return</B> keyword is used only to exit the method, and
+is therefore unnecessary when you reach the end of the method. You can return
+from a method at any point, but if you&#8217;ve given a non-<B>void </B>return
+type then the compiler will ensure that you return the appropriate type of value
+regardless of where you return.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">At this point, it can look like a
+program is just a bunch of objects with methods that take other objects as
+arguments and send messages to those other objects. That is indeed much of what
+goes on, but in the following chapter you&#8217;ll learn how to do the detailed
+low-level work by making decisions within a method. For this chapter, sending
+messages will
+suffice.</FONT><A NAME="_Toc375545229"></A><A NAME="_Toc408018430"></A><BR></P></DIV>
+<A NAME="Heading75"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Building a Java program</H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">There are several other issues you
+must understand before seeing your first Java
+program.</FONT><A NAME="_Toc375545230"></A><A NAME="_Toc408018431"></A><BR></P></DIV>
+<A NAME="Heading76"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Name visibility</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">A problem in any programming
+language is the control of names. If you use a name in one module of the
+program, and another programmer uses the same name in another module, how do you
+distinguish one name from another and prevent the two names from
+&#8220;clashing&#8221;? In C this is a particular problem because a program is
+often an unmanageable sea of names. C++ classes (on which Java classes are
+based) nest functions within classes so they cannot clash with function names
+nested within other classes. However, C++ still allowed global data and global
+functions, so clashing was still possible. To solve this problem, C++ introduced
+<I>namespaces</I> using additional keywords.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Java was able to avoid all of this
+by taking a fresh approach. To produce an unambiguous name for a library, the
+specifier used is not unlike an Internet domain name. In fact, the Java creators
+want you to use your Internet domain name in reverse since those are guaranteed
+to be unique. Since my domain name is <B>BruceEckel.com</B>, my utility library
+of foibles would be named <B>com.bruceeckel.utility.foibles</B>. After your
+reversed domain name, the dots are intended to represent
+subdirectories.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">In <A NAME="Index76"></A>Java 1.0
+and Java 1.1<A NAME="Index77"></A> the domain extension <B>com</B>, <B>edu</B>,
+<B>org</B>, <B>net</B>, etc., was
+<A NAME="Index78"></A><A NAME="Index79"></A>capitalized by convention, so the
+library would appear: <B>COM.bruceeckel.utility.foibles</B>. Partway through the
+development of Java 1.2<A NAME="Index80"></A>, however, it was discovered that
+this caused problems and so now the entire package name is
+lowercase.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This mechanism in Java means that
+all of your files automatically live in their own namespaces, and each class
+within a file automatically has a unique identifier. (Class names within a file
+must be unique, of course.) So you do not need to learn special language
+features to solve this problem &#8211; the language takes care of it for
+you.</FONT><A NAME="_Toc375545231"></A><A NAME="_Toc408018432"></A><BR></P></DIV>
+<A NAME="Heading77"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Using other components</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Whenever you want to use a
+predefined class in your program, the compiler must know how to locate it. Of
+course, the class might already exist in the same source code file that
+it&#8217;s being called from. In that case, you simply use the class &#8211;
+even if the class doesn&#8217;t get defined until later in the file. Java
+eliminates the &#8220;forward referencing&#8221; problem so you don&#8217;t need
+to think about it.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">What about a class that exists in
+some other file? You might think that the compiler should be smart enough to
+simply go and find it, but there is a problem. Imagine that you want to use a
+class of a particular name, but the definition for that class exists in more
+than one file. Or worse, imagine that you&#8217;re writing a program, and as
+you&#8217;re building it you add a new class to your library that conflicts with
+the name of an existing class.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">To solve this problem, you must
+eliminate all potential ambiguities. This is accomplished by telling the Java
+compiler exactly what classes you want using the <B>import</B> keyword.
+<B>import </B>tells the compiler to bring in a <I>package</I>, which is a
+library of classes. (In other languages, a library could consist of functions
+and data as well as classes, but remember that all code in Java must be written
+inside a class.) </FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Most of the time you&#8217;ll be
+using components from the standard Java libraries that come with your compiler.
+With these, you don&#8217;t need to worry about long, reversed domain names; you
+just say, for example:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>import</font> java.util.Vector;</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">to tell the compiler that you want
+to use Java&#8217;s <B>Vector</B> class. However, <B>util</B> contains a number
+of classes and you might want to use several of them without declaring them all
+explicitly. This is easily accomplished by using &#8216;<B>*</B>&#8217; to
+indicate a wildcard:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>import</font> java.util.*;</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">It is more common to import a
+collection of classes in this manner than to import classes
+individually.</FONT><A NAME="_Toc375545232"></A><A NAME="_Toc408018433"></A><BR></P></DIV>
+<A NAME="Heading78"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+The static keyword</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Ordinarily, when you create a class
+you are describing how objects of that class look and how they will behave. You
+don&#8217;t actually get anything until you create an object of that class with
+<B>new</B>, and at that point data storage is created and methods become
+available.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">But there are two situations in
+which this approach is not sufficient. One is if you want to have only one piece
+of storage for a particular piece of data, regardless of how many objects are
+created, or even if no objects are created. The other is if you need a method
+that isn&#8217;t associated with any particular object of this class. That is,
+you need a method that you can call even if no objects are created. You can
+achieve both of these effects with the <B>static</B> keyword. When you say
+something is <B>static</B>, it means that data or method is not tied to any
+particular object instance of that class. So even if you&#8217;ve never created
+an object of that class you can call a <B>static</B> method or access a piece of
+<B>static</B> data. With ordinary, non-<B>static</B> data and methods you must
+create an object and use that object to access the data or method, since
+non-<B>static</B> data and methods must know the particular object they are
+working with. Of course, since <B>static</B> methods don&#8217;t need any
+objects to be created before they are used, they cannot <I>directly </I>access
+non-<B>static</B> members or methods by simply calling those other members
+without referring to a named object (since non-<B>static</B> members and methods
+must be tied to a particular object).</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Some object-oriented languages use
+the terms <I>class data</I> and <I>class methods</I>, meaning that the data and
+methods exist only for the class as a whole, and not for any particular objects
+of the class. Sometimes the Java literature uses these terms
+too.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">To make a data member or method
+<B>static</B>, you simply place the keyword before the definition. For example,
+this produces a <B>static</B> data member and initializes it:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>class</font> StaticTest {
+    <font color=#0000ff>static</font> <font color=#0000ff>int</font> i = 47;
+}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Now even if you make two
+<B>StaticTest</B> objects, there will still be only one piece of storage for
+<B>StaticTest.i.</B> Both objects will share the same <B>i.
+</B>Consider:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>StaticTest st1 = <font color=#0000ff>new</font> StaticTest();
+StaticTest st2 = <font color=#0000ff>new</font> StaticTest();</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">At this point, both <B>st1.i</B>
+and <B>st2.i</B> have the same value of 47 since they refer to the same piece of
+memory.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">There are two ways to refer to a
+<B>static</B> variable. As indicated above, you can name it via an object, by
+saying, for example, <B>st2.i</B>. You can also refer to it directly through its
+class name, something you cannot do with a non-static member. (This is the
+preferred way to refer to a <B>static</B> variable since it emphasizes that
+variable&#8217;s <B>static</B> nature.)</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>StaticTest.i++;</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The <B>++</B> operator increments
+the variable. At this point, both <B>st1.i</B> and <B>st2.i</B> will have the
+value 48.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Similar logic applies to static
+methods. You can refer to a static method either through an object as you can
+with any method, or with the special additional syntax
+<B>classname.method(&#160;)</B>. You define a static method in a similar
+way:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>class</font> StaticFun {
+  <font color=#0000ff>static</font> <font color=#0000ff>void</font> incr() { StaticTest.i++; }
+}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You can see that the
+<B>StaticFun</B> method <B>incr(&#160;)</B> increments the <B>static</B> data
+<B>i</B>. You can call <B>incr(&#160;)</B> in the typical way, through an
+object:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>StaticFun sf = <font color=#0000ff>new</font> StaticFun();
+sf.incr();</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Or, because <B>incr(&#160;) </B>is
+a static method, you can call it directly through its class:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>StaticFun.incr();</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">While <B>static</B>, when applied
+to a data member, definitely changes the way the data is created (one for each
+class vs. the non-<B>static </B>one for each object), when applied to a method
+it&#8217;s not so dramatic. An important use of <B>static</B> for methods is to
+allow you to call that method without creating an object. This is essential, as
+we will see, in defining the <B>main(&#160;)</B> method that is the entry point
+for running an application.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Like any method, a <B>static</B>
+method can create or use named objects of its type, so a <B>static</B> method is
+often used as a &#8220;shepherd&#8221; for a flock of instances of its own
+type.</FONT><A NAME="_Toc375545233"></A><A NAME="_Toc408018434"></A><BR></P></DIV>
+<A NAME="Heading79"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Your first Java program</H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Finally, here&#8217;s the
+program.</FONT><A NAME="fnB15" HREF="#fn15">[15]</A><FONT FACE="Georgia">
+It prints out information about the system that it&#8217;s running on using
+various methods of the <B>System</B> object from the Java standard library. Note
+that an additional style of comment is introduced here: the
+&#8216;<B>//</B>&#8217;, which is a comment until the end of the
+line:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>// Property.java</font>
+<font color=#0000ff>import</font> java.util.*;
+
+<font color=#0000ff>public</font> <font color=#0000ff>class</font> Property {
+  <font color=#0000ff>public</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> main(String[] args) {
+    System.out.println(<font color=#0000ff>new</font> Date());
+    Properties p = System.getProperties();
+    p.list(System.out);
+    System.out.println(<font color=#004488>"--- Memory Usage:"</font>);
+    Runtime rt = Runtime.getRuntime();
+    System.out.println(<font color=#004488>"Total Memory = "</font>
+                       + rt.totalMemory()
+                       + <font color=#004488>" Free Memory = "</font>
+                       + rt.freeMemory());
+  }
+}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">At the beginning of each program
+file, you must place the <B>import</B> statement to bring in any extra classes
+you&#8217;ll need for the code in that file. Note that it is
+&#8220;extra.&#8221; That&#8217;s because there&#8217;s a certain library of
+classes that are automatically brought into every Java file: <B>java.lang</B>.
+Start up your Web browser and look at the documentation from Sun. (If you
+haven&#8217;t downloaded it from <I>java.sun.com</I> or otherwise installed the
+Java documentation, do so now). If you look at the <B>packages.html</B> file,
+you&#8217;ll see a list of all the different class libraries that come with
+Java. Select <B>java.lang</B>. Under &#8220;Class Index&#8221; you&#8217;ll see
+a list of all the classes that are part of that library. Since <B>java.lang</B>
+is implicitly included in every Java code file, these classes are automatically
+available. In the list, you&#8217;ll see <B>System</B> and <B>Runtime</B>, which
+are used in <B>Property.java</B>. There&#8217;s no <B>Date</B> class listed in
+<B>java.lang</B>, which means you must import another library to use that. If
+you don&#8217;t know the library where a particular class is, or if you want to
+see all of the classes, you can select &#8220;Class Hierarchy&#8221; in the Java
+documentation. In a Web browser, this takes awhile to construct, but you can
+find every single class that comes with Java. Then you can use the
+browser&#8217;s &#8220;find&#8221; function to find <B>Date. </B>When you do
+you&#8217;ll see it listed as <B>java.util.Date</B>, which lets you know that
+it&#8217;s in the <B>util</B> library and that you must <B>import
+java.util.*</B> in order to use <B>Date</B>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">If you look at the documentation
+starting from the <B>packages.html</B> file (which I&#8217;ve set in my Web
+browser as the default starting page), select <B>java.lang</B> and then
+<B>System</B>. You&#8217;ll see that the <B>System</B> class has several fields,
+and if you select <B>out</B> you&#8217;ll discover that it&#8217;s a
+<B>static</B> <B>PrintStream </B>object. Since it&#8217;s <B>static</B> you
+don&#8217;t need to create anything. The <B>out</B> object is always there and
+you can just use it. What you can do with this <B>out</B> object is determined
+by the type it is: a <B>PrintStream</B>. Conveniently, <B>PrintStream </B>is
+shown in the description as a hyperlink, so if you click on that you&#8217;ll
+see a list of all the methods you can call for <B>PrintStream</B>. There are
+quite a few and these will be covered later in the book. For now all we&#8217;re
+interested in is <B>println(&#160;)</B>, which in effect means &#8220;print out
+what I&#8217;m giving you to the console and end with a new line.&#8221; Thus,
+in any Java program you write you can say
+<B>System.out.println(&#8220;things&#8221;)</B> whenever you want to print
+something to the console.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The name of the class is the same
+as the name of the file. When you&#8217;re creating a stand-alone program such
+as this one, one of the classes in the file must have the same name as the file.
+(The compiler complains if you don&#8217;t do this.) That class must contain a
+method called <B>main(&#160;)</B> with the signature shown:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>public</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> main(String[] args) {</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The <B>public</B> keyword means
+that the method is available to the outside world (described in detail in
+Chapter 5). The argument to <B>main(&#160;)</B> is an array of <B>String</B>
+objects. The <B>args</B> won&#8217;t be used in this program, but they need to
+be there because they hold the arguments invoked on the command
+line.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The first line of the program is
+quite interesting:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>System.out.println(<font color=#0000ff>new</font> Date());</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Consider the argument: a
+<B>Date</B> object is being created just to send its value to
+<B>println(&#160;)</B>. As soon as this statement is finished, that <B>Date</B>
+is unnecessary, and the garbage collector can come along and get it anytime. We
+don&#8217;t need to worry about cleaning it up.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The second line calls
+<B>System.getProperties(&#160;)</B>. If you consult the online documentation
+using your Web browser, you&#8217;ll see that <B>getProperties(&#160;) </B>is a
+<B>static </B>method of class <B>System</B>. Because it&#8217;s <B>static</B>,
+you don&#8217;t need to create any objects in order to call the method; a
+<B>static </B>method is always available whether an object of its class exists
+or not. When you call <B>getProperties(&#160;)</B>, it<B> </B>produces the
+system properties as an object of class <B>Properties</B>. The handle that comes
+back is stored in a <B>Properties</B> handle called <B>p</B>. In line three, you
+can see that the <B>Properties</B> object has a method called
+<B>list(&#160;)</B> that sends its entire contents to a <B>PrintStream</B>
+object that you pass as an argument.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The fourth and sixth lines in
+<B>main(&#160;)</B> are typical print statements. Note that to print multiple
+<B>String</B> values, we simply separate them with &#8216;<B>+</B>&#8217; signs.
+However, there&#8217;s something strange going on here. The
+&#8216;<B>+</B>&#8217; sign doesn&#8217;t mean addition when it&#8217;s used
+with <B>String</B> objects. Normally, you wouldn&#8217;t ascribe any meaning to
+&#8216;<B>+</B>&#8217; when you think of strings. However, the Java
+<B>String</B> class is blessed with something called &#8220;operator
+overloading.&#8221; That is, the &#8216;<B>+</B>&#8217; sign, only when used
+with <B>String</B> objects, behaves differently from the way it does with
+everything else. For <B>String</B>s, it means &#8220;concatenate these two
+strings.&#8221;</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">But that&#8217;s not all. If you
+look at the statement:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>    System.out.println(<font color=#004488>"Total Memory = "</font>
+                       + rt.totalMemory()
+                       + <font color=#004488>" Free Memory = "</font>
+                       + rt.freeMemory());</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>totalMemory(&#160;)</B> and
+<B>freeMemory(&#160;)</B> return <I>numerical values</I>, and not <B>String</B>
+objects. What happens when you &#8220;add&#8221; a numerical value to a
+<B>String</B>? The compiler sees the problem and magically calls a method that
+turns that numerical value (<B>int</B>, <B>float</B>, etc.) into a
+<B>String</B>, which can then be &#8220;added&#8221; with the plus sign. This
+<I>automatic type conversion</I> also falls into the category of operator
+overloading.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Much of the Java literature states
+vehemently that operator overloading (a feature in C++) is bad, and yet here it
+is! However, this is wired into the compiler, only for <B>String</B> objects,
+and you can&#8217;t overload operators for any of the code you
+write.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The fifth line in
+<B>main(&#160;)</B> creates a <B>Runtime</B> object by calling the <B>static</B>
+method <B>getRuntime(&#160;)</B> for the class <B>Runtime</B>. What&#8217;s
+returned is a handle to a <B>Runtime</B> object; whether this is a static object
+or one created with <B>new</B> doesn&#8217;t need to concern you, since you can
+use the objects without worrying about who&#8217;s responsible for cleaning them
+up. As shown, the <B>Runtime</B> object can tell you information about memory
+usage.</FONT><A NAME="_Toc375545234"></A><A NAME="_Toc408018435"></A><BR></P></DIV>
+<A NAME="Heading80"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Comments and embedded
+documentation<BR><A NAME="Index81"></A><A NAME="Index82"></A></H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">There are two types of comments in
+Java. The first is the traditional C-style comment that was inherited by C++.
+These comments begin with a <B>/*</B> and continue, possibly across many lines,
+until a <B>*/</B>. Note that many programmers will begin each line of a
+continued comment with a <B>*</B>, so you&#8217;ll often see:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>/* This is
+*  A comment that continues
+*  Across lines
+*/</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Remember, however, that everything
+inside the <B>/*</B> and <B>*/</B> is ignored so it&#8217;s no different to
+say:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>/* This is a comment that
+continues across lines */</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The second form of comment comes
+from C++. It is the single-line comment, which starts at a <B>//</B> and
+continues until the end of the line. This type of comment is convenient and
+commonly used because it&#8217;s easy. You don&#8217;t need to hunt on the
+keyboard to find <B>/</B> and then <B>*</B> (you just press the same key twice),
+and you don&#8217;t need to close the comment. So you will often
+see:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>// this is a one-line comment</font></PRE></FONT></BLOCKQUOTE><DIV ALIGN="LEFT"><P><A NAME="_Toc375545235"></A><A NAME="_Toc408018436"></A><BR></P></DIV>
+<A NAME="Heading81"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Comment documentation</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">One of the thoughtful parts of the
+Java language is that the designers didn&#8217;t consider writing code to be the
+only important activity &#8211; they also thought about documenting it. Possibly
+the biggest problem with documenting code has been maintaining that
+documentation. If the documentation and the code are separate, it becomes a
+hassle to change the documentation every time you change the code. The solution
+seems simple: link the code to the documentation. The easiest way to do this is
+to put everything in the same file. To complete the picture, however, you need a
+special comment syntax to mark special documentation and a tool to extract those
+comments and put them in a useful form. This is what Java has
+done.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The tool to extract the comments is
+called <I>javadoc.</I> It uses some of the technology from the Java compiler to
+look for special comment tags you put in your programs. It not only extracts the
+information marked by these tags, but it also pulls out the class name or method
+name that adjoins the comment. This way you can get away with the minimal amount
+of work to generate decent program documentation.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The output of javadoc is an HTML
+file that you can view with your Web browser. This tool allows you to create and
+maintain a single source file and automatically generate useful documentation.
+Because of javadoc we have a standard for creating documentation, and it&#8217;s
+easy enough that we can expect or even demand documentation with all Java
+libraries.</FONT><A NAME="_Ref348399283"></A><A NAME="_Toc375545236"></A><A NAME="_Toc408018437"></A><BR></P></DIV>
+<A NAME="Heading82"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Syntax</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">All of the javadoc commands occur
+only within <B>/**</B> comments. The comments end with <B>*/ </B>as usual. There
+are two primary ways to use javadoc: embed HTML, or use &#8220;doc tags.&#8221;
+Doc tags are commands that start with a &#8216;<B>@</B>&#8217; and are placed at
+the beginning of a comment line. (A leading &#8216;<B>*</B>&#8217;, however, is
+ignored.)</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">There are three &#8220;types&#8221;
+of comment documentation, which correspond to the element the comment precedes:
+class, variable, or method. That is, a class comment appears right before the
+definition of a class; a variable comment appears right in front of the
+definition of a variable and a method comment appears right in front of the
+definition of a method. As a simple example:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>/** A class comment */</font>
+<font color=#0000ff>public</font> <font color=#0000ff>class</font> docTest {
+  <font color=#009900>/** A variable comment */</font>
+  <font color=#0000ff>public</font> <font color=#0000ff>int</font> i;
+  <font color=#009900>/** A method comment */</font>
+  <font color=#0000ff>public</font> <font color=#0000ff>void</font> f() {}
+}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Note that javadoc will process
+comment documentation for only <B>public </B>and <B>protected </B>members.
+Comments for <B>private </B>and &#8220;friendly&#8221; (see Chapter 5) members
+are ignored and you&#8217;ll see no output. (You can use the <B>-private
+</B>flag to include <B>private</B> members as well.) This makes sense, since
+only <B>public</B> and <B>protected</B> members are available outside the file,
+which is the client programmer&#8217;s perspective. However, all <B>class</B>
+comments are included in the output.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The output for the above code is an
+HTML file that has the same standard format as all the rest of the Java
+documentation, so users will be comfortable with the format and can easily
+navigate your classes. It&#8217;s worth entering the above code, sending it
+through javadoc and viewing the resulting HTML file to see the
+results.</FONT><A NAME="_Toc375545237"></A><A NAME="_Toc408018438"></A><BR></P></DIV>
+<A NAME="Heading83"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Embedded HTML</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Javadoc passes HTML commands
+through to the generated HTML document. This allows you full use of HTML;
+however, the primary motive is to let you format code, such as:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>/**
+* &lt;pre&gt;
+* System.out.println(new Date());
+* &lt;/pre&gt;
+*/</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You can also use HTML just as you
+would in any other Web document to format the regular text in your
+descriptions:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>/**
+* You can &lt;em&gt;even&lt;/em&gt; insert a list:
+* &lt;ol&gt;
+* &lt;li&gt; Item one
+* &lt;li&gt; Item two
+* &lt;li&gt; Item three
+* &lt;/ol&gt;
+*/</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Note that within the documentation
+comment, asterisks at the beginning of a line are thrown away by javadoc, along
+with leading spaces. Javadoc reformats everything so that it conforms to the
+standard documentation appearance. Don&#8217;t use headings such as
+<B>&lt;h1&gt;</B> or <B>&lt;hr&gt;</B> as embedded HTML because javadoc inserts
+its own headings and yours will interfere with them.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">All types of comment documentation
+&#8211; class, variable, and method &#8211; can support embedded
+HTML.</FONT><A NAME="_Toc375545238"></A><A NAME="_Toc408018439"></A><BR></P></DIV>
+<A NAME="Heading84"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+@see: referring to other classes</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">All three types of comment
+documentation can contain <B>@see</B> tags, which allow you to refer to the
+documentation in other classes. Javadoc will generate HTML with the <B>@see</B>
+tags hyperlinked to the other documentation. The forms are:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>@see classname
+@see fully-qualified-classname
+@see fully-qualified-classname#method-name</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Each one adds a hyperlinked
+&#8220;See Also&#8221; entry to the generated documentation. Javadoc will not
+check the hyperlinks you give it to make sure they are
+valid.</FONT><A NAME="_Toc375545239"></A><A NAME="_Toc408018440"></A><BR></P></DIV>
+<A NAME="Heading85"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Class documentation tags</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Along with embedded HTML and
+<B>@see </B>references, class documentation can include tags for version
+information and the author&#8217;s name. Class documentation can also be used
+for <I>interfaces</I> (described later in the book).</FONT><BR></P></DIV>
+<A NAME="Heading86"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+@version</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This is of the
+form:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>@version version-information</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">in which <B>version-information</B>
+is any significant information you see fit to include. When the <B>-version</B>
+flag is placed on the javadoc command line, the version information will be
+called out specially in the generated HTML documentation.</FONT><BR></P></DIV>
+<A NAME="Heading87"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+@author</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This is of the
+form:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>@author author-information</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">in which <B>author-information</B>
+is, presumably, your name, but it could also include your email address or any
+other appropriate information. When the <B>-author </B>flag is placed on the
+javadoc command line, the author information will be called out specially in the
+generated HTML documentation.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You can have multiple author tags
+for a list of authors, but they must be placed consecutively. All the author
+information will be lumped together into a single paragraph in the generated
+HTML.</FONT><A NAME="_Toc375545240"></A><A NAME="_Toc408018441"></A><BR></P></DIV>
+<A NAME="Heading88"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Variable documentation tags</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Variable documentation can include
+only embedded HTML and <B>@see</B>
+references.</FONT><A NAME="_Toc375545241"></A><A NAME="_Toc408018442"></A><BR></P></DIV>
+<A NAME="Heading89"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Method documentation tags</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">As well as embedded documentation
+and <B>@see</B> references, methods allow documentation tags for parameters,
+return values, and exceptions.</FONT><BR></P></DIV>
+<A NAME="Heading90"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+@param</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This is of the
+form:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>@param parameter-name description</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">in which <B>parameter-name </B>is
+the identifier in the parameter list, and <B>description </B>is text that can
+continue on subsequent lines. The description is considered finished when a new
+documentation tag is encountered. You can have any number of these, presumably
+one for each parameter.</FONT><BR></P></DIV>
+<A NAME="Heading91"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+@return</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This is of the
+form:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>@<font color=#0000ff>return</font> description</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">in which <B>description</B> gives
+you the meaning of the return value. It can continue on subsequent
+lines.</FONT><BR></P></DIV>
+<A NAME="Heading92"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+@exception</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Exceptions will be described in
+Chapter 9, but briefly they are objects that can be &#8220;thrown&#8221; out of
+a method if that method fails. Although only one exception object can emerge
+when you call a method, a particular method might produce any number of
+different types of exceptions, all of which need descriptions. So the form for
+the exception tag is:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>@exception fully-qualified-<font color=#0000ff>class</font>-name description</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">in which
+<B>fully-qualified-class-name</B> gives an unambiguous name of an exception
+class that&#8217;s defined somewhere, and <B>description</B> (which can continue
+on subsequent lines) tells you why this particular type of exception can emerge
+from the method call.</FONT><BR></P></DIV>
+<A NAME="Heading93"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+@deprecated</H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">This is new in Java
+1.1<A NAME="Index83"></A>. It is used to tag features that were superseded by an
+improved feature. The deprecated tag is a suggestion that you no longer use this
+particular feature, since sometime in the future it is likely to be removed.
+Methods that are marked <B>@deprecated</B> cause the compiler to issue warnings
+if it is
+used.</FONT><A NAME="_Toc375545242"></A><A NAME="_Toc408018443"></A><BR></P></DIV>
+<A NAME="Heading94"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Documentation example</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"> Here is the first Java program
+again, this time with documentation comments added:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#009900>//: Property.java</font>
+<font color=#0000ff>import</font> java.util.*;
+
+<font color=#009900>/** The first Thinking in Java example program.
+ * Lists system information on current machine.
+ * @author Bruce Eckel
+ * @author http://www.BruceEckel.com
+ * @version 1.0 
+*/</font>
+<font color=#0000ff>public</font> <font color=#0000ff>class</font> Property {
+  <font color=#009900>/** Sole entry point to class &amp; application
+   * @param args array of string arguments
+   * @return No return value
+   * @exception exceptions No exceptions thrown
+  */</font>
+  <font color=#0000ff>public</font> <font color=#0000ff>static</font> <font color=#0000ff>void</font> main(String[] args) {
+    System.out.println(<font color=#0000ff>new</font> Date());
+    Properties p = System.getProperties();
+    p.list(System.out);
+    System.out.println(<font color=#004488>"--- Memory Usage:"</font>);
+    Runtime rt = Runtime.getRuntime();
+    System.out.println(<font color=#004488>"Total Memory = "</font>
+                       + rt.totalMemory()
+                       + <font color=#004488>" Free Memory = "</font>
+                       + rt.freeMemory());
+  }
+} <font color=#009900>///:~</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The first line:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>   <font color=#009900>//: Property.java</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">uses my own technique of putting a
+&#8216;<B>:</B>&#8217; as a special marker for the comment line containing the
+source file name. The last line also finishes with a comment, and this one
+indicates the end of the source code listing, which allows it to be
+automatically extracted from the text of the book and checked with a compiler.
+This is described in detail in Chapter
+17.</FONT><A NAME="_Toc312373851"></A><A NAME="_Toc375545243"></A><A NAME="_Toc408018444"></A><BR></P></DIV>
+<A NAME="Heading95"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Coding style</H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The unofficial standard in Java is
+to capitalize the first letter of a class name. If the class name consists of
+several words, they are run together (that is, you don&#8217;t use underscores
+to separate the names) and the first letter of each embedded word is
+capitalized, such as:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>class</font> AllTheColorsOfTheRainbow { <font color=#009900>// ...</font></PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">For almost everything else:
+methods, fields (member variables) and object handle names, the accepted style
+is just as it is for classes <I>except</I> that the first letter of the
+identifier is lower case. For example:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>class</font> AllTheColorsOfTheRainbow {
+  <font color=#0000ff>int</font> anIntegerRepresentingColors;
+  <font color=#0000ff>void</font> changeTheHueOfTheColor(<font color=#0000ff>int</font> newHue) {
+    <font color=#009900>// ...</font>
+  }
+  <font color=#009900>// ...</font>
+}</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Of course, you should remember that
+the user must also type all these long names, and be merciful.
+</FONT><A NAME="_Toc375545244"></A><A NAME="_Toc408018445"></A><BR></P></DIV>
+<A NAME="Heading96"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Summary</H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">In this chapter you have seen
+enough of Java programming to understand how to write a simple program, and you
+have gotten an overview of the language and some of its basic ideas. However,
+the examples so far have all been of the form &#8220;do this, then do that, then
+do something else.&#8221; What if you want the program to make choices, such as
+&#8220;if the result of doing this is red, do that, if not, then do something
+else&#8221;? The support in Java for this fundamental programming activity will
+be covered in the next
+chapter.</FONT><A NAME="_Toc375545245"></A><A NAME="_Toc408018446"></A><BR></P></DIV>
+<A NAME="Heading97"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Exercises</H2></FONT>
+<OL>
+<LI><FONT FACE="Verdana" SIZE=5>	</FONT><FONT FACE="Georgia">Following
+the first example in this chapter, create a &#8220;Hello, World&#8221; program
+that simply prints out that statement. You need only a single method in your
+class (the &#8220;main&#8221; one that gets executed when the program starts).
+Remember to make it <B>static</B> and to put the argument list in, even though
+you don&#8217;t use the argument list. Compile the program with <B>javac</B> and
+run it using
+<B>java</B>.</FONT><LI><FONT FACE="Verdana" SIZE=5>	</FONT><FONT FACE="Georgia">Write
+a program that prints three arguments taken from the command
+line.</FONT><LI><FONT FACE="Verdana" SIZE=5>	</FONT><FONT FACE="Georgia">Find
+the code for the second version of <B>Property.java</B>, which is the simple
+comment documentation example. Execute <B>javadoc</B> on the file and view the
+results with your Web
+browser.</FONT><LI><FONT FACE="Verdana" SIZE=5>	</FONT><FONT FACE="Georgia">Take
+the program in Exercise 1 and add comment documentation to it. Extract this
+comment documentation into an HTML file using <B>javadoc</B> and view it with
+your Web
+browser.</FONT><LI><FONT FACE="Verdana" SIZE=5>	</FONT></OL><HR><DIV ALIGN="LEFT"><P><A NAME="fn11" HREF="#fnB11">[11]</A><FONT FACE="Georgia" SIZE=2>
+In Java version 1.1 only, not in 1.0.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><A NAME="fn12" HREF="#fnB12">[12]</A><FONT FACE="Georgia" SIZE=2>
+In C++ you should often use the safer containers in the Standard Template
+Library as an alternative to arrays.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><A NAME="fn13" HREF="#fnB13">[13]</A><FONT FACE="Georgia" SIZE=2>
+<B>static</B> methods, which you&#8217;ll learn about soon, can be called <I>for
+the class</I>, without an object.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><A NAME="fn14" HREF="#fnB14">[14]</A><FONT FACE="Georgia" SIZE=2>
+With the usual exception of the aforementioned &#8220;special&#8221; data types
+<B>boolean, char</B>, <B>byte</B>, <B>short</B>, <B>int</B>, <B>long</B>,<B>
+float,</B> and <B>double</B>. In general, though, you pass objects, which really
+means you pass handles to objects.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><A NAME="fn15" HREF="#fnB15">[15]</A><FONT FACE="Georgia" SIZE=2>
+Some programming environments will flash programs up on the screen and close
+them before you've had a chance to see the results. You can put in the following
+bit of code at the end of <B>main(&#160;)</B> to pause the
+output:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>  <font color=#0000ff>try</font> {
+      Thread.currentThread().sleep(5 * 1000);
+    } <font color=#0000ff>catch</font>(InterruptedException e) {}
+  }</PRE></FONT></BLOCKQUOTE><DIV ALIGN="LEFT"><P><FONT FACE="Georgia" SIZE=2>This will pause the
+output for five seconds. This code involves concepts that will not be introduced
+until much later in the book, so you won&#8217;t understand it until then, but
+it will do the trick.</FONT><BR></P></DIV>
+
+<DIV ALIGN="CENTER">
+    <FONT FACE="Verdana" size = "-1">
+     [ <a href="Chapter01.html">Previous Chapter</a> ] 
+    [ <a href="SimpleContents.html">Short TOC</a> ] 
+    [ <a href="Contents.html">Table of Contents</a> ] 
+    [ <a href="DocIndex.html">Index</a> ]
+     [ <a href="Chapter03.html">Next Chapter</a> ] 
+    </FONT>
+    <BR>
+ Last Update:02/04/2000</P></DIV>
+
+</BODY>
+
+</HTML>

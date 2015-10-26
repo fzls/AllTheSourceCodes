@@ -1,0 +1,689 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<!--
+This document was converted from RTF source: 
+By rtftohtml 4.19
+See http://www.sunpack.com/RTF
+Filename:Tjava14.rtf
+Application Directory:c:\TOOLS\RTF2HTML\
+Subject:
+Author:Bruce Eckel
+Operator:Bruce Eckel
+Document Comments:
+Version Comments:
+Comments:
+Keywords:
+Translation Date:02/04/2000
+Translation Time:23:26:30
+Translation Platform:Win32
+Number of Output files:27
+This File:AppendixD.html
+SplitDepth=1
+SkipNavPanel=1
+SkipLeadingToc=1
+SkipTrailingToc=1
+GenContents=1
+GenFrames=1
+GenIndex=1
+-->
+<HEAD lang="en"><META http-equiv="Content-Type" content="text/html">
+<TITLE>D: Performance</TITLE>
+</HEAD>
+
+<BODY  BGCOLOR="#FFFFFF"><DIV ALIGN="CENTER">
+  <a href="http://www.MindView.net">
+  <img src="mindview-head.gif" alt="MindView Inc." BORDER = "0"></a>
+  <CENTER>
+    <FONT FACE="Verdana" size = "-1">
+    [ <a href="README-HTML.txt">Viewing Hints</a> ]
+    [ <a href="http://www.mindview.net/TIJ2/index.html">2nd Edition</a> ]
+    [ <a href="http://www.mindview.net/MailingList.html">Free Newsletter</a> ] <br>
+    [ <a href="http://www.mindview.net/Training.html">Seminars</a> ]
+    [ <a href="http://www.mindview.net/javaCD2.html">Seminars on CD ROM</a> ]
+    [ <a href="http://www.mindview.net/CPPServices/#ConsultingServices">Consulting</a> ]
+    </FONT>
+  <H2><FONT FACE="Verdana">
+  Thinking in Java, 1st edition</FONT></H2>
+  <H3><FONT FACE="Verdana">&copy;1998 by Bruce Eckel</FONT></H3>
+  
+    <FONT FACE="Verdana" size = "-1">
+     [ <a href="AppendixC.html">Previous Chapter</a> ] 
+    [ <a href="SimpleContents.html">Short TOC</a> ] 
+    [ <a href="Contents.html">Table of Contents</a> ] 
+    [ <a href="DocIndex.html">Index</a> ]
+     [ <a href="AppendixE.html">Next Chapter</a> ] 
+    </FONT>
+    
+  </CENTER>
+  </P></DIV><A NAME="_Toc407441465"></A><A NAME="_Toc408018849"></A><A NAME="Heading633"></A><FONT FACE = "Verdana"><H1 ALIGN="LEFT">
+D: Performance</H1></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Verdana" SIZE=4>This appendix was
+contributed by and used with the permission of Joe Sharp, consultant
+(SharpJoe@aol.com).</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><A NAME="Index3120"></A><FONT FACE="Georgia">The Java
+language emphasizes accurate, reliable behavior at the expense of performance.
+This is reflected in features such as automatic garbage collection, rigorous
+runtime checking, complete byte code checking, and conservative runtime
+synchronization. Availability on a wide choice of platforms leads, at present,
+to an interpreted virtual machine that further handicaps performance.
+</FONT>About performance, <FONT FACE="Georgia">Steve McConnell [16]
+quoted: &#8220;Complete it first, and then perfect it. The part that needs to be
+perfect is usually small.&#8221; This appendix will aid you in locating and
+optimizing that &#8220;part that needs to be
+perfect.&#8221;</FONT><A NAME="_Toc408018850"></A><BR></P></DIV>
+<A NAME="Heading634"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Basic approach </H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">You should address performance only
+after you have a correct and fully tested program:</FONT><BR></P></DIV>
+<OL>
+<LI><FONT FACE="Georgia">	Measure the program&#8217;s performance under
+realistic conditions. If it meets your requirements, you are finished. If not,
+go to the next step.</FONT><LI><FONT FACE="Georgia">	Find the most
+critical performance bottleneck. This might require considerable ingenuity, but
+the effort will pay off. If you simply guess where the bottleneck is and try to
+optimize there, you&#8217;ll waste your
+time.</FONT><LI><FONT FACE="Georgia">	Apply the speed improvement
+techniques discussed in this appendix, then return to Step
+1.</FONT></OL><DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Finding the critical
+bottleneck is the key to cost-effective effort &#8211; Donald Knuth [9] improved
+a program where 50 percent of the time was spent in less than 4 percent of the
+code. He changed a few lines in an hour of work and doubled the program speed.
+Working on the rest of the program would have dissipated his valuable time and
+effort. To quote Knuth, &#8220;Premature optimization is the root of all
+evil.&#8221; It is wise to restrain your impulses to optimize early because you
+may forgo many useful programming techniques, resulting in code that&#8217;s
+harder to understand, riskier, and requires more effort to
+maintain.</FONT><A NAME="_Toc408018851"></A><BR></P></DIV>
+<A NAME="Heading635"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Locating the bottleneck</H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Three approaches to locating the
+performance-critical part of a program
+are:</FONT><A NAME="_Toc408018852"></A><BR></P></DIV>
+<A NAME="Heading636"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+1. Install your own instrumentation</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">&#8220;Profile&#8221; code by
+inserting explicit timing: </FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE><font color=#0000ff>long</font> start = System.currentTimeMillis();
+   <font color=#009900>// Operation to be timed goes here</font>
+<font color=#0000ff>long</font> time = System.currentTimeMillis() - start;</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Have an infrequently-used method
+print cumulative times out to the console window with
+<B>System.out.println(&#160;).</B> Since the compiler will ignore it when false,
+a <B>static final boolean</B> switch can turn the timing on and off so the code
+can efficiently be left in place in released code, ready for emergency use at
+any time. Even when more sophisticated profiling is available, this is a
+convenient way to time a specific task or operation.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>System.currentTimeMillis(&#160;)</B>
+returns time in 1/1000ths of a second. However, some systems with time
+resolution less than a millisecond (such as a Windows PC) need to repeat an
+operation <B>n</B> times and divide the total time by <B>n</B> to get accurate
+estimates. </FONT><A NAME="_Toc408018853"></A><BR></P></DIV>
+<A NAME="Heading637"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+2. JDK profiling [2]<BR><A NAME="Index3121"></A></H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The JDK comes with a built-in
+profiler that keeps track of the time spent in each routine and writes the
+information to a file. Unfortunately, the JDK profilers have uneven performance.
+JDK 1.1.1 works, but subsequent releases have had various
+instabilities.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">To run the profiler, use the
+<B>-prof </B>option when invoking the unoptimized versions of the Java
+interpreter, for example: </FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>java_g -prof myClass</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Or with an applet:
+</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>java_g -prof sun.applet.AppletViewer applet.html</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The profiler output is not
+particularly easy to decipher. In fact, in JDK 1.0 it truncates the method names
+to 30 characters, so it might not be possible to distinguish between some
+methods. However, if your platform does support the <B>-prof</B> option, either
+Vladimir Bulatov&#8217;s <I>HyperProf </I>[3] or Greg White&#8217;s
+<I>ProfileViewer</I> [4] will help interpret the
+results.</FONT><A NAME="_Toc408018854"></A><BR></P></DIV>
+<A NAME="Heading638"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+3. Special tools</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">The best way to keep up with the
+exploding field of performance optimization tools is through a Web site such as
+Jonathan Hardwick&#8217;s <I>Tools for Optimizing</I> <I>Java </I>[5] at
+<I>http://www.cs.cmu.edu/~jch/java/tools.html</I>.</FONT><A NAME="_Toc408018855"></A><BR></P></DIV>
+<A NAME="Heading639"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Tips for measuring performance</H3></FONT>
+<UL>
+<LI><FONT FACE="Symbol">	</FONT><FONT FACE="Georgia">Since profiling uses
+clock time, make every effort to remove other processes during the
+measurement.</FONT><LI><FONT FACE="Symbol">	</FONT><FONT FACE="Georgia">Always
+time the code before and after making changes to verify that, at least on the
+test platform, your changes improved the program. (Jon Bentley mentioned that
+some of his most logical changes actually slowed the program
+down.)</FONT><LI><FONT FACE="Symbol">	</FONT><FONT FACE="Georgia">Try to
+make each timing test under identical conditions.
+</FONT><LI><FONT FACE="Symbol">	</FONT><FONT FACE="Georgia">If possible,
+contrive a test that doesn&#8217;t rely on any user input to avoid variations in
+user response that can cause the results to fluctuate.
+</FONT><A NAME="_Toc408018856"></A></UL><A NAME="Heading640"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+Speedup techniques </H2></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Now that the critical region has
+been isolated, you can apply two types of
+<A NAME="Index3122"></A>optimizations<B>: </B>generic techniques and those
+specific to Java.</FONT><A NAME="_Toc408018857"></A><BR></P></DIV>
+<A NAME="Heading641"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Generic approaches</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">An effective generic speedup is to
+redefine the program in a more practical way. For example, in <I>Programming
+Pearls</I> [14], Bentley describes Doug McIlroy&#8217;s representation of the
+English language with a novel data depiction that enabled him to produce a
+remarkably fast, compact spelling checker. In addition, choosing a better
+algorithm will probably give a bigger performance gain than any other approach,
+particularly as the size of the data set increases. For more of these generic
+approaches, see the general book listings [12-19] at the end of this appendix.
+</FONT><A NAME="_Toc408018858"></A><BR></P></DIV>
+<A NAME="Heading642"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Language dependent approaches</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">To put things in perspective,
+it&#8217;s useful to look at the time it takes to perform various operations. So
+that the results are relatively independent of the computer being used, they
+have been normalized by dividing by the time it takes to make a local
+assignment.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><TABLE BORDER>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Operation</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Example</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Normalized time</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Local assignment</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>i = n;</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">1.0</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Instance
+assignment</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>this.i = n;</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">1.2</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>int</B>
+increment</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>i++;</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">1.5</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>byte</B>
+increment</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>b++;</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">2.0</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>short</B>
+increment</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>s++;</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">2.0</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>float</B>
+increment</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>f++;</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">2.0</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>double</B>
+increment</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>d++;</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">2.0</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Empty loop</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>while(true)
+n++;</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">2.0</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Ternary expression</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>(x&lt;0) ? -x :
+x</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">2.2</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Math call</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Math.abs(x);</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">2.5</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Array assignment</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>a[0] = n;</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">2.7</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>long</B>
+increment</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>l++;</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">3.5</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Method call</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>funct(&#160;);</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">5.9</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>throw</B> and <B>catch</B>
+exception</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>try{ throw e; }
+catch(e){}</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">320</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>synchronized</B> method
+call</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>synchMethod(&#160;);</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">570</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>New</B>
+<B>Object</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>new
+Object(&#160;);</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">980</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>New</B> array</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>new
+int[10];</B></FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">3100</FONT><BR></P></DIV>
+</TD>
+</TR>
+</TABLE></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Using present systems (such as
+Pentium 200 pro, Netscape 3, and JDK 1.1.5), these relative times show the
+extraordinary cost of new objects and arrays, the heavy cost of synchronization,
+and the modest cost of an unsynchronized method call. References [5] and [6]
+give the Web address of measurement applets you can run on your own
+machine.</FONT><BR></P></DIV>
+<A NAME="Heading643"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+General modifications </H4></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Here are some modifications that
+you can make to speed up time-critical parts of your Java program. (Be sure to
+test the performance before and after you try them.)</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><TABLE BORDER>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Replace</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">With</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Why</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Interface</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Abstract Class (when only one
+parent is needed)</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Multiple inheritance of interfaces
+prevents some optimizations.</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Non-local or array loop
+variable</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Local loop
+variable</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Time (above) shows an instance
+integer assignment is 1.2 local integer assignments, but an array assignment is
+2.7 local integer assignments.</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Linked list (fixed
+size)</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Saving discarded link items or
+replacing the list with a circular array (in which approximate size is
+known)</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Each new object takes 980 local
+assignments. See Reusing Objects (below), Van Wyk [12] p. 87 and Bentley[15] p.
+81</FONT><BR></P></DIV>
+</TD>
+</TR>
+<TR VALIGN="TOP">
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">x/2 (or any power of
+2)</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">X &gt;&gt; 2
+</FONT><BR><FONT FACE="Georgia">(or any power of 2)</FONT><BR></P></DIV>
+</TD>
+<TD>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">Uses faster hardware
+instructions</FONT><BR></P></DIV>
+</TD>
+</TR>
+<A NAME="_Toc408018859"></A></TABLE></P></DIV>
+<A NAME="Heading644"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Specific situations</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>The cost of Strings</B>: The
+<B>String</B> concatenation operator + looks innocent but involves a lot of
+work. The compiler can efficiently concatenate constant strings, but a variable
+string requires considerable processing. For example, if <B>s</B> and <B>t</B>
+are <B>String</B> variables:</FONT><BR></P></DIV>
+
+<BLOCKQUOTE><FONT SIZE = "+1"><PRE>System.out.println(<font color=#004488>"heading"</font> + s + <font color=#004488>"trailer"</font> + t);</PRE></FONT></BLOCKQUOTE>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">this requires a new
+<B>StringBuffer</B>, appending arguments, and converting the result back to a
+<B>String </B>with <B>toString(&#160;)</B>. This costs both space and time. If
+you&#8217;re appending more than one <B>String</B>, consider using a
+<B>StringBuffer</B> directly, especially if you can repeatedly reuse it in a
+loop. Preventing the creation of a new <B>StringBuffer</B> on each iteration
+saves the object creation time of 980 seen earlier. Using
+<B>substring(&#160;)</B> and the other <B>String</B> methods is usually an
+improvement. When feasible, character arrays are even faster. Also notice that
+<B>StringTokenizer</B> is costly because of synchronization.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Synchronization</B>: In the JDK
+interpreter, calling a <B>synchronized</B> method is typically 10 times slower
+than calling an unsynchronized method. With JIT compilers, this performance gap
+has increased to 50 to 100 times (notice the timing above shows it to be 97
+times slower). Avoid <B>synchronized</B> methods if you can &#8211; if you
+can&#8217;t, synchronizing on methods rather than on code blocks is slightly
+faster.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Reusing objects</B>: It takes a
+long time to create an object (the timing above shows 980 assignment times for a
+new <B>Object</B>, and 3100 assignment times for a small new array), so
+it&#8217;s often worth saving and updating the fields of an old object instead
+of creating a new object. For example, rather than creating a new <B>Font</B>
+object in your <B>paint(&#160;)</B> method, you can declare it an instance
+object, initialize it once, and then just update it when necessary in
+<B>paint(&#160;)</B>. See also Bentley, <I>Programming Pearls</I> p. 81
+[15].</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Exceptions</B>: You should only
+throw exceptions in abnormal situations, which are usually cases in which
+performance is not an issue since the program has run into a problem that it
+doesn&#8217;t normally expect. When optimizing, combine small
+<B>try</B>-<B>catch</B> blocks, which thwart compiler optimization by breaking
+the code into small independent sections. On the other hand, be careful of
+sacrificing the robustness of your code by over-zealous removal of exception
+handling.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Hashing: </B>The standard
+<B>Hashtable</B> class in Java 1.0 and 1.1 requires casting and costly
+synchronization (570 assignment times). Furthermore, the early JDK library
+doesn&#8217;t deliberately choose prime number table sizes. Finally, a hashing
+function should be designed for the particular characteristics of the keys
+actually used. For all these reasons, the generic <B>Hashtable</B> can be
+improved by designing a hash class that fits a particular application<B>.</B>
+Note that the <B>HashMap</B> in the Java 1.2 collections library has much
+greater flexibility and isn&#8217;t automatically
+<B>synchronized</B>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Method inlining:</B> Java
+compilers can inline a method only if it is <B>final</B>, <B>private</B>, or
+<B>static</B>, and in some cases it must have no local variables. If your code
+spends a lot of time calling a method that has none of these modifiers, consider
+writing a version that is <B>final</B>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>I/O</B>: Use buffers wherever
+possible, otherwise you can end up doing I/O a single byte at a time. Note that
+the JDK 1.0 I/O classes use a lot of synchronization, so you might get better
+performance by using a single &#8220;bulk&#8221; call such as
+<B>readFully(&#160;)</B> and then interpreting the data yourself. Also notice
+that the Java 1.1 &#8220;reader&#8221; and &#8220;writer&#8221; classes were
+designed for improved performance.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Casts and instanceof</B>:<B>
+</B>Casts take from 2 to 200 assignment times. The more costly ones require
+travel up the inheritance hierarchy. Other costly operations lose and restore
+capabilities of the lower level constructs.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Graphics:</B> Use clipping to
+reduce the amount of work done in <B>repaint(&#160;)</B>, double buffering to
+improve perceived speed, and image strips or compression to speed downloading
+times. <I>Animation in Java Applets</I> from JavaWorld and <I>Performing
+Animation</I> from Sun are two good tutorials. Remember to use high-level
+primitives; it&#8217;s much faster to call <B>drawPolygon(&#160;)</B> on a bunch
+of points than looping with <B>drawLine(&#160;)</B>. If you must draw a
+one-pixel-wide line, <B>drawLine(x,y,x,y)</B> is faster than
+<B>fillRect(x,y,1,1)</B>.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Using API classes</B>: Use
+classes from the Java API when they offer native machine performance that you
+can&#8217;t match using Java. For example, <B>arrayCopy(&#160;)</B> is much
+faster than using a loop to copy an array of any significant size.
+</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia"><B>Replacing API classes</B>:
+Sometimes API classes do more than you need, with a corresponding increase in
+execution time. For these you can write specialized versions that do less but
+run faster. For example, one application that needed a container to store many
+arrays was speeded by replacing the original <B>Vector</B> with a faster dynamic
+array of objects.</FONT><BR></P></DIV>
+<A NAME="Heading645"></A><FONT FACE = "Verdana"><H4 ALIGN="LEFT">
+Other suggestions</H4></FONT>
+<UL>
+<LI><FONT FACE="Symbol">	</FONT><FONT FACE="Georgia">Move repeated
+constant calculations out of a critical loop, for example, computing
+<B>buffer.length</B> for a constant-size
+<B>buffer</B>.</FONT><LI><FONT FACE="Symbol">	</FONT><FONT FACE="Georgia"><B>static
+final </B>constants can help the compiler optimize the program.
+</FONT><LI><FONT FACE="Symbol">	</FONT><FONT FACE="Georgia">Unroll fixed
+length
+loops.</FONT><LI><FONT FACE="Symbol">	</FONT><FONT FACE="Georgia">Use
+javac&#8217;s optimization option, <B>-O</B>, which optimizes compiled code by
+inlining <B>static</B>, <B>final</B>, and <B>private</B> methods. Note that your
+classes may get larger in size (JDK 1.1 or later only &#8211; earlier versions
+might not perform byte verification). Newer just-in-time (JIT) compilers will
+dramatically speed the
+code.</FONT><LI><FONT FACE="Symbol">	</FONT><FONT FACE="Georgia">Count
+down to zero whenever possible &#8211; this uses a special JVM byte
+code.</FONT><A NAME="_Toc408018860"></A></UL><A NAME="Heading646"></A><FONT FACE = "Verdana"><H2 ALIGN="LEFT">
+References<A NAME="_Toc408018861"></A></H2></FONT>
+<A NAME="Heading647"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Performance tools</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[1] MicroBenchmark running on
+Pentium Pro (200Mh), Netscape 3.0, JDK 1.1.4 (see reference [5]
+below).</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[2] Sun&#8217;s Java document page
+on the JDK Java interpreter
+<I>http://java.sun.com/products/JDK/tools/win32/java.html</I></FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[3] Vladimir Bulatov&#8217;s
+<I>HyperProf</I>
+<I>http://www.physics.orst.edu/~bulatov/HyperProf</I></FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[4] Greg White&#8217;s
+<I>ProfileViewer</I>
+<I>http://www.inetmi.com/~gwhi/ProfileViewer/ProfileViewer.html</I></FONT><A NAME="_Toc408018862"></A><BR></P></DIV>
+<A NAME="Heading648"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Web sites</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[5] The premiere online references
+for optimizing Java code are Jonathan Hardwick&#8217;s Java Optimization<I>
+</I>site at <I>http://www.cs.cmu.edu/~jch/java/optimization.html</I>,
+&#8220;Tools for Optimizing Java&#8221; at
+<I>http://www.cs.cmu.edu/~jch/java/tools.html</I>, and &#8220;Java
+Microbenchmarks&#8221; (with a quick 45 second measurement benchmark) at
+<I>http://www.cs.cmu.edu/~jch/java/benchmarks.html.</I>
+</FONT><A NAME="_Toc408018863"></A><BR></P></DIV>
+<A NAME="Heading649"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Articles</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[6] <I>Make Java fast: Optimize!
+How to get the greatest performance out of your code through low-level
+optimizations in Java </I>by<I> </I>Doug Bell
+<I>http://www.javaworld.com/javaworld/jw-04-1997/jw-04-optimize.html</I>,
+complete with an extensive annotated measurement Benchmark
+applet.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[7] <I>Java Optimization
+Resources</I>
+<I>http://www.cs.cmu.edu/~jch/java/resources.html</I></FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[8] <I>Optimizing Java for
+Speed</I> <I>http://www.cs.cmu.edu/~jch/java/speed.html</I></FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[9] <I>An Empirical Study of
+FORTRAN Programs</I> by Donald Knuth, 1971, Software &#8211; Practice and
+Experience, Volume 1 p. 105-33.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[10] <I>Building High-Performance
+Applications and Servers in Java: An Experiential Study</I>, by Jimmy Nguyen,
+Michael Fraenkel, Richard Redpath, Binh Q. Nguyen, and Sandeep K. Singhal; IBM
+Software Solutions, IBM T.J. Watson Research Center.
+<I>http://www.ibm.com/java/education/javahipr.html.</I></FONT><A NAME="_Toc408018864"></A><BR></P></DIV>
+<A NAME="Heading650"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+Java specific books</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[11] <I>Advanced Java, Idioms,
+Pitfalls, Styles, and Programming Tips</I>, by Chris<I> </I>Laffra, Prentice
+Hall, 1997. (Java 1.0) Chapter Sections
+11-20.</FONT><A NAME="_Toc408018865"></A><BR></P></DIV>
+<A NAME="Heading651"></A><FONT FACE = "Verdana"><H3 ALIGN="LEFT">
+General books</H3></FONT>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[12] <I>Data Structures and C
+Programs</I> by Christopher J. Van Wyk, Addison-Wesley, 1988.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[13] <I>Writing Efficient Programs
+</I>by Jon Bentley, Prentice Hall, 1982, especially p. 110 and p.
+145-151.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[14] <I>More Programming Pearls</I>
+by Jon Bentley. Association for Computing Machinery, February
+1988.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[15] <I>Programming Pearls</I> by
+Jon Bentley, Addison-Wesley 1989. Part II addresses generic performance
+enhancements.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[16] <I>Code Complete: A Practical
+Handbook of Software Construction </I>by Steve McConnell, Microsoft Press 1993,
+Chapter 9.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[17] <I>Object-Oriented System
+Development</I> by Champeaux, Lea, and Faure, Chapter 25.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[18] <I>The Art of Programming</I>
+by Donald Knuth, Volume 1 <I>Fundamental Algorithms </I>3<SUP>rd</SUP> Edition,
+1997; Volume 2, <I>Seminumerical Algorithms</I> 3<SUP>rd</SUP> Edition; Volume 3
+<I>Sorting and Searching</I> 2<SUP>nd</SUP> Edition, Addison-Wesley. The
+definitive encyclopedia of algorithms.</FONT><BR></P></DIV>
+<DIV ALIGN="LEFT"><P><FONT FACE="Georgia">[19] <I>Algorithms in C:
+Fundamentals, Data Structures, Sorting, Searching</I> by Robert Sedgewick,
+3<SUP>rd</SUP> Edition, Addison-Wesley 1997. The author is an apprentice of
+Knuth&#8217;s. This is one of seven editions devoted to several languages and
+contains timely, somewhat simpler treatments of
+algorithms.</FONT><A NAME="Appendix_D"></A><A NAME="_Toc375545510"></A><BR></P></DIV>
+
+<DIV ALIGN="CENTER">
+    <FONT FACE="Verdana" size = "-1">
+     [ <a href="AppendixC.html">Previous Chapter</a> ] 
+    [ <a href="SimpleContents.html">Short TOC</a> ] 
+    [ <a href="Contents.html">Table of Contents</a> ] 
+    [ <a href="DocIndex.html">Index</a> ]
+     [ <a href="AppendixE.html">Next Chapter</a> ] 
+    </FONT>
+    <BR>
+ Last Update:02/04/2000</P></DIV>
+
+</BODY>
+
+</HTML>

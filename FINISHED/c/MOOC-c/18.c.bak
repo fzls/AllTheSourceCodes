@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main(){
+   int a, n, i, j;
+   double s=0, temp;
+   scanf("%d%d",&a,&n);
+   
+   for(i=1;i<=n;i++){
+   	temp=1;
+   	for(j=0;j<i;j++)
+   	 temp*=a;
+   	s+=temp; 
+   	
+   	}
+   printf("%lf\n",s);
+   	
+}

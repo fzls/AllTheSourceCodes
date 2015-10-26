@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main(){
+	int z,x;
+   printf("%d\n",(z=0,1||(z=1),z));
+   system("pause");
+
+}

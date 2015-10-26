@@ -1,0 +1,22 @@
+#include "stdio.h"
+int main(void)
+{
+  int ri,repeat;
+  int i,n;
+  void dectobin(int n);
+
+  scanf("%d",&repeat);
+  for(ri=1;ri<=repeat;ri++){
+    scanf("%d",&n);
+    if(n=0)printf("0");
+    	else
+         dectobin(n);
+    printf("\n");
+  }
+}
+  void dectobin(int n){
+  	if(n!=0)
+  		dectobin(n/2);
+  	if(n!=0)	
+  	printf("%d",n%2);	
+  	}

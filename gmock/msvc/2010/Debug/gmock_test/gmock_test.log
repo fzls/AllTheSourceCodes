@@ -1,0 +1,28 @@
+﻿  gmock_all_test.cc
+E:\Programing\gmock-1.7.0\gmock-1.7.0\test/gmock-generated-function-mockers_test.cc(134): warning C4373: “testing::gmock_generated_function_mockers_test::MockFoo::TakesConst”: 虚函数重写“testing::gmock_generated_function_mockers_test::FooInterface::TakesConst”，当参数只在 const/volatile 限定符上有差异时，早期版本的编译器未进行重写
+  E:\Programing\gmock-1.7.0\gmock-1.7.0\test/gmock-generated-function-mockers_test.cc(91): note: 参见“testing::gmock_generated_function_mockers_test::FooInterface::TakesConst”的声明
+E:\Programing\gmock-1.7.0\gmock-1.7.0\include\gmock/gmock-matchers.h(530): error C2440: “return”: 无法从“testing::internal::EqMatcher<testing::gmock_matchers_test::ConvertibleFromAny>”转换为“testing::Matcher<testing::gmock_matchers_test::ConvertibleFromAny>”
+  E:\Programing\gmock-1.7.0\gmock-1.7.0\include\gmock/gmock-matchers.h(530): note: 无构造函数可以接受源类型，或构造函数重载决策不明确
+  E:\Programing\gmock-1.7.0\gmock-1.7.0\include\gmock/gmock-matchers.h(521): note: 编译类 模板 成员函数“testing::Matcher<testing::gmock_matchers_test::ConvertibleFromAny> testing::internal::MatcherCastImpl<T,M>::CastImpl(M,testing::internal::BooleanConstant<true>)”时
+          with
+          [
+              T=testing::gmock_matchers_test::ConvertibleFromAny,
+              M=testing::internal::EqMatcher<testing::gmock_matchers_test::ConvertibleFromAny>
+          ]
+  E:\Programing\gmock-1.7.0\gmock-1.7.0\include\gmock/gmock-matchers.h(509): note: 参见对正在编译的函数 模板 实例化“testing::Matcher<testing::gmock_matchers_test::ConvertibleFromAny> testing::internal::MatcherCastImpl<T,M>::CastImpl(M,testing::internal::BooleanConstant<true>)”的引用
+          with
+          [
+              T=testing::gmock_matchers_test::ConvertibleFromAny,
+              M=testing::internal::EqMatcher<testing::gmock_matchers_test::ConvertibleFromAny>
+          ]
+  E:\Programing\gmock-1.7.0\gmock-1.7.0\include\gmock/gmock-matchers.h(586): note: 参见对正在编译的类 模板 实例化“testing::internal::MatcherCastImpl<T,M>”的引用
+          with
+          [
+              T=testing::gmock_matchers_test::ConvertibleFromAny,
+              M=testing::internal::EqMatcher<testing::gmock_matchers_test::ConvertibleFromAny>
+          ]
+  E:\Programing\gmock-1.7.0\gmock-1.7.0\test/gmock-matchers_test.cc(634): note: 参见对正在编译的函数 模板 实例化“testing::Matcher<testing::gmock_matchers_test::ConvertibleFromAny> testing::MatcherCast<testing::gmock_matchers_test::ConvertibleFromAny,testing::internal::EqMatcher<testing::gmock_matchers_test::ConvertibleFromAny>>(M)”的引用
+          with
+          [
+              M=testing::internal::EqMatcher<testing::gmock_matchers_test::ConvertibleFromAny>
+          ]

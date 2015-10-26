@@ -1,0 +1,1139 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pr",
+				"prior"
+			],
+			[
+				"ini",
+				"initialize_c	initialize_c"
+			],
+			[
+				"next",
+				"Next"
+			],
+			[
+				"ph",
+				"phoneNum"
+			],
+			[
+				"has",
+				"hashvalue"
+			],
+			[
+				"v",
+				"vector"
+			],
+			[
+				"pnu",
+				"phoneNum"
+			],
+			[
+				"push",
+				"push_back	(sorts.cpp)"
+			],
+			[
+				"not",
+				"not_match"
+			],
+			[
+				"swa",
+				"swap_index"
+			],
+			[
+				"quick",
+				"QuickSort2"
+			],
+			[
+				"user",
+				"users"
+			],
+			[
+				"sub",
+				"submit_i"
+			],
+			[
+				"si",
+				"submit_i"
+			],
+			[
+				"use",
+				"users"
+			],
+			[
+				"pn",
+				"problem_num"
+			],
+			[
+				"wk",
+				"working"
+			],
+			[
+				"fid",
+				"findlength"
+			],
+			[
+				"find",
+				"findlength"
+			],
+			[
+				"sorttime",
+				"sorttime"
+			],
+			[
+				"clock",
+				"clock_t"
+			],
+			[
+				"sort_he",
+				"sort_heap	(Figure9-18.cpp)"
+			],
+			[
+				"Ins",
+				"InsertionSort"
+			],
+			[
+				"Qs",
+				"QuickSort"
+			],
+			[
+				"mid",
+				"middle"
+			],
+			[
+				"up",
+				"upper-1"
+			],
+			[
+				"fir",
+				"fisrt"
+			],
+			[
+				"Bus",
+				"BubbleSort"
+			],
+			[
+				"bes",
+				"test_best"
+			],
+			[
+				"test",
+				"test"
+			],
+			[
+				"cloc",
+				"clock_t	(sort.cpp)"
+			],
+			[
+				"temp",
+				"tempfunc	templated function"
+			],
+			[
+				"cunt",
+				"count"
+			],
+			[
+				"delete",
+				"delete_heap"
+			],
+			[
+				"li",
+				"little"
+			],
+			[
+				"pop",
+				"pop_back"
+			],
+			[
+				"rc",
+				"Road_cost"
+			],
+			[
+				"cost",
+				"costs"
+			],
+			[
+				"cos",
+				"costs"
+			],
+			[
+				"R",
+				"Road_cost"
+			],
+			[
+				"Int",
+				"INT_MAX"
+			],
+			[
+				"mg",
+				"MatrixUDG"
+			],
+			[
+				"cll",
+				"collected"
+			],
+			[
+				"leng",
+				"length"
+			],
+			[
+				"ds",
+				"distance"
+			],
+			[
+				"cla",
+				"class	class-..-(class)"
+			],
+			[
+				"cur",
+				"curr_setp"
+			],
+			[
+				"curr",
+				"curr"
+			],
+			[
+				"cu",
+				"curr_Path"
+			],
+			[
+				"mar",
+				"matrix"
+			],
+			[
+				"dis",
+				"min_distance"
+			],
+			[
+				"bs",
+				"BFS_test_connected"
+			],
+			[
+				"cout",
+				"count"
+			],
+			[
+				"cr",
+				"crocodiles"
+			],
+			[
+				"cc",
+				"crocodiles"
+			],
+			[
+				"cro",
+				"crocodiles_num"
+			],
+			[
+				"vn",
+				"vnodes"
+			],
+			[
+				"BF",
+				"BFS"
+			],
+			[
+				"ad",
+				"adjVer"
+			],
+			[
+				"en",
+				"eNode"
+			],
+			[
+				"enu",
+				"edg_num"
+			],
+			[
+				"BFs",
+				"BFS_connected"
+			],
+			[
+				"df",
+				"DFS_connected"
+			],
+			[
+				"ver",
+				"ver_num"
+			],
+			[
+				"wg",
+				"weight"
+			],
+			[
+				"adj",
+				"adjvertex"
+			],
+			[
+				"v1",
+				"vertex1"
+			],
+			[
+				"vert",
+				"vertexs"
+			],
+			[
+				"vertex",
+				"vertex_num"
+			],
+			[
+				"gra",
+				"graph"
+			],
+			[
+				"pa",
+				"pause	pause"
+			],
+			[
+				"clea",
+				"clear_text"
+			],
+			[
+				"wpl",
+				"WPL"
+			],
+			[
+				"cle",
+				"clear_text"
+			],
+			[
+				"move",
+				"moveDown"
+			],
+			[
+				"DE",
+				"DeleteMin"
+			],
+			[
+				"mh",
+				"minheap"
+			],
+			[
+				"ht",
+				"HuffmanTree"
+			],
+			[
+				"delte",
+				"DeleteMin"
+			],
+			[
+				"char",
+				"character"
+			],
+			[
+				"ct",
+				"clear_text"
+			],
+			[
+				"avl",
+				"avl_tree	(AVL_tree.cpp)"
+			],
+			[
+				"ps",
+				"push_back"
+			],
+			[
+				"merge",
+				"merge_tree"
+			],
+			[
+				"dev",
+				"delete_avl	(AVL_tree.cpp)"
+			],
+			[
+				"b",
+				"beginend	$1.begin(), $1.end()"
+			],
+			[
+				"beg",
+				"begin"
+			],
+			[
+				"ind",
+				"index_pc1"
+			],
+			[
+				"id",
+				"index"
+			],
+			[
+				"c",
+				"components"
+			],
+			[
+				"count",
+				"counter"
+			],
+			[
+				"binf",
+				"bin_find"
+			],
+			[
+				"dele",
+				"delete_bst"
+			],
+			[
+				"inde",
+				"index_pc2"
+			],
+			[
+				"index",
+				"index_pc1"
+			],
+			[
+				"lev",
+				"level_order"
+			],
+			[
+				"creat",
+				"creatBinTree	(check_bst_identity.cpp)"
+			],
+			[
+				"av",
+				"AVL_Tree_Node"
+			],
+			[
+				"roo",
+				"root_original"
+			],
+			[
+				"AVl",
+				"AVL_tree"
+			],
+			[
+				"node",
+				"node"
+			],
+			[
+				"Bint",
+				"BinTreeNode"
+			],
+			[
+				"B",
+				"BinTree"
+			],
+			[
+				"low",
+				"totest_lower_limit"
+			],
+			[
+				"loe",
+				"original_lower_limit"
+			],
+			[
+				"ro",
+				"root_original"
+			],
+			[
+				"pre",
+				"preorder"
+			],
+			[
+				"Bin",
+				"BinTree"
+			],
+			[
+				"check",
+				"check_bst_identity"
+			],
+			[
+				"root",
+				"root_original"
+			],
+			[
+				"using",
+				"usingt	Using statement (templated)"
+			],
+			[
+				"or",
+				"original"
+			],
+			[
+				"num",
+				"number"
+			],
+			[
+				"pap",
+				"pop_after_push"
+			],
+			[
+				"tr",
+				"tree"
+			],
+			[
+				"par",
+				"parent"
+			],
+			[
+				"is",
+				"is_isomorphic"
+			],
+			[
+				"bin",
+				"bintree1"
+			],
+			[
+				"binte",
+				"BinTreeNode"
+			],
+			[
+				"poly",
+				"polynomial"
+			],
+			[
+				"ge",
+				"getStatement"
+			],
+			[
+				"Cl",
+				"CLOCKS_PER_SEC	(hanoi.cpp)"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"min",
+				"min_index"
+			],
+			[
+				"opa",
+				"operands1"
+			],
+			[
+				"op",
+				"operands"
+			],
+			[
+				"oper",
+				"operators_per"
+			],
+			[
+				"opea",
+				"operands_per"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/G/Downloads/test.cpp",
+			"settings":
+			{
+				"buffer_size": 612,
+				"line_ending": "Windows",
+				"name": "#include <iostream>"
+			}
+		}
+	],
+	"build_system": "Packages/User/C.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"page",
+				"Package Control: List Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"synajava",
+				"Set Syntax: Java"
+			],
+			[
+				"",
+				"BracketHighlighter: Swap Brackets"
+			],
+			[
+				"lis",
+				"Package Control: List Packages"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"bookshow",
+				"SublimeBookmarks: Show All Bookmarks "
+			],
+			[
+				"git",
+				"Git: Init"
+			],
+			[
+				"DIS",
+				"Package Control: Disable Package"
+			],
+			[
+				"isn",
+				"Snippet: std::begin($1), std::end($1)"
+			],
+			[
+				"subk",
+				"SublimeBookmarks: Show All Bookmarks "
+			],
+			[
+				"sbks",
+				"SublimeBookmarks: Show All Bookmarks "
+			],
+			[
+				"sbo",
+				"SublimeBookmarks: Add Bookmark"
+			],
+			[
+				"subb",
+				"SublimeBookmarks: Show All Bookmarks "
+			],
+			[
+				"book",
+				"Bookmarks: Toggle"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"en",
+				"Package Control: Enable Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"sytax c",
+				"Set Syntax: Objective-C++"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"disable",
+				"SublimeCodeIntel: Disable Plugin"
+			],
+			[
+				"tosider",
+				"View: Toggle Side Bar"
+			],
+			[
+				"sidebar",
+				"View: Toggle Side Bar"
+			],
+			[
+				"run",
+				"Build: Run"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: is",
+				"Package Control: Install Package"
+			],
+			[
+				"scope",
+				"Cscope: Look up functions calling this function"
+			],
+			[
+				"cscope",
+				"Cscope: Look up symbol"
+			],
+			[
+				"c",
+				"CTags: Rebuild Tags"
+			],
+			[
+				"Cscope: ",
+				"Cscope: Look up symbol"
+			],
+			[
+				"cool",
+				"CoolFormat: Formatter Settings"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax",
+				"Set Syntax: C"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instak",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: printf …"
+			],
+			[
+				"Package Control: insa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 525.0
+	},
+	"console":
+	{
+		"height": 146.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": true,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/G/installation/C++/sublime备份/Sublime Text 2/Packages/User/C.sublime-build",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/C.sublime-build",
+		"/E/Programing/test.cpp",
+		"/E/Programing/testss.cpp",
+		"/D/QQ_FileRev/Cpp0.cpp",
+		"/G/Downloads/ycmd/ycmd/README.md",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/YouCompleteMe/README.md",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/C++NamespaceTool.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/bh_core.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/C++11.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/ColorHighlighter.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/ConvertToUTF8.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/CTags.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/SublimeAStyleFormatter.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/AutoUpdateSourceHeader.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/Base File.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/vector.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/while.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/USACO.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/struct.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/regular_function.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/returns.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/scanf.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/set.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/std-map-(map).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/template.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/read-file-(readF).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/list.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/namespace-..-(namespace).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/pause.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/rangefor.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/printf-..-(printf).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/mitlicense.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/minimal.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/initialize_headfile.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/initialize_cpp_headfile.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/if-..-(if).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/inheritance-type-trait.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/initialize_c.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/initialize_c++.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/include.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/if_elif_else_preprocessor.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/if.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/gcc_greater.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/functor.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/full.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/forward_list.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/fprintf.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/forv.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/forward.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/exception.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/Enumeration.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/dowhileloop.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/do...while-loop-(do).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/deque.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/declval.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/constexpr_function.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/class_template.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/class-..-(class).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/class.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/clang_less.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/clang_greater_version.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/catchallbyref.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/case.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/binary_template_functor.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/030-for-int-loop-(fori).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/for.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/010-main()-(main).sublime-snippet",
+		"/E/Programing/c++_primer/Code/13_1.cpp",
+		"/E/Programing/DataStructure/Course/week_2/test.out",
+		"/E/Programing/DataStructure/Course/week_2/test.in",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/().sublime-snippet",
+		"/E/Programing/Assembly/test.asm",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/$1.begin()-$1.end()-(beginend).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/mine_own/beginend.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/C++ Snippets/classes/class.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 3/Packages/User/C++ Snippets/classes/struct.sublime-snippet",
+		"/E/Programing/C_practice/GCD.c",
+		"/E/Programing/DataStructure/Course/week_2/Add_Two_Polynomials.c",
+		"/E/Programing/DataStructure/Course/week_2/Reverse_Linked_List.c",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/pesudo.cpp",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/sorts.cpp",
+		"/E/Programing/TEST/Level.java",
+		"/D/QQ_FileRev/Prime.java",
+		"/D/QQ_FileRev/Level.java",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/sorts.out",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/initialize_c++.sublime-snippet",
+		"/E/Programing/DataStructure/footstep.cpp",
+		"/E/Programing/FundamentalDataStructures/SourceCode/BuggyIntCell.cpp",
+		"/E/百度云同步盘/大三秋冬学期/数据结构/code/code/Fig01_10.cpp",
+		"/E/百度云同步盘/大三秋冬学期/数据结构/code/code/Fig10_38.cpp",
+		"/E/百度云同步盘/大三秋冬学期/数据结构/SourceCode/AvlTree.h",
+		"/E/百度云同步盘/大三秋冬学期/数据结构/SourceCode/DisjSets.cpp",
+		"/E/Programing/DataStructure/PAT/ch6_hash/test.out",
+		"/E/Programing/DataStructure/PAT/ch6_hash/test.in",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/sort_with_swap.cpp",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/Package Control/readme.md",
+		"/C/Users/Silence/Documents/未命名1.cpp",
+		"/G/Downloads/爬虫/flashsword20-webmagic-master/webmagic/user-manual.md",
+		"/G/Downloads/爬虫/flashsword20-webmagic-master/webmagic/README.md",
+		"/E/Programing/DataStructure/PAT/ch6_hash/find_phone_num.cpp",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/test.out",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/test.in",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/ranking.cpp",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/counting.cpp",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/insert_or_merge.cpp",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/insert_or_merge.in",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/insert_or_merge.out",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/counting.cpp.out",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/insert_or_merge.txt",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/output.txt",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/input.text",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/sorts.in",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/C++ Starting Kit/std-map-(map).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/C++ Starting Kit/std-vector-(v).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/C++/std-map-(map).sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/C++/std-vector-(v).sublime-snippet",
+		"/E/Programing/DataStructure/On_reading/SourceCode/sorts.h",
+		"/E/Programing/DataStructure/On_reading/SourceCode/addPolynomials.cpp",
+		"/c/mingw/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++/bits/stl_algo.h",
+		"/E/Programing/DataStructure/On_reading/SourceCode/Figure9-18.cpp",
+		"/E/Programing/DataStructure/experiment/ch2/sort.cpp",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/initialize_c.sublime-snippet",
+		"/E/Programing/DataStructure/PAT/ch5_sorts/input.txt",
+		"/E/Programing/DataStructure/PAT/ch4_graphs/input.txt"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ctrl+b",
+			"[",
+			"ctrl+b",
+			"struct",
+			"Node",
+			"node",
+			"Node",
+			"main",
+			"struct Node",
+			"a",
+			"sum",
+			"c",
+			"next",
+			"Polynomials",
+			"totest",
+			"phone",
+			"hash",
+			"times",
+			"index",
+			"counter",
+			"per",
+			"vector",
+			"marks",
+			"uid",
+			"users",
+			"$TM_FILENAME",
+			"is_merge",
+			"part",
+			"j",
+			"k",
+			"insert_or_merge",
+			"init",
+			"a",
+			"InsertionSort",
+			"MergeSort",
+			"(vector<T> &data) noexcept",
+			"(vector<T> &data) noexcept ;",
+			"template<typename T> void",
+			"numbers",
+			"ShellSort",
+			"Merge_nonrec",
+			"MergeSort_nonrec",
+			"MergeSort_iter",
+			"time",
+			"temp",
+			" operator==",
+			"stable_sort",
+			"sort",
+			"data[largest]",
+			"CountingSort",
+			"RadixSort",
+			"bitRadixsort",
+			"RadixSort",
+			"long",
+			"long data[]",
+			"RadixSort",
+			"MergeSort",
+			"QuickSort2",
+			"Merge",
+			"MergeSort",
+			"MergeSort_nonrec",
+			"n",
+			"MergeSort",
+			"QuickSort",
+			"void",
+			"QuickSort",
+			"upper++",
+			"quicksort",
+			"data[]",
+			"CombSort",
+			"QuickSort",
+			"middle",
+			"HeapSort",
+			"ShellSort",
+			"fisrt",
+			"InsertionSort",
+			"h",
+			"stepcount",
+			"data.size()",
+			"BubbleSort2",
+			"SelectionSort",
+			"<< n",
+			"<< time << \"    \" << ((float)time) / CLOCKS_PER_SEC << \" seconds\" << endl;",
+			"inverse_best",
+			"sorted",
+			"unsorted",
+			"********************\"",
+			"--------------------",
+			"-----------",
+			"test",
+			"tosort",
+			"<",
+			"find_min_cost",
+			"dummy",
+			"costs",
+			"i",
+			"length",
+			"INT_MAX / 2 - 100",
+			"length",
+			"MAX",
+			"temp",
+			"int",
+			"visited",
+			"true",
+			"escape",
+			"minPath",
+			"101",
+			"max_min_distance",
+			"INT_MAX / 2 - 100",
+			"101",
+			"INT_MAX",
+			"i",
+			"BFS_test_connected",
+			"void",
+			"graph",
+			"void",
+			"temp",
+			"j",
+			"i",
+			"AdjacencyMatrixGraph",
+			"Adjacent",
+			"AdjacentMatrixGraph",
+			"graph",
+			"vertexs",
+			"<<",
+			"greater",
+			"print",
+			"printTree"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"print_final",
+			")\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/G/Downloads/test.cpp",
+					"settings":
+					{
+						"buffer_size": 612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#include <iostream>",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Solarized (light).tmTheme",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/C++ Starting Kit/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.clang":
+	{
+		"height": 130.0
+	},
+	"output.exec":
+	{
+		"height": 192.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 165.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"C++/Unit07/test.cpp"
+			],
+			[
+				"pri",
+				"c/The former/pyramid.c.bak"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 211.0,
+	"status_bar_visible": true
+}

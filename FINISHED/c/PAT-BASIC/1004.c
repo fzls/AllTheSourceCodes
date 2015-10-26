@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main(){
+   int n, i, max ,min ;
+   struct student
+   {
+   	char name[11];
+   	char number[11];
+   	int grade;
+   }*stu;
+
+   scanf("%d",&n);
+   i = n;
+
+   stu = (struct student *)malloc(n * sizeof( struct student ));
+   while( i -- ){
+   	scanf("%s%s%d",stu->name, stu->number, &stu->grade);
+   	if( i != 0)
+   		stu++;
+   	}
+
+   stu = stu - n + 1;
+   
+	max = 0;
+   for(i = 0; i < n; i++)
+   	if( (stu + i)->grade > stu[max].grade)
+   		max = i;
+   printf("%s %s\n",stu[max].name, stu[max].number);
+
+	min = 0;
+   for(i = 0; i < n; i++)
+   	if(stu[i].grade < stu[min].grade)
+   		min = i;
+   printf("%s %s\n",stu[min].name, stu[min].number);
+
+
+
+}
+

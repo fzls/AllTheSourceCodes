@@ -1,0 +1,5 @@
+﻿  production.cc
+  gtest_prod_test.cc
+  正在生成代码...
+gtest_prod_test.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+  gtest_prod_test.vcxproj -> E:\Programing\gmock-1.7.0\gmock-1.7.0\gtest\msvc\gtest/Debug\gtest_prod_test.exe

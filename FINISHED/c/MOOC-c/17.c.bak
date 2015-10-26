@@ -1,0 +1,37 @@
+#include <stdio.h>
+char *yin(int number){
+	switch(number){
+	   case 0: return "ling";break;
+	   case 1: return "yi";break;
+	   case 2: return "er";break;
+	   case 3: return "san";break;
+	   case 4: return "si";break;
+	   case 5: return "wu";break;
+	   case 6: return "liu";break;
+	   case 7: return "qi";break;
+	   case 8: return "ba";break;
+	   case 9: return "jiu";break;
+	}
+	
+	
+	}
+void ping(int n){
+	if(n>0){
+		ping(n/10);
+		printf("%s ",yin(n%10));
+	}
+	}
+	
+int main(){
+   int n;
+   scanf("%d",&n);
+   
+   if(n<0){
+     printf("fu ");
+     n=-n;
+  }
+    ping(n);
+   if(n==0)
+   	printf("ling \n");
+   		
+}

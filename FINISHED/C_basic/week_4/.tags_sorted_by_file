@@ -1,0 +1,16 @@
+isprime	4_1.c	/^int isprime(int x) {$/;"	f
+main	4_1.c	/^int main() {$/;"	f
+main	4_2.c	/^int main() {$/;"	f
+print	4_2.c	/^void print(int x) { \/\/�����������ִ����������Էֱ��������Ӧ���$/;"	f
+print_final	4_2.c	/^void print_final(int x) {$/;"	f
+print_part	4_2.c	/^void print_part(int x) {$/;"	f
+main	test.c	/^int main()$/;"	f
+print	test.c	/^void print(int x) \/\/由于最右端与其他部分处理情况不同，可以分别写一个函数为其实现相应功能$/;"	f
+print_final	test.c	/^void print_final(int x)$/;"	f
+print_part	test.c	/^void print_part(int x)$/;"	f
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/

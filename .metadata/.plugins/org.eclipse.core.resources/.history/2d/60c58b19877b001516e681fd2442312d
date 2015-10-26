@@ -1,0 +1,17 @@
+package test;
+
+import java.lang.String;
+
+public class denglu_main {
+
+	/**
+	 * @param args
+	 */
+	public denglu_main(){}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		test12 test=new test12();
+	}
+
+}

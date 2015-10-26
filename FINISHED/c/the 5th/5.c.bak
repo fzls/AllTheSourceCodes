@@ -1,0 +1,28 @@
+
+
+#include <stdio.h>
+int main(void)
+{
+    int gcd, lcm, m, n;  
+    int repeat, ri,i;  
+
+    scanf("%d", &repeat);
+    for(ri = 1; ri <= repeat; ri++){
+        scanf("%d", &m);
+        scanf("%d", &n);
+        if(m <= 0 || n <= 0)
+            printf("m <= 0 or n <= 0");
+        else{
+        for(i=m;i%m!=0||i%n!=0;i++){
+        	;
+        	}	
+        lcm=i;
+        for(i=m;m%i!=0||n%i!=0;i--){
+        	;
+        	}	
+        gcd=i;
+            printf("%d is the least common multiple of %d and %d, %d is the greatest common divisor of %d and %d.\n", lcm, m, n, gcd, m, n);
+        }
+    }
+}
+

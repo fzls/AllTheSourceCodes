@@ -1,0 +1,125 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.*;
+
+
+public class Login extends JFrame implements ActionListener {
+	JLabel label1,label2,label3,label4;
+	JTextField text1;
+	JPasswordField text2;
+	JButton button1,button2;
+	JRadioButton radiobutton1,radiobutton2,radiobutton3;
+	ButtonGroup group;
+	Box baseBox,box1,box2;
+	Student student;
+	Teacher teacher;
+	//Administrator administrator;
+
+    public Login(String s) {
+    	super(s);
+    setBounds(350,100,500,580);//setBounds(int x, int y, int width, int height)
+	setVisible(true);
+	Toolkit tool=this.getToolkit();
+	Image image=tool.getImage("src//钢铁侠.png");//get the login picture
+	this.setIconImage(image);
+    setLayout(new FlowLayout());
+
+    Icon icon=new ImageIcon("src//钢铁侠.png");
+    label1=new JLabel(icon);
+	label2=new JLabel("用户名");
+	label2.setSize(1000, 1000);
+	label3=new JLabel("密    码");
+	label4=new JLabel("欢迎登陆教务查询系统",JLabel.CENTER);
+	button1=new JButton("登入");
+	button2=new JButton("重置");
+	text1=new JTextField(8);
+	text2=new JPasswordField(8);
+	text2.setEchoChar('*');
+	group=new ButtonGroup();
+	radiobutton1=new JRadioButton("学生");
+	radiobutton2=new JRadioButton("教师");
+//	radiobutton3=new JRadioButton("管理员");
+	group.add(radiobutton1);
+	group.add(radiobutton2);
+	group.add(radiobutton3);
+	box1=Box.createVerticalBox();
+	box1.add(label2);
+	box1.add(Box.createVerticalStrut(8));
+	box1.add(label3);
+//	box1.add(Box.createVerticalStrut(16));
+//	box1.add(button1);
+
+	box2=Box.createVerticalBox();
+	box2.add(text1);
+	box2.add(Box.createVerticalStrut(8));
+	box2.add(text2);
+//	box2.add(Box.createVerticalStrut(8));
+//	box2.add(button2);
+
+	baseBox=Box.createHorizontalBox();
+	baseBox.add(box1);
+    baseBox.add(Box.createHorizontalStrut(10));
+    baseBox.add(box2);
+
+	//add(label1);
+    add(baseBox);
+    add(button1);
+    add(button2);
+
+	add(radiobutton1);
+    add(radiobutton2);
+	//add(radiobutton3);
+	add(label4);
+	add(label1);
+	button1.addActionListener(this);
+	button2.addActionListener(this);
+//	radiobutton1.addActionListener(this);
+//	radiobutton2.addActionListener(this);
+//	radiobutton3.addActionListener(this);
+	validate();
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public void actionPerformed(ActionEvent e){
+		if(e.getSource()==button1)
+	{   /*try{if(e.getSource()==radiobutton1&&text1.getText().equals("student")&&text2.getText().equals("123"))
+	{student=new Student();
+		student.setVisible(true);}
+
+		}
+		catch(Exception ee){
+			label1.setText("wrong");
+		}*/
+		if(radiobutton1.isSelected()&&text1.getText().equals("")&&text2.getText().equals(""))
+			{student=new Student("学生信息查询");
+		student.setVisible(true);
+		setVisible(false);}
+	//	dispose();
+		else if(radiobutton2.isSelected()&&text1.getText().equals("user2")&&text2.getText().equals("u002"))
+		{teacher=new Teacher("教师信息查询");
+		teacher.setVisible(true);
+		//dispose();
+		setVisible(false);
+		}
+	//	else if(radiobutton3.isSelected()&&text1.getText().equals("")&&text2.getText().equals(""))
+		//	{administrator=new Administrator("管理员登入");
+	//	administrator.setVisible(true);
+	//	setVisible(false);
+	//	dispose();
+	//	}
+		else {
+			label4.setForeground(Color.red);
+			label4.setText("登陆有误，请重试错误");
+		}
+
+			}
+			if(e.getSource()==button2)
+			{text1.setText(null);
+			text2.setText(null);
+			label4.setForeground(Color.black);
+			label4.setText("欢迎查询");
+			}
+			}
+   
+
+}

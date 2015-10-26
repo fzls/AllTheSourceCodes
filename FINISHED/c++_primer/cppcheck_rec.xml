@@ -1,0 +1,1358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="1.70"/>
+    <errors>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\Code\12_1.cpp" line="34"/>
+        </error>
+        <error id="returnReference" severity="error" msg="Reference to auto variable returned." verbose="Reference to auto variable returned.">
+            <location file="E:\Programing\FINISHED\c++_primer\Code\13_1.cpp" line="61"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\Code\5_1.cpp" line="26"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\Code\6_1.h" line="23"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\Code\6_1.h" line="22"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;app2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;app2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\Code\8_1.cpp" line="39"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;app&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;app&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\Code\8_1.cpp" line="38"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;out2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;out2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\Code\8_1.cpp" line="34"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;out&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;out&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\Code\8_1.cpp" line="33"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;e&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;e&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch02\ex2_34.cpp" line="12"/>
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch02\ex2_34.cpp" line="17"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;c&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;c&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch02\ex2_34.cpp" line="10"/>
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch02\ex2_34.cpp" line="17"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;b&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;b&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch02\ex2_34.cpp" line="9"/>
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch02\ex2_34.cpp" line="17"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;a&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;a&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch02\ex2_34.cpp" line="6"/>
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch02\ex2_34.cpp" line="17"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ivec&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ivec&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch03\ex3_18.cpp" line="5"/>
+        </error>
+        <error id="selfAssignment" severity="warning" msg="Redundant assignment of &amp;#039;arr2[i]&amp;#039; to itself." verbose="Redundant assignment of &amp;#039;arr2[i]&amp;#039; to itself.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch03\ex3_32.cpp" line="11"/>
+        </error>
+        <error id="staticStringCompare" severity="warning" msg="Unnecessary comparison of static strings." verbose="The compared strings, &amp;#039;&amp;quot;Wangyue&amp;quot;&amp;#039; and &amp;#039;&amp;quot;Pezy&amp;quot;&amp;#039;, are always unequal. Therefore the comparison is unnecessary and looks suspicious.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch03\ex3_39.cpp" line="22"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch05\ex5_25.cpp" line="15"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch07\ex7_11.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch07\ex7_11.h" line="17"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch07\ex7_12.h" line="22"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch07\ex7_12.h" line="20"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch07\ex7_26.h" line="26"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch07\ex7_26.h" line="24"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch07\ex7_41.h" line="33"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch07\ex7_41.h" line="30"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;NoDefault&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;NoDefault&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch07\ex7_43.cpp" line="13"/>
+        </error>
+        <error id="clarifyCalculation" severity="style" msg="Clarify calculation precedence for &amp;#039;&amp;amp;&amp;#039; and &amp;#039;?&amp;#039;." verbose="Suspicious calculation. Please use parentheses to clarify the code. The code &amp;#039;&amp;#039;a&amp;amp;b?c:d&amp;#039;&amp;#039; should be written as either &amp;#039;&amp;#039;(a&amp;amp;b)?c:d&amp;#039;&amp;#039; or &amp;#039;&amp;#039;a&amp;amp;(b?c:d)&amp;#039;&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch09\ex9_20.cpp" line="21"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;My_date&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;My_date&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch09\ex9_51.cpp" line="22"/>
+        </error>
+        <error id="clarifyCalculation" severity="style" msg="Clarify calculation precedence for &amp;#039;&amp;amp;&amp;#039; and &amp;#039;?&amp;#039;." verbose="Suspicious calculation. Please use parentheses to clarify the code. The code &amp;#039;&amp;#039;a&amp;amp;b?c:d&amp;#039;&amp;#039; should be written as either &amp;#039;&amp;#039;(a&amp;amp;b)?c:d&amp;#039;&amp;#039; or &amp;#039;&amp;#039;a&amp;amp;(b?c:d)&amp;#039;&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch10\ex10_33.cpp" line="31"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;bookstore&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;bookstore&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch11\ex11_11.cpp" line="22"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;it&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;it&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch11\ex11_27_28_29_30.cpp" line="50"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: m" verbose="Unused variable: m">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch11\ex11_9_10.cpp" line="22"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_02.h" line="23"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: pi2" verbose="Memory leak: pi2">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_17_18.cpp" line="81"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ix&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ix&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_17_18.cpp" line="29"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;pi&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;pi&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_17_18.cpp" line="29"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;pi2&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;pi2&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_17_18.cpp" line="29"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_19.h" line="34"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_22.h" line="36"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: concatenate_string" verbose="Memory is allocated but not initialized: concatenate_string">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_23.cpp" line="21"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: concatenate_string" verbose="Memory is allocated but not initialized: concatenate_string">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_23.cpp" line="20"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: concatenate_string" verbose="Memory is allocated but not initialized: concatenate_string">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_23.cpp" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_27_30.h" line="32"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: dictionary" verbose="Unused variable: dictionary">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_28.cpp" line="33"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;file&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;file&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_28.cpp" line="31"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_32.h" line="25"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch12\ex12_33.h" line="28"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Employee&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Employee&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_18.h" line="23"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_26.h" line="34"/>
+        </error>
+        <error id="operatorEqToSelf" severity="warning" msg="&amp;#039;operator=&amp;#039; should check for assignment to self to avoid problems with dynamic memory." verbose="&amp;#039;operator=&amp;#039; should check for assignment to self to ensure that each block of dynamically allocated memory is owned and managed by only one instance of the class.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_28.cpp" line="32"/>
+        </error>
+        <error id="operatorEqToSelf" severity="warning" msg="&amp;#039;operator=&amp;#039; should check for assignment to self to avoid problems with dynamic memory." verbose="&amp;#039;operator=&amp;#039; should check for assignment to self to ensure that each block of dynamically allocated memory is owned and managed by only one instance of the class.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_28.cpp" line="12"/>
+        </error>
+        <error id="copyCtorPointerCopying" severity="style" msg="Value of pointer &amp;#039;count&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory." verbose="Value of pointer &amp;#039;count&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_28.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_31.h" line="26"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_40.h" line="23"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_42_StrVec.h" line="13"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_42_TextQuery.h" line="16"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_44_47.h" line="10"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_49_StrVec.h" line="18"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_49_String.h" line="16"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_53.h" line="9"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;hp1&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;hp1&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_53_test.cpp" line="6"/>
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch13\ex13_53_test.cpp" line="7"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_02.h" line="26"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_02.h" line="25"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Book::no_&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Book::no_&amp;#039; is not initialized in the constructor.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_05.h" line="16"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Book&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Book&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_05.h" line="16"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_07.h" line="12"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Book::no_&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Book::no_&amp;#039; is not initialized in the constructor.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_15.h" line="19"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Book::number_&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Book::number_&amp;#039; is not initialized in the constructor.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_15.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Book&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Book&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_15.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_16_StrBlob.h" line="55"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_16_StrVec.h" line="21"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_16_String.h" line="22"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_18_StrBlob.h" line="59"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_18_StrVec.h" line="25"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_18_StrVecMain.cpp" line="25"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_18_String.h" line="34"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_22.h" line="29"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_22.h" line="28"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_23.h" line="25"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_26_StrBlob.h" line="59"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_26_StrVec.h" line="25"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_26_String.h" line="34"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_27_28_StrBlob.h" line="59"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_30_StrBlob.h" line="59"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlobPtr_pointer&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlobPtr_pointer&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_32.h" line="20"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;GetInput&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;GetInput&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_35.cpp" line="6"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;GetInput&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;GetInput&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_36.cpp" line="7"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;IsEqual&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;IsEqual&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_37.cpp" line="8"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;BiggerEqual&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;BiggerEqual&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_40.cpp" line="34"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_45.h" line="29"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch14\ex14_45.h" line="28"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;bp2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;bp2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.12.13.14\main.cpp" line="69"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;br1&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;br1&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.12.13.14\main.cpp" line="67"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;bp1&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;bp1&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.12.13.14\main.cpp" line="66"/>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &amp;#039;derived&amp;#039; does not have a constructor." verbose="The class &amp;#039;derived&amp;#039; does not have a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.12.13.14\main.cpp" line="45"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: dd3" verbose="Unused variable: dd3">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.18.19.20\main.cpp" line="116"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: dd2" verbose="Unused variable: dd2">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.18.19.20\main.cpp" line="113"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;p&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;p&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.18.19.20\main.cpp" line="111"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: dd1" verbose="Unused variable: dd1">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.18.19.20\main.cpp" line="110"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: d3" verbose="Unused variable: d3">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.18.19.20\main.cpp" line="107"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: d2" verbose="Unused variable: d2">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.18.19.20\main.cpp" line="104"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;p&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;p&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.18.19.20\main.cpp" line="102"/>
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.18.19.20\main.cpp" line="111"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: d1" verbose="Unused variable: d1">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.18.19.20\main.cpp" line="101"/>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &amp;#039;Base&amp;#039; does not have a constructor." verbose="The class &amp;#039;Base&amp;#039; does not have a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.18.19.20\main.cpp" line="63"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Shape&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Shape&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.21.22\main.cpp" line="37"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;d1p&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;d1p&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.23.cpp" line="59"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;d2p&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;d2p&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.23.cpp" line="59"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;bp1&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;bp1&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.23.cpp" line="54"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;bp2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;bp2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.23.cpp" line="54"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;bp3&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;bp3&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.23.cpp" line="54"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: d2obj" verbose="Unused variable: d2obj">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.23.cpp" line="52"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: d1obj" verbose="Unused variable: d1obj">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.23.cpp" line="51"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: bobj" verbose="Unused variable: bobj">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.23.cpp" line="50"/>
+        </error>
+        <error id="unusedPrivateFunction" severity="style" msg="Unused private function: &amp;#039;Basket::compare&amp;#039;" verbose="Unused private function: &amp;#039;Basket::compare&amp;#039;">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.30\basket.h" line="25"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Foo&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Foo&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.31.32.33.cpp" line="68"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.34.35.36.38\StrBlob.h" line="50"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.34.35.36.38\notquery.h" line="16"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.34.35.36.38\query.h" line="40"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.34.35.36.38\query.h" line="24"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.34.35.36.38\textquery.h" line="38"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.34.35.36.38\wordquery.h" line="16"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.39.40\StrBlob.h" line="50"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.39.40\notquery.h" line="16"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.39.40\query.h" line="39"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.39.40\query.h" line="23"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.39.40\textquery.h" line="38"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.39.40\wordquery.h" line="16"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_b\notquery.h" line="20"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_b\query.h" line="31"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_b\query.h" line="26"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_b\textquery.h" line="30"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_b\wordquery.h" line="14"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_c\notquery.h" line="20"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_c\query.h" line="31"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_c\query.h" line="26"/>
+        </error>
+        <error id="unusedPrivateFunction" severity="style" msg="Unused private function: &amp;#039;QueryResult::line_no&amp;#039;" verbose="Unused private function: &amp;#039;QueryResult::line_no&amp;#039;">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_c\queryresult.h" line="42"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_c\textquery.h" line="30"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch15\ex15.42_c\wordquery.h" line="14"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Blob&amp;lt;T&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Blob&amp;lt;T&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.12.13\Blob.h" line="14"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Screen&amp;lt;H,W&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Screen&amp;lt;H,W&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.14.15\Screen.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Screen&amp;lt;5,5&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Screen&amp;lt;5,5&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.14.15\Screen.h" line="19"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Vec&amp;lt;T&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Vec&amp;lt;T&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.16\vec.h" line="21"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Vec&amp;lt;int&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Vec&amp;lt;int&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.16\vec.h" line="21"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;DebugDelete&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;DebugDelete&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.21.22\DebugDelete.h" line="9"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;wy_textQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;wy_textQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.21.22\wy_textquery.h" line="36"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Blob&amp;lt;T&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Blob&amp;lt;T&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.29\Blob.h" line="28"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Blob&amp;lt;std::string&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Blob&amp;lt;std::string&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.29\Blob.h" line="28"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;DebugDelete&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;DebugDelete&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.29\DebugDelete.h" line="20"/>
+        </error>
+        <error id="copyCtorPointerCopying" severity="style" msg="Value of pointer &amp;#039;refCount&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory." verbose="Value of pointer &amp;#039;refCount&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.29\shared_pointer.h" line="49"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;cp2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;cp2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.32.33.34.35.36\main.cpp" line="80"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;j&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;j&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.32.33.34.35.36\main.cpp" line="79"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;p2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;p2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.32.33.34.35.36\main.cpp" line="79"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;b&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;b&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.40\main.cpp" line="41"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: v" verbose="Unused variable: v">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.42.43.44.45.46\main.cpp" line="84"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;i&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;i&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.49.50\main.cpp" line="44"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;p&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;p&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.49.50\main.cpp" line="44"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.58.59\strvec.h" line="23"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.62\Sales_data.h" line="55"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.62\Sales_data.h" line="52"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ret&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ret&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch16\ex16.65.66.67\main.cpp" line="65"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch17\ex17.3\textquery.h" line="27"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Quiz&amp;lt;M&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Quiz&amp;lt;M&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch17\ex17_11_12_13.cpp" line="40"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Quiz&amp;lt;N&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Quiz&amp;lt;N&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch17\ex17_11_12_13.cpp" line="40"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Quiz&amp;lt;10&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Quiz&amp;lt;10&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch17\ex17_11_12_13.cpp" line="40"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Quiz&amp;lt;5&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Quiz&amp;lt;5&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch17\ex17_11_12_13.cpp" line="40"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch17\ex17_14_15_16.cpp" line="46"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;valid_record&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;valid_record&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch17\ex17_19_20.cpp" line="44"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch17\ex17_23.cpp" line="55"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch17\ex17_4_5_6_7_8_SalesData.h" line="72"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch17\ex17_4_5_6_7_8_SalesData.h" line="60"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;in&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;in&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch18\ex18.1.2.3.cpp" line="76"/>
+        </error>
+        <error id="noCopyConstructor" severity="style" msg="&amp;#039;struct intArray&amp;#039; does not have a copy constructor which is recommended since the class contains a pointer to allocated memory." verbose="&amp;#039;struct intArray&amp;#039; does not have a copy constructor which is recommended since the class contains a pointer to allocated memory.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\ch18\ex18.1.2.3.cpp" line="46"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\include\Sales_item.h" line="58"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\key_Cpp-Primer-master\include\Sales_item.h" line="57"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;result&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;result&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\10\use_find.cc" line="58"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;Foo&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;Foo&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\Foo.h" line="37"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrBlob&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\StrBlob.h" line="48"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\TextQuery.h" line="52"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: p1" verbose="Memory leak: p1">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\oknew.cc" line="96"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: p2" verbose="Memory leak: p2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\oknew.cc" line="96"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: p" verbose="Memory leak: p">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\oknew.cc" line="96"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;p&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;p&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\oknew.cc" line="93"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;pia&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;pia&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\oknew.cc" line="90"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;p0&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;p0&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\oknew.cc" line="58"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: i0" verbose="Unused variable: i0">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\oknew.cc" line="56"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;p2&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;p2&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\oknew.cc" line="54"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;p1&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;p1&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\12\oknew.cc" line="53"/>
+        </error>
+        <error id="operatorEqToSelf" severity="warning" msg="&amp;#039;operator=&amp;#039; should check for assignment to self to avoid problems with dynamic memory." verbose="&amp;#039;operator=&amp;#039; should check for assignment to self to ensure that each block of dynamically allocated memory is owned and managed by only one instance of the class.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\HasPtrUseCount.cc" line="88"/>
+        </error>
+        <error id="copyCtorPointerCopying" severity="style" msg="Value of pointer &amp;#039;ps&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory." verbose="Value of pointer &amp;#039;ps&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\HasPtrUseCount.cc" line="45"/>
+        </error>
+        <error id="copyCtorPointerCopying" severity="style" msg="Value of pointer &amp;#039;use&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory." verbose="Value of pointer &amp;#039;use&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\HasPtrUseCount.cc" line="45"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\HasPtrUseCount.cc" line="39"/>
+        </error>
+        <error id="operatorEqToSelf" severity="warning" msg="&amp;#039;operator=&amp;#039; should check for assignment to self to avoid problems with dynamic memory." verbose="&amp;#039;operator=&amp;#039; should check for assignment to self to ensure that each block of dynamically allocated memory is owned and managed by only one instance of the class.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\HasPtrValueLike.cc" line="60"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\HasPtrValueLike.cc" line="36"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;StrVec&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\StrVec.h" line="54"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\String.h" line="52"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;hp&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;hp&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\moveHP.cc" line="74"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\moveHP.cc" line="75"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\moveHP.cc" line="40"/>
+        </error>
+        <error id="operatorEqVarError" severity="warning" msg="Member variable &amp;#039;numbered::mysn&amp;#039; is not assigned a value in &amp;#039;numbered::operator=&amp;#039;." verbose="Member variable &amp;#039;numbered::mysn&amp;#039; is not assigned a value in &amp;#039;numbered::operator=&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\13\serial.cc" line="40"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\14\Sales_data.h" line="51"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\14\Sales_data.h" line="48"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;PrintString&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;PrintString&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\14\newcount-size.cc" line="82"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;SizeComp&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;SizeComp&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\14\newcount-size.cc" line="70"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;ReadLine&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;ReadLine&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\14\readStr.cc" line="56"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\15\Query.h" line="94"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\15\Query.h" line="80"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\15\Query.h" line="67"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\15\Query.h" line="60"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The struct &amp;#039;Derived&amp;#039; defines member variable with name &amp;#039;mem&amp;#039; also defined in its parent struct &amp;#039;Base&amp;#039;." verbose="The struct &amp;#039;Derived&amp;#039; defines member variable with name &amp;#039;mem&amp;#039; also defined in its parent struct &amp;#039;Base&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\15\scope.cc" line="46"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\15\scope.cc" line="36"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;Derived&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;Derived&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\15\scope.cc" line="40"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;undiscounted&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;undiscounted&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\15\useQuote.cc" line="47"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;bp&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;bp&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\15\virtualsNscope.cc" line="81"/>
+        </error>
+        <error id="returnReference" severity="error" msg="Reference to auto variable returned." verbose="Reference to auto variable returned.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Blob.h" line="312"/>
+        </error>
+        <error id="returnReference" severity="error" msg="Reference to auto variable returned." verbose="Reference to auto variable returned.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Blob.h" line="303"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;lhs&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;lhs&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Blob.h" line="209"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;rhs&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;rhs&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Blob.h" line="209"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;a&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;a&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Blob.h" line="198"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Blob&amp;lt;T&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Blob&amp;lt;T&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Blob.h" line="64"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Blob&amp;lt;int&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Blob&amp;lt;int&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Blob.h" line="64"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Blob&amp;lt;string&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Blob&amp;lt;string&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Blob.h" line="64"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Blob&amp;lt;double&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Blob&amp;lt;double&amp;gt;&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Blob.h" line="64"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: ip" verbose="Memory leak: ip">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\SP.cc" line="67"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Sales_data.h" line="52"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\Sales_data.h" line="49"/>
+        </error>
+        <error id="nullPointer" severity="error" msg="Possible null pointer dereference: v2" verbose="Possible null pointer dereference: v2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\compare.h" line="49"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;j&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;j&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\compareDef.cc" line="54"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;i&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;i&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\compareDef.cc" line="50"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: p1" verbose="Memory leak: p1">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\compareSpec.cc" line="82"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: p2" verbose="Memory leak: p2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\compareSpec.cc" line="82"/>
+        </error>
+        <error id="staticStringCompare" severity="warning" msg="Unnecessary comparison of static strings." verbose="The compared strings, &amp;#039;&amp;quot;hi&amp;quot;&amp;#039; and &amp;#039;&amp;quot;mom&amp;quot;&amp;#039;, are always unequal. Therefore the comparison is unnecessary and looks suspicious.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\compareSpec.cc" line="76"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: p1" verbose="Memory is allocated but not initialized: p1">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\compareSpec.cc" line="74"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: p2" verbose="Memory is allocated but not initialized: p2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\compareSpec.cc" line="74"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: p1" verbose="Memory is allocated but not initialized: p1">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\compareSpec.cc" line="73"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: p2" verbose="Memory is allocated but not initialized: p2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\compareSpec.cc" line="73"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;i&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;i&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\qm.cc" line="51"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;s&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;s&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\trail-ret.cc" line="69"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;ErrorCode&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;ErrorCode&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\16\variadic.cc" line="71"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\REerrs.cc" line="47"/>
+        </error>
+        <error id="checkCastIntToCharAndBack" severity="warning" msg="Storing cin.get() return value in char variable and then comparing with EOF." verbose="When saving cin.get() return value in char variable there is loss of precision.  When cin.get() returns EOF this value is truncated. Comparing the char variable with EOF can have unexpected results. For instance a loop &amp;quot;while (EOF != (c = cin.get());&amp;quot; loops forever on some compilers/platforms and on other compilers/platforms it will stop when the file contains a matching character.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\badgetc.cc" line="40"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;b&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;b&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\bits.cc" line="78"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;onBits&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;onBits&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\bits.cc" line="58"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;sz&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;sz&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\bits.cc" line="56"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;sz&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;sz&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\bits.cc" line="48"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\bits.cc" line="56"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;onBits&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;onBits&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\bits.cc" line="47"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\bits.cc" line="58"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;all_set&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;all_set&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\bits.cc" line="46"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;is_not_set&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;is_not_set&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\bits.cc" line="45"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;is_set&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;is_set&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\bits.cc" line="44"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\ccpgms.cc" line="57"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ival&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ival&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\manips.cc" line="55"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;jval&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;jval&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\manips.cc" line="55"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: b" verbose="Unused variable: b">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\manips.cc" line="44"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;phone&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;phone&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\phonesFinal.cc" line="50"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\phonesFinal.cc" line="57"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\subexpr.cc" line="58"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;sz&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;sz&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\tuple.cc" line="62"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;phone&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;phone&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\validatePhones.cc" line="67"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\17\validatePhones.cc" line="73"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Bear::dance_flag&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Bear::dance_flag&amp;#039; is not initialized in the constructor.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\18\Animal_virtual_baseVers.h" line="142"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Endangered&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Endangered&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\18\Animal_virtual_baseVers.h" line="36"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The struct &amp;#039;MI&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Derived&amp;#039;." verbose="The struct &amp;#039;MI&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Derived&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\18\mi-scope.cc" line="60"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\18\mi-scope.cc" line="52"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The struct &amp;#039;MI&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Base2&amp;#039;." verbose="The struct &amp;#039;MI&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Base2&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\18\mi-scope.cc" line="60"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\18\mi-scope.cc" line="45"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The struct &amp;#039;Derived&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Base1&amp;#039;." verbose="The struct &amp;#039;Derived&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Base1&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\18\mi-scope.cc" line="52"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\18\mi-scope.cc" line="38"/>
+        </error>
+        <error id="throwInNoexceptFunction" severity="error" msg="Exception thrown in function declared not to throw exceptions." verbose="Exception thrown in function declared not to throw exceptions.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\18\spec.cc" line="39"/>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &amp;#039;File&amp;#039; does not have a constructor." verbose="The class &amp;#039;File&amp;#039; does not have a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\bitfields.cc" line="34"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;ShiftOps&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;ShiftOps&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\calc.cc" line="49"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;d&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;d&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\dyn_cast.cc" line="75"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: pa" verbose="Memory leak: pa">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\dyn_cast.cc" line="64"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: pc" verbose="Memory leak: pc">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\dyn_cast.cc" line="64"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: pd" verbose="Memory leak: pd">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\dyn_cast.cc" line="64"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;i&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;i&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\enum.cc" line="72"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;p2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;p2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\enum.cc" line="70"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;hair&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;hair&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\enum.cc" line="69"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;eyes&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;eyes&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\enum.cc" line="67"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;token&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;token&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\tok2.cc" line="46"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\tok2.cc" line="47"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;get&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;get&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="106"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;c2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;c2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="98"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;c1&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;c1&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="97"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;c1&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;c1&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="93"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="97"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;c2&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;c2&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="89"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="98"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;c1&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;c1&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="88"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="93"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;pmf2&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;pmf2&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="82"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="85"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;pmf&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;pmf&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="81"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="84"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;str&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;str&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="71"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="76"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;pcScreen&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;pcScreen&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\19\useScreen.cc" line="67"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\1\Sales_item.h" line="58"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\1\Sales_item.h" line="57"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;val&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;val&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\1\occurs.cc" line="35"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;j&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;j&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\2\compounddecls.cc" line="39"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;p2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;p2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\2\compounddecls.cc" line="39"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;all_nines&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;all_nines&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\2\inits.cc" line="46"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;titleB&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;titleB&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\2\inits.cc" line="45"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;titleA&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;titleA&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\2\inits.cc" line="44"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;v4&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;v4&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\2\inits.cc" line="40"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;v3&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;v3&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\2\inits.cc" line="39"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;v2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;v2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\2\inits.cc" line="38"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;v1&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;v1&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\2\inits.cc" line="37"/>
+        </error>
+        <error id="stringCompare" severity="warning" msg="Comparison of identical string variables." verbose="The compared strings, &amp;#039;cp1&amp;#039; and &amp;#039;cp1&amp;#039;, are identical. This could be a logic bug.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\3\cstring_hdr.cc" line="60"/>
+        </error>
+        <error id="staticStringCompare" severity="warning" msg="Unnecessary comparison of static strings." verbose="The compared strings, &amp;#039;&amp;quot;A strin..&amp;#039; and &amp;#039;&amp;quot;A diffe..&amp;#039;, are always unequal. Therefore the comparison is unnecessary and looks suspicious.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\3\cstring_hdr.cc" line="52"/>
+        </error>
+        <error id="unassignedVariable" severity="style" msg="Variable &amp;#039;alt_ia&amp;#039; is not assigned a value." verbose="Variable &amp;#039;alt_ia&amp;#039; is not assigned a value.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\3\multidim.cc" line="128"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ia4&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ia4&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\3\multidim.cc" line="69"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ia3&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ia3&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\3\multidim.cc" line="66"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ia2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ia2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\3\multidim.cc" line="58"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: arr2" verbose="Unused variable: arr2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\4\arraysizeof.cc" line="43"/>
+        </error>
+        <error id="clarifyCalculation" severity="style" msg="Clarify calculation precedence for &amp;#039;&amp;lt;&amp;lt;&amp;#039; and &amp;#039;?&amp;#039;." verbose="Suspicious calculation. Please use parentheses to clarify the code. The code &amp;#039;&amp;#039;a&amp;lt;&amp;lt;b?c:d&amp;#039;&amp;#039; should be written as either &amp;#039;&amp;#039;(a&amp;lt;&amp;lt;b)?c:d&amp;#039;&amp;#039; or &amp;#039;&amp;#039;a&amp;lt;&amp;lt;(b?c:d)&amp;#039;&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\4\shift-prec.cc" line="51"/>
+        </error>
+        <error id="clarifyCalculation" severity="style" msg="Clarify calculation precedence for &amp;#039;&amp;lt;&amp;lt;&amp;#039; and &amp;#039;?&amp;#039;." verbose="Suspicious calculation. Please use parentheses to clarify the code. The code &amp;#039;&amp;#039;a&amp;lt;&amp;lt;b?c:d&amp;#039;&amp;#039; should be written as either &amp;#039;&amp;#039;(a&amp;lt;&amp;lt;b)?c:d&amp;#039;&amp;#039; or &amp;#039;&amp;#039;a&amp;lt;&amp;lt;(b?c:d)&amp;#039;&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\4\shift-prec.cc" line="39"/>
+        </error>
+        <error id="constStatement" severity="warning" msg="Redundant code: Found a statement that begins with numeric constant." verbose="Redundant code: Found a statement that begins with numeric constant.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\4\sizeof_pgm.cc" line="40"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;k&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;k&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\4\unaryOps.cc" line="36"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\5\add_item2.cc" line="52"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;ErrCode&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;ErrCode&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\6\errMsg_initList.cc" line="47"/>
+        </error>
+        <error id="uselessAssignmentPtrArg" severity="warning" msg="Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?" verbose="Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\6\reset.cc" line="49"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Account::daily_tbl&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Account::daily_tbl&amp;#039; is not initialized in the constructor.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\7\Account.h" line="37"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Debug&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Debug&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\7\Debug.h" line="34"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\7\Sales_data.h" line="46"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_4_7_0\7\Sales_data.h" line="43"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Shorter&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Shorter&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\10\newcount-size.cc" line="78"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;result&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;result&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\10\use_find.cc" line="56"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;Foo&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;Foo&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\Foo.h" line="37"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;TextQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\TextQuery.h" line="52"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: p1" verbose="Memory leak: p1">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\oknew.cc" line="99"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: p2" verbose="Memory leak: p2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\oknew.cc" line="99"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: p" verbose="Memory leak: p">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\oknew.cc" line="99"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;p&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;p&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\oknew.cc" line="96"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;pia&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;pia&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\oknew.cc" line="93"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: pi" verbose="Memory is allocated but not initialized: pi">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\oknew.cc" line="75"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;p0&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;p0&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\oknew.cc" line="58"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: i0" verbose="Unused variable: i0">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\oknew.cc" line="56"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;p2&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;p2&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\oknew.cc" line="54"/>
+        </error>
+        <error id="unusedAllocatedMemory" severity="style" msg="Variable &amp;#039;p1&amp;#039; is allocated memory that is never used." verbose="Variable &amp;#039;p1&amp;#039; is allocated memory that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\12\oknew.cc" line="53"/>
+        </error>
+        <error id="operatorEqToSelf" severity="warning" msg="&amp;#039;operator=&amp;#039; should check for assignment to self to avoid problems with dynamic memory." verbose="&amp;#039;operator=&amp;#039; should check for assignment to self to ensure that each block of dynamically allocated memory is owned and managed by only one instance of the class.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\13\HasPtrUseCount.cc" line="65"/>
+        </error>
+        <error id="copyCtorPointerCopying" severity="style" msg="Value of pointer &amp;#039;ps&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory." verbose="Value of pointer &amp;#039;ps&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\13\HasPtrUseCount.cc" line="45"/>
+        </error>
+        <error id="copyCtorPointerCopying" severity="style" msg="Value of pointer &amp;#039;use&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory." verbose="Value of pointer &amp;#039;use&amp;#039;, which points to allocated memory, is copied in copy constructor instead of allocating new memory.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\13\HasPtrUseCount.cc" line="45"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\13\HasPtrUseCount.cc" line="39"/>
+        </error>
+        <error id="operatorEqToSelf" severity="warning" msg="&amp;#039;operator=&amp;#039; should check for assignment to self to avoid problems with dynamic memory." verbose="&amp;#039;operator=&amp;#039; should check for assignment to self to ensure that each block of dynamically allocated memory is owned and managed by only one instance of the class.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\13\HasPtrValueLike.cc" line="60"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\13\HasPtrValueLike.cc" line="36"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;String&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\13\String.h" line="51"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;HasPtr&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\13\moveHP.cc" line="40"/>
+        </error>
+        <error id="operatorEqVarError" severity="warning" msg="Member variable &amp;#039;numbered::mysn&amp;#039; is not assigned a value in &amp;#039;numbered::operator=&amp;#039;." verbose="Member variable &amp;#039;numbered::mysn&amp;#039; is not assigned a value in &amp;#039;numbered::operator=&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\13\serial.cc" line="40"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\14\Sales_data.h" line="52"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\14\Sales_data.h" line="48"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;LessVal&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;LessVal&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\14\fcnobj.cc" line="56"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;Size_compare&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;Size_compare&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\14\fcnobj.cc" line="49"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;PrintString&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;PrintString&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\14\newcount-size.cc" line="82"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;SizeComp&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;SizeComp&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\14\newcount-size.cc" line="70"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;ReadLine&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;ReadLine&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\14\readStr.cc" line="55"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;NotQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\15\Query.h" line="94"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;WordQuery&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\15\Query.h" line="80"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\15\Query.h" line="67"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Query&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\15\Query.h" line="60"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The struct &amp;#039;Derived&amp;#039; defines member variable with name &amp;#039;mem&amp;#039; also defined in its parent struct &amp;#039;Base&amp;#039;." verbose="The struct &amp;#039;Derived&amp;#039; defines member variable with name &amp;#039;mem&amp;#039; also defined in its parent struct &amp;#039;Base&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\15\scope.cc" line="46"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\15\scope.cc" line="36"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;Derived&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;Derived&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\15\scope.cc" line="40"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;undiscounted&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;undiscounted&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\15\useQuote.cc" line="47"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;bp&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;bp&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\15\virtualsNscope.cc" line="81"/>
+        </error>
+        <error id="returnReference" severity="error" msg="Reference to auto variable returned." verbose="Reference to auto variable returned.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\Blob.h" line="309"/>
+        </error>
+        <error id="returnReference" severity="error" msg="Reference to auto variable returned." verbose="Reference to auto variable returned.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\Blob.h" line="300"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;lhs&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;lhs&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\Blob.h" line="202"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;rhs&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;rhs&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\Blob.h" line="202"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &amp;#039;a&amp;#039; should be passed by reference." verbose="Parameter &amp;#039;a&amp;#039; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\Blob.h" line="191"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: ip" verbose="Memory leak: ip">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\SP.cc" line="59"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\Sales_data.h" line="56"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\Sales_data.h" line="52"/>
+        </error>
+        <error id="nullPointer" severity="error" msg="Possible null pointer dereference: v2" verbose="Possible null pointer dereference: v2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\compare.h" line="49"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;j&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;j&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\compareDef.cc" line="58"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;i&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;i&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\compareDef.cc" line="54"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: p1" verbose="Memory leak: p1">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\compareSpec.cc" line="82"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: p2" verbose="Memory leak: p2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\compareSpec.cc" line="82"/>
+        </error>
+        <error id="staticStringCompare" severity="warning" msg="Unnecessary comparison of static strings." verbose="The compared strings, &amp;#039;&amp;quot;hi&amp;quot;&amp;#039; and &amp;#039;&amp;quot;mom&amp;quot;&amp;#039;, are always unequal. Therefore the comparison is unnecessary and looks suspicious.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\compareSpec.cc" line="76"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: p1" verbose="Memory is allocated but not initialized: p1">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\compareSpec.cc" line="74"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: p2" verbose="Memory is allocated but not initialized: p2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\compareSpec.cc" line="74"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: p1" verbose="Memory is allocated but not initialized: p1">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\compareSpec.cc" line="73"/>
+        </error>
+        <error id="uninitdata" severity="error" msg="Memory is allocated but not initialized: p2" verbose="Memory is allocated but not initialized: p2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\compareSpec.cc" line="73"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;i&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;i&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\16\qm.cc" line="51"/>
+        </error>
+        <error id="checkCastIntToCharAndBack" severity="warning" msg="Storing cin.get() return value in char variable and then comparing with EOF." verbose="When saving cin.get() return value in char variable there is loss of precision.  When cin.get() returns EOF this value is truncated. Comparing the char variable with EOF can have unexpected results. For instance a loop &amp;quot;while (EOF != (c = cin.get());&amp;quot; loops forever on some compilers/platforms and on other compilers/platforms it will stop when the file contains a matching character.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\badgetc.cc" line="40"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;b&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;b&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\bits.cc" line="78"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;onBits&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;onBits&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\bits.cc" line="58"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;sz&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;sz&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\bits.cc" line="56"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;sz&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;sz&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\bits.cc" line="48"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\bits.cc" line="56"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;onBits&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;onBits&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\bits.cc" line="47"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\bits.cc" line="58"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;all_set&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;all_set&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\bits.cc" line="46"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;is_not_set&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;is_not_set&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\bits.cc" line="45"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;is_set&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;is_set&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\bits.cc" line="44"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ival&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ival&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\manips.cc" line="55"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;jval&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;jval&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\manips.cc" line="55"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: b" verbose="Unused variable: b">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\manips.cc" line="44"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;sz&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;sz&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\17\tuple.cc" line="62"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Bear::dance_flag&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Bear::dance_flag&amp;#039; is not initialized in the constructor.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\18\Animal_virtual_baseVers.h" line="142"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Endangered&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Endangered&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\18\Animal_virtual_baseVers.h" line="36"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The struct &amp;#039;MI&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Derived&amp;#039;." verbose="The struct &amp;#039;MI&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Derived&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\18\mi-scope.cc" line="64"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\18\mi-scope.cc" line="55"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The struct &amp;#039;MI&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Base2&amp;#039;." verbose="The struct &amp;#039;MI&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Base2&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\18\mi-scope.cc" line="64"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\18\mi-scope.cc" line="47"/>
+        </error>
+        <error id="duplInheritedMember" severity="warning" msg="The struct &amp;#039;Derived&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Base1&amp;#039;." verbose="The struct &amp;#039;Derived&amp;#039; defines member variable with name &amp;#039;ival&amp;#039; also defined in its parent struct &amp;#039;Base1&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\18\mi-scope.cc" line="55"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\18\mi-scope.cc" line="39"/>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &amp;#039;File&amp;#039; does not have a constructor." verbose="The class &amp;#039;File&amp;#039; does not have a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\bitfields.cc" line="34"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;ShiftOps&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;ShiftOps&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\calc.cc" line="51"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;d&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;d&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\dyn_cast.cc" line="75"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: pa" verbose="Memory leak: pa">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\dyn_cast.cc" line="64"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: pc" verbose="Memory leak: pc">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\dyn_cast.cc" line="64"/>
+        </error>
+        <error id="memleak" severity="error" msg="Memory leak: pd" verbose="Memory leak: pd">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\dyn_cast.cc" line="64"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;i&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;i&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\enum.cc" line="72"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;p2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;p2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\enum.cc" line="70"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;hair&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;hair&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\enum.cc" line="69"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;eyes&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;eyes&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\enum.cc" line="67"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;token&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;token&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\tok2.cc" line="50"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\tok2.cc" line="51"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;get&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;get&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="87"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;c2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;c2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="81"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;c1&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;c1&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="80"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;c1&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;c1&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="76"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="80"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;c2&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;c2&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="72"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="81"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;c1&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;c1&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="71"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="76"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;pmf2&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;pmf2&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="65"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="68"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;pmf&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;pmf&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="64"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="67"/>
+        </error>
+        <error id="redundantAssignment" severity="performance" msg="Variable &amp;#039;str&amp;#039; is reassigned a value before the old one has been used." verbose="Variable &amp;#039;str&amp;#039; is reassigned a value before the old one has been used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="54"/>
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="59"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;pcScreen&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;pcScreen&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\19\useScreen.cc" line="50"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Sales_item::units_sold&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Sales_item::units_sold&amp;#039; is not initialized in the constructor.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\1\Sales_item.h" line="58"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Sales_item::revenue&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Sales_item::revenue&amp;#039; is not initialized in the constructor.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\1\Sales_item.h" line="58"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\1\Sales_item.h" line="58"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_item&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\1\Sales_item.h" line="56"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="Invalid number of character &amp;#039;{&amp;#039; when these macros are defined: &amp;#039;&amp;#039;." verbose="Invalid number of character &amp;#039;{&amp;#039; when these macros are defined: &amp;#039;&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\1\add.cc" line="33"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &amp;#039;val&amp;#039; can be reduced." verbose="The scope of the variable &amp;#039;val&amp;#039; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &amp;#039;i&amp;#039; can be reduced:&#10;void f(int x)&#10;{&#10;    int i = 0;&#10;    if (x) {&#10;        // it&amp;#039;s safe to move &amp;#039;int i = 0;&amp;#039; here&#10;        for (int n = 0; n &amp;lt; 10; ++n) {&#10;            // it is possible but not safe to move &amp;#039;int i = 0;&amp;#039; here&#10;            do_something(&amp;amp;i);&#10;        }&#10;    }&#10;}&#10;When you see this message it is always safe to reduce the variable scope 1 level.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\1\occurs.cc" line="35"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;j&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;j&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\2\compounddecls.cc" line="39"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;p2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;p2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\2\compounddecls.cc" line="39"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;all_nines&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;all_nines&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\2\inits.cc" line="44"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;titleB&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;titleB&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\2\inits.cc" line="43"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;titleA&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;titleA&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\2\inits.cc" line="42"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;v3&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;v3&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\2\inits.cc" line="38"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;v1&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;v1&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\2\inits.cc" line="37"/>
+        </error>
+        <error id="stringCompare" severity="warning" msg="Comparison of identical string variables." verbose="The compared strings, &amp;#039;cp1&amp;#039; and &amp;#039;cp1&amp;#039;, are identical. This could be a logic bug.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\3\cstring_hdr.cc" line="60"/>
+        </error>
+        <error id="staticStringCompare" severity="warning" msg="Unnecessary comparison of static strings." verbose="The compared strings, &amp;#039;&amp;quot;A strin..&amp;#039; and &amp;#039;&amp;quot;A diffe..&amp;#039;, are always unequal. Therefore the comparison is unnecessary and looks suspicious.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\3\cstring_hdr.cc" line="52"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ia4&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ia4&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\3\multidim.cc" line="67"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ia3&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ia3&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\3\multidim.cc" line="64"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;ia2&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;ia2&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\3\multidim.cc" line="56"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: arr2" verbose="Unused variable: arr2">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\4\arraysizeof.cc" line="43"/>
+        </error>
+        <error id="clarifyCalculation" severity="style" msg="Clarify calculation precedence for &amp;#039;&amp;lt;&amp;lt;&amp;#039; and &amp;#039;?&amp;#039;." verbose="Suspicious calculation. Please use parentheses to clarify the code. The code &amp;#039;&amp;#039;a&amp;lt;&amp;lt;b?c:d&amp;#039;&amp;#039; should be written as either &amp;#039;&amp;#039;(a&amp;lt;&amp;lt;b)?c:d&amp;#039;&amp;#039; or &amp;#039;&amp;#039;a&amp;lt;&amp;lt;(b?c:d)&amp;#039;&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\4\shift-prec.cc" line="51"/>
+        </error>
+        <error id="clarifyCalculation" severity="style" msg="Clarify calculation precedence for &amp;#039;&amp;lt;&amp;lt;&amp;#039; and &amp;#039;?&amp;#039;." verbose="Suspicious calculation. Please use parentheses to clarify the code. The code &amp;#039;&amp;#039;a&amp;lt;&amp;lt;b?c:d&amp;#039;&amp;#039; should be written as either &amp;#039;&amp;#039;(a&amp;lt;&amp;lt;b)?c:d&amp;#039;&amp;#039; or &amp;#039;&amp;#039;a&amp;lt;&amp;lt;(b?c:d)&amp;#039;&amp;#039;.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\4\shift-prec.cc" line="39"/>
+        </error>
+        <error id="constStatement" severity="warning" msg="Redundant code: Found a statement that begins with numeric constant." verbose="Redundant code: Found a statement that begins with numeric constant.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\4\sizeof_pgm.cc" line="40"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &amp;#039;k&amp;#039; is assigned a value that is never used." verbose="Variable &amp;#039;k&amp;#039; is assigned a value that is never used.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\4\unaryOps.cc" line="36"/>
+        </error>
+        <error id="catchExceptionByValue" severity="style" msg="Exception should be caught by reference." verbose="The exception is caught by value. It could be caught as a (const) reference which is usually recommended in C++.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\5\add_item2.cc" line="52"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &amp;#039;ErrCode&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Struct &amp;#039;ErrCode&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\6\errMsg_initList.cc" line="44"/>
+        </error>
+        <error id="uselessAssignmentPtrArg" severity="warning" msg="Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?" verbose="Assignment of function parameter has no effect outside the function. Did you forget dereferencing it?">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\6\reset.cc" line="49"/>
+        </error>
+        <error id="unusedPrivateFunction" severity="style" msg="Unused private function: &amp;#039;Account::initRate&amp;#039;" verbose="Unused private function: &amp;#039;Account::initRate&amp;#039;">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\7\Account.h" line="49"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Account::daily_tbl&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Account::daily_tbl&amp;#039; is not initialized in the constructor.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\7\Account.h" line="37"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;Account::daily_tbl&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;Account::daily_tbl&amp;#039; is not initialized in the constructor.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\7\Account.h" line="36"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Debug&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Debug&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\7\Debug.h" line="36"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\7\Sales_data.h" line="47"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit." verbose="Class &amp;#039;Sales_data&amp;#039; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided.">
+            <location file="E:\Programing\FINISHED\c++_primer\source_code\GCC_pre_C11\7\Sales_data.h" line="43"/>
+        </error>
+    </errors>
+</results>

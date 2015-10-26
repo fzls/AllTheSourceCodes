@@ -1,0 +1,236 @@
+        prepaer time for numbers: 1000  : Clicks: 1        0.001    seconds
+-------------------------------the 1st test----------------------------------
+                           **** average case test****
+
+sort            numbers: 1000  : Clicks: 0        0        seconds
+stable_sort     numbers: 1000  : Clicks: 0        0        seconds
+partial_sort    numbers: 1000  : Clicks: 0        0        seconds
+CombSort        numbers: 1000  : Clicks: 0        0        seconds
+radixsort2      numbers: 1000  : Clicks: 0        0        seconds
+bitRadixsort2   numbers: 1000  : Clicks: 0        0        seconds
+MergeSort       numbers: 1000  : Clicks: 0        0        seconds
+QuickSort       numbers: 1000  : Clicks: 0        0        seconds
+QuickSort2      numbers: 1000  : Clicks: 0        0        seconds
+ShellSort       numbers: 1000  : Clicks: 0        0        seconds
+sort_heap       numbers: 1000  : Clicks: 1        0.001    seconds
+RadixSort       numbers: 1000  : Clicks: 1        0.001    seconds
+MergeSort_iter  numbers: 1000  : Clicks: 1        0.001    seconds
+HeapSort        numbers: 1000  : Clicks: 1        0.001    seconds
+bitRadixsort    numbers: 1000  : Clicks: 12       0.012    seconds
+CountingSort    numbers: 1000  : Clicks: 16       0.016    seconds
+
+                           **** best case test****
+
+sort            numbers: 1000  : Clicks: 0        0        seconds
+stable_sort     numbers: 1000  : Clicks: 0        0        seconds
+CombSort        numbers: 1000  : Clicks: 0        0        seconds
+RadixSort       numbers: 1000  : Clicks: 0        0        seconds
+MergeSort       numbers: 1000  : Clicks: 0        0        seconds
+MergeSort_iter  numbers: 1000  : Clicks: 0        0        seconds
+QuickSort       numbers: 1000  : Clicks: 0        0        seconds
+QuickSort2      numbers: 1000  : Clicks: 0        0        seconds
+ShellSort       numbers: 1000  : Clicks: 0        0        seconds
+HeapSort        numbers: 1000  : Clicks: 0        0        seconds
+sort_heap       numbers: 1000  : Clicks: 1        0.001    seconds
+partial_sort    numbers: 1000  : Clicks: 1        0.001    seconds
+radixsort2      numbers: 1000  : Clicks: 1        0.001    seconds
+bitRadixsort2   numbers: 1000  : Clicks: 1        0.001    seconds
+bitRadixsort    numbers: 1000  : Clicks: 8        0.008    seconds
+CountingSort    numbers: 1000  : Clicks: 11       0.011    seconds
+
+                           **** worst case test****
+
+sort            numbers: 1000  : Clicks: 0        0        seconds
+stable_sort     numbers: 1000  : Clicks: 0        0        seconds
+partial_sort    numbers: 1000  : Clicks: 0        0        seconds
+CombSort        numbers: 1000  : Clicks: 0        0        seconds
+RadixSort       numbers: 1000  : Clicks: 0        0        seconds
+MergeSort       numbers: 1000  : Clicks: 0        0        seconds
+MergeSort_iter  numbers: 1000  : Clicks: 0        0        seconds
+QuickSort       numbers: 1000  : Clicks: 0        0        seconds
+QuickSort2      numbers: 1000  : Clicks: 0        0        seconds
+ShellSort       numbers: 1000  : Clicks: 0        0        seconds
+HeapSort        numbers: 1000  : Clicks: 0        0        seconds
+sort_heap       numbers: 1000  : Clicks: 1        0.001    seconds
+radixsort2      numbers: 1000  : Clicks: 1        0.001    seconds
+bitRadixsort2   numbers: 1000  : Clicks: 1        0.001    seconds
+bitRadixsort    numbers: 1000  : Clicks: 7        0.007    seconds
+CountingSort    numbers: 1000  : Clicks: 11       0.011    seconds
+        prepaer time for numbers: 10000 : Clicks: 13       0.013    seconds
+-------------------------------the 2nd test----------------------------------
+                           **** average case test****
+
+bitRadixsort2   numbers: 10000 : Clicks: 2        0.002    seconds
+QuickSort       numbers: 10000 : Clicks: 2        0.002    seconds
+QuickSort2      numbers: 10000 : Clicks: 2        0.002    seconds
+sort            numbers: 10000 : Clicks: 3        0.003    seconds
+stable_sort     numbers: 10000 : Clicks: 3        0.003    seconds
+MergeSort       numbers: 10000 : Clicks: 3        0.003    seconds
+MergeSort_iter  numbers: 10000 : Clicks: 3        0.003    seconds
+ShellSort       numbers: 10000 : Clicks: 4        0.004    seconds
+CombSort        numbers: 10000 : Clicks: 5        0.005    seconds
+radixsort2      numbers: 10000 : Clicks: 5        0.005    seconds
+HeapSort        numbers: 10000 : Clicks: 5        0.005    seconds
+sort_heap       numbers: 10000 : Clicks: 6        0.006    seconds
+partial_sort    numbers: 10000 : Clicks: 6        0.006    seconds
+RadixSort       numbers: 10000 : Clicks: 6        0.006    seconds
+bitRadixsort    numbers: 10000 : Clicks: 11       0.011    seconds
+CountingSort    numbers: 10000 : Clicks: 12       0.012    seconds
+
+                           **** best case test****
+
+QuickSort       numbers: 10000 : Clicks: 0        0        seconds
+sort            numbers: 10000 : Clicks: 1        0.001    seconds
+QuickSort2      numbers: 10000 : Clicks: 1        0.001    seconds
+ShellSort       numbers: 10000 : Clicks: 1        0.001    seconds
+stable_sort     numbers: 10000 : Clicks: 2        0.002    seconds
+CombSort        numbers: 10000 : Clicks: 2        0.002    seconds
+bitRadixsort2   numbers: 10000 : Clicks: 2        0.002    seconds
+MergeSort       numbers: 10000 : Clicks: 2        0.002    seconds
+MergeSort_iter  numbers: 10000 : Clicks: 2        0.002    seconds
+HeapSort        numbers: 10000 : Clicks: 3        0.003    seconds
+partial_sort    numbers: 10000 : Clicks: 5        0.005    seconds
+sort_heap       numbers: 10000 : Clicks: 6        0.006    seconds
+radixsort2      numbers: 10000 : Clicks: 6        0.006    seconds
+RadixSort       numbers: 10000 : Clicks: 8        0.008    seconds
+bitRadixsort    numbers: 10000 : Clicks: 9        0.009    seconds
+CountingSort    numbers: 10000 : Clicks: 11       0.011    seconds
+
+                           **** worst case test****
+
+QuickSort2      numbers: 10000 : Clicks: 0        0        seconds
+stable_sort     numbers: 10000 : Clicks: 1        0.001    seconds
+MergeSort_iter  numbers: 10000 : Clicks: 1        0.001    seconds
+QuickSort       numbers: 10000 : Clicks: 1        0.001    seconds
+CombSort        numbers: 10000 : Clicks: 2        0.002    seconds
+ShellSort       numbers: 10000 : Clicks: 2        0.002    seconds
+bitRadixsort2   numbers: 10000 : Clicks: 3        0.003    seconds
+MergeSort       numbers: 10000 : Clicks: 3        0.003    seconds
+HeapSort        numbers: 10000 : Clicks: 3        0.003    seconds
+radixsort2      numbers: 10000 : Clicks: 5        0.005    seconds
+sort_heap       numbers: 10000 : Clicks: 6        0.006    seconds
+partial_sort    numbers: 10000 : Clicks: 6        0.006    seconds
+RadixSort       numbers: 10000 : Clicks: 6        0.006    seconds
+sort            numbers: 10000 : Clicks: 7        0.007    seconds
+bitRadixsort    numbers: 10000 : Clicks: 9        0.009    seconds
+CountingSort    numbers: 10000 : Clicks: 11       0.011    seconds
+        prepaer time for numbers: 25000 : Clicks: 33       0.033    seconds
+-------------------------------the 3rd test----------------------------------
+                           **** average case test****
+
+bitRadixsort2   numbers: 25000 : Clicks: 3        0.003    seconds
+QuickSort2      numbers: 25000 : Clicks: 5        0.005    seconds
+QuickSort       numbers: 25000 : Clicks: 6        0.006    seconds
+sort            numbers: 25000 : Clicks: 7        0.007    seconds
+MergeSort_iter  numbers: 25000 : Clicks: 7        0.007    seconds
+stable_sort     numbers: 25000 : Clicks: 9        0.009    seconds
+MergeSort       numbers: 25000 : Clicks: 9        0.009    seconds
+ShellSort       numbers: 25000 : Clicks: 11       0.011    seconds
+HeapSort        numbers: 25000 : Clicks: 11       0.011    seconds
+CombSort        numbers: 25000 : Clicks: 12       0.012    seconds
+CountingSort    numbers: 25000 : Clicks: 12       0.012    seconds
+radixsort2      numbers: 25000 : Clicks: 12       0.012    seconds
+bitRadixsort    numbers: 25000 : Clicks: 12       0.012    seconds
+RadixSort       numbers: 25000 : Clicks: 15       0.015    seconds
+sort_heap       numbers: 25000 : Clicks: 16       0.016    seconds
+partial_sort    numbers: 25000 : Clicks: 16       0.016    seconds
+
+                           **** best case test****
+
+QuickSort2      numbers: 25000 : Clicks: 1        0.001    seconds
+QuickSort       numbers: 25000 : Clicks: 2        0.002    seconds
+sort            numbers: 25000 : Clicks: 3        0.003    seconds
+bitRadixsort2   numbers: 25000 : Clicks: 3        0.003    seconds
+ShellSort       numbers: 25000 : Clicks: 3        0.003    seconds
+MergeSort_iter  numbers: 25000 : Clicks: 4        0.004    seconds
+stable_sort     numbers: 25000 : Clicks: 5        0.005    seconds
+MergeSort       numbers: 25000 : Clicks: 6        0.006    seconds
+CombSort        numbers: 25000 : Clicks: 7        0.007    seconds
+HeapSort        numbers: 25000 : Clicks: 10       0.01     seconds
+CountingSort    numbers: 25000 : Clicks: 13       0.013    seconds
+bitRadixsort    numbers: 25000 : Clicks: 13       0.013    seconds
+sort_heap       numbers: 25000 : Clicks: 14       0.014    seconds
+radixsort2      numbers: 25000 : Clicks: 14       0.014    seconds
+RadixSort       numbers: 25000 : Clicks: 17       0.017    seconds
+partial_sort    numbers: 25000 : Clicks: 19       0.019    seconds
+
+                           **** worst case test****
+
+QuickSort2      numbers: 25000 : Clicks: 1        0.001    seconds
+QuickSort       numbers: 25000 : Clicks: 2        0.002    seconds
+bitRadixsort2   numbers: 25000 : Clicks: 3        0.003    seconds
+stable_sort     numbers: 25000 : Clicks: 4        0.004    seconds
+MergeSort_iter  numbers: 25000 : Clicks: 4        0.004    seconds
+ShellSort       numbers: 25000 : Clicks: 4        0.004    seconds
+MergeSort       numbers: 25000 : Clicks: 6        0.006    seconds
+CombSort        numbers: 25000 : Clicks: 7        0.007    seconds
+HeapSort        numbers: 25000 : Clicks: 9        0.009    seconds
+CountingSort    numbers: 25000 : Clicks: 11       0.011    seconds
+radixsort2      numbers: 25000 : Clicks: 11       0.011    seconds
+bitRadixsort    numbers: 25000 : Clicks: 13       0.013    seconds
+sort_heap       numbers: 25000 : Clicks: 15       0.015    seconds
+partial_sort    numbers: 25000 : Clicks: 15       0.015    seconds
+RadixSort       numbers: 25000 : Clicks: 15       0.015    seconds
+sort            numbers: 25000 : Clicks: 18       0.018    seconds
+        prepaer time for numbers: 50000 : Clicks: 69       0.069    seconds
+-------------------------------the 4th test----------------------------------
+                           **** average case test****
+
+bitRadixsort2   numbers: 50000 : Clicks: 6        0.006    seconds
+QuickSort       numbers: 50000 : Clicks: 12       0.012    seconds
+CountingSort    numbers: 50000 : Clicks: 14       0.014    seconds
+MergeSort_iter  numbers: 50000 : Clicks: 15       0.015    seconds
+QuickSort2      numbers: 50000 : Clicks: 15       0.015    seconds
+sort            numbers: 50000 : Clicks: 16       0.016    seconds
+bitRadixsort    numbers: 50000 : Clicks: 17       0.017    seconds
+stable_sort     numbers: 50000 : Clicks: 18       0.018    seconds
+MergeSort       numbers: 50000 : Clicks: 20       0.02     seconds
+HeapSort        numbers: 50000 : Clicks: 25       0.025    seconds
+CombSort        numbers: 50000 : Clicks: 26       0.026    seconds
+ShellSort       numbers: 50000 : Clicks: 27       0.027    seconds
+radixsort2      numbers: 50000 : Clicks: 33       0.033    seconds
+sort_heap       numbers: 50000 : Clicks: 35       0.035    seconds
+partial_sort    numbers: 50000 : Clicks: 37       0.037    seconds
+RadixSort       numbers: 50000 : Clicks: 41       0.041    seconds
+
+                           **** best case test****
+
+QuickSort2      numbers: 50000 : Clicks: 3        0.003    seconds
+QuickSort       numbers: 50000 : Clicks: 4        0.004    seconds
+ShellSort       numbers: 50000 : Clicks: 5        0.005    seconds
+sort            numbers: 50000 : Clicks: 6        0.006    seconds
+bitRadixsort2   numbers: 50000 : Clicks: 7        0.007    seconds
+MergeSort_iter  numbers: 50000 : Clicks: 8        0.008    seconds
+stable_sort     numbers: 50000 : Clicks: 9        0.009    seconds
+CombSort        numbers: 50000 : Clicks: 12       0.012    seconds
+MergeSort       numbers: 50000 : Clicks: 13       0.013    seconds
+CountingSort    numbers: 50000 : Clicks: 16       0.016    seconds
+bitRadixsort    numbers: 50000 : Clicks: 17       0.017    seconds
+HeapSort        numbers: 50000 : Clicks: 22       0.022    seconds
+radixsort2      numbers: 50000 : Clicks: 23       0.023    seconds
+sort_heap       numbers: 50000 : Clicks: 31       0.031    seconds
+partial_sort    numbers: 50000 : Clicks: 31       0.031    seconds
+RadixSort       numbers: 50000 : Clicks: 31       0.031    seconds
+
+                           **** worst case test****
+
+QuickSort2      numbers: 50000 : Clicks: 3        0.003    seconds
+QuickSort       numbers: 50000 : Clicks: 5        0.005    seconds
+bitRadixsort2   numbers: 50000 : Clicks: 6        0.006    seconds
+MergeSort_iter  numbers: 50000 : Clicks: 8        0.008    seconds
+ShellSort       numbers: 50000 : Clicks: 8        0.008    seconds
+stable_sort     numbers: 50000 : Clicks: 10       0.01     seconds
+CountingSort    numbers: 50000 : Clicks: 12       0.012    seconds
+MergeSort       numbers: 50000 : Clicks: 13       0.013    seconds
+CombSort        numbers: 50000 : Clicks: 15       0.015    seconds
+bitRadixsort    numbers: 50000 : Clicks: 17       0.017    seconds
+HeapSort        numbers: 50000 : Clicks: 21       0.021    seconds
+radixsort2      numbers: 50000 : Clicks: 22       0.022    seconds
+RadixSort       numbers: 50000 : Clicks: 30       0.03     seconds
+sort_heap       numbers: 50000 : Clicks: 32       0.032    seconds
+partial_sort    numbers: 50000 : Clicks: 35       0.035    seconds
+sort            numbers: 50000 : Clicks: 38       0.038    seconds
+        prepaer time for numbers: 100000 : Clicks: 154      0.154    seconds
+-------------------------------the 5th test----------------------------------
+                           **** average case test****
+
