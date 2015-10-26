@@ -1,3 +1,5 @@
+*.url
+*.pdf
 # Compiled Object files
 *.slo
 *.lo
