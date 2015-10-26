@@ -64,7 +64,7 @@ void moveZeroes(vector<int>& nums) {
 		for (; nums[i] == 0 && i != n; ++i);
 		if (i > j && i != n) {
 			nums[j] = nums[i];
-			nums[i] = 0;
+			nums[i] = 0; s
 		}
 	}
 
