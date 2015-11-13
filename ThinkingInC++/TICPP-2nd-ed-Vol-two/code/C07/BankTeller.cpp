@@ -34,7 +34,7 @@ class Teller {
   bool busy; // Is teller serving a customer?
 public:
   Teller(queue<Customer>& cq)
-  : customers(cq), ttime(0), busy(false) {}
+    : customers(cq), ttime(0), busy(false) {}
   Teller& operator=(const Teller& rv) {
     customers = rv.customers;
     current = rv.current;
@@ -44,18 +44,18 @@ public:
   }
   bool isBusy() { return busy; }
   void run(bool recursion = false) {
-    if(!recursion)
+    if (!recursion)
       ttime = SLICE;
     int servtime = current.getTime();
-    if(servtime > ttime) {
+    if (servtime > ttime) {
       servtime -= ttime;
       current.setTime(servtime);
       busy = true; // Still working on current
       return;
     }
-    if(servtime < ttime) {
+    if (servtime < ttime) {
       ttime -= servtime;
-      if(!customers.empty()) {
+      if (!customers.empty()) {
         current = customers.front();
         customers.pop(); // Remove it
         busy = true;
@@ -63,7 +63,7 @@ public:
       }
       return;
     }
-    if(servtime == ttime) {
+    if (servtime == ttime) {
       // Done with current, set to empty:
       current = Customer(0);
       busy = false;
@@ -78,7 +78,7 @@ public:
   friend ostream&
   operator<<(ostream& os, const CustomerQ& cd) {
     copy(cd.c.begin(), cd.c.end(),
-      ostream_iterator<Customer>(os, ""));
+         ostream_iterator<Customer>(os, ""));
     return os;
   }
 };
@@ -91,28 +91,28 @@ int main() {
   srand(time(0)); // Seed the random number generator
   clock_t ticks = clock();
   // Run simulation for at least 5 seconds:
-  while(clock() < ticks + 5 * CLOCKS_PER_SEC) {
+  while (clock() < ticks + 5 * CLOCKS_PER_SEC) {
     // Add a random number of customers to the
     // queue, with random service times:
-    for(int i = 0; i < rand() % 5; i++)
+    for (int i = 0; i < rand() % 5; i++)
       customers.push(Customer(rand() % 15 + 1));
     cout << '{' << tellers.size() << '}'
          << customers << endl;
     // Have the tellers service the queue:
-    for(TellIt i = tellers.begin();
-      i != tellers.end(); i++)
+    for (TellIt i = tellers.begin();
+         i != tellers.end(); i++)
       (*i).run();
     cout << '{' << tellers.size() << '}'
          << customers << endl;
     // If line is too long, add another teller:
-    if(customers.size() / tellers.size() > 2)
+    if (customers.size() / tellers.size() > 2)
       tellers.push_back(Teller(customers));
     // If line is short enough, remove a teller:
-    if(tellers.size() > 1 &&
-      customers.size() / tellers.size() < 2)
-      for(TellIt i = tellers.begin();
-        i != tellers.end(); i++)
-        if(!(*i).isBusy()) {
+    if (tellers.size() > 1 &&
+        customers.size() / tellers.size() < 2)
+      for (TellIt i = tellers.begin();
+           i != tellers.end(); i++)
+        if (!(*i).isBusy()) {
           tellers.erase(i);
           break; // Out of for loop
         }

@@ -1,0 +1,5 @@
+chapter 4
+	Square Matrix Multiply Recursive	page 77
+		notes: next time try to implement the matrix as a class rather than simply a allias to the two dimentioal arrays, which make it easier to return the result matrix, otherwise it would be difficult to implement the subMatrix addtion.
+	Strassen's Method	page 79
+

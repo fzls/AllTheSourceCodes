@@ -103,7 +103,7 @@ void bitRadixsort2(vector<int> &data,  int b) ;
 int main() {
 	freopen("sorts.in", "r", stdin);
 	freopen("sorts.out", "w", stdout);
-	clock_t time;
+	clock_t time = = clock();
 	default_random_engine e(time);
 	int times;
 	cin >> times;

@@ -7,7 +7,8 @@ using namespace std;
 
 int option(int percents[]) {
 	register int i = 0, choice = rand() % 100 + 1, perc;
-	for (perc = percents[0]; perc < choice; perc += percents[i + 1], i++);
+	for (perc = percents[0]; perc < choice; perc += percents[i + 1], i++)
+		;
 	return i;
 }
 
