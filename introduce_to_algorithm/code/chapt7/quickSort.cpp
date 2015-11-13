@@ -75,13 +75,15 @@ int partion(vector<int>&data, int left, int right) {
 	swap(data[left], data[(left + right) / 2]);
 	int pivot = data[left];
 	int i = left + 1, j = right;
-	while (i < j) {
+	while (i <= j) {//use <= rather than <, because if at the begining, the i == j, then we should not just skip the loop, because if so the swap after the while would always swap the left and right, no matter which one is larger. with <= , if the situation happened, then we can enter the loop body, but the first two won't run, so we have to write a else clause to deal with this situation , which can be either increase i or decrease j or both(not necessarily);
 		while (data[i] < pivot)
 			++i;
 		while (data[j] > pivot)
 			--j;
 		if (i < j)
 			swap(data[i++], data[j--]);
+		else
+			++i;
 	}
 	swap(data[left], data[j]);
 	return j;
