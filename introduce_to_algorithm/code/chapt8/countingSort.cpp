@@ -58,7 +58,7 @@ void radixSort(vector<int> &data) {
 }
 
 void bitRadixSort(vector<int> &data) {
-	int r = 5, b = 32, base = 1 << r;
+	int r = 8, b = 32, base = 1 << r;
 	int digits = (b + r - 1) / r;
 	for (int factor = 1; digits > 0; --digits, factor *= base)
 		countingSort(data, factor, base);

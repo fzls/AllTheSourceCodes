@@ -6,7 +6,7 @@
 * @version:
 * @Time: 		 2015-11-13 23:57:29
 * @Description:  clrs page 216 chapt9
-*
+* pay attention to the Partition algorithm in the quick sort or the other, especial what to do when left + 1 = right;
 +----------------------------------------------------------
 */
 #include <algorithm>
@@ -54,9 +54,6 @@ int randomizedSelect(vector<int> &data, int order) {
 }
 int randomizedSelect(vector<int> &data, int first, int last, int order) {
 	int pivot = randomizedPartition(data, first, last);
-
-	// cout << "pivot :" << pivot + 1 << endl;
-	// printVector(data);
 	int pivot_order = pivot - first + 1;
 	if (order == pivot_order)
 		return data[pivot];
@@ -69,7 +66,6 @@ int randomizedPartition(vector<int> &data, int first, int last) {
 	clock_t _time = clock();
 	default_random_engine _e(_time);
 	swap(data[first], data[first + _e() % (last - first + 1)]) ;
-	// swap(data[first], data[(first + last) / 2]) ;
 	int pivot = data[first];
 	int lowerBound = first + 1, upperBound = last;
 	while (lowerBound <= upperBound) {
