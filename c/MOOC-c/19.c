@@ -1,9 +1,0 @@
-#include <stdio.h>
-int main(){
-   float f1, f2;
-   int in;
-   char ch;
-   scanf("%f%d %c%f",&f1,&in,&ch,&f2);
-   printf("%c %d %0.2f %0.2f\n",ch,in,f1,f2);
-
-}

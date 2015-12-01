@@ -1,2 +1,0 @@
--lgraphics -lgdi32 -limm32 -lmsimg32 -lole32 -loleaut32 -lwinmm -luuid
-（最后一个可能不需要） -mwindows

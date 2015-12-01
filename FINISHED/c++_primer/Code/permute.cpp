@@ -19,8 +19,6 @@ void listPermutation(string s);
 void recPermutation(string completed, string remaining);
 
 int main() {
-	freopen("test.in", "r", stdin);
-	freopen("test.out", "w", stdout);
 	string s;
 	cin >> s;
 	listPermutation(s);
@@ -35,12 +33,11 @@ void listPermutation(string s) {
 }
 void recPermutation(string completed, string remaining) {
 	if (remaining.size() == 0) {
-		// cout << count++ << '\t' << completed  << endl;
-		cout << completed  << endl;
+		cout << count++ << '\t' << completed  << endl;
 	}
 	else
 		for (decltype(completed.size()) i = 0; i < remaining.size(); i++) {
-			string completed_ = completed  + remaining[i] + " ";
+			string completed_ = completed + remaining[i];
 			string remaining_ = remaining.substr(0, i) + remaining.substr(i + 1);
 			recPermutation(completed_, remaining_);
 		}
