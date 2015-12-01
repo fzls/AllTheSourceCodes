@@ -2,17 +2,17 @@
 #include <iostream>
 using namespace std;
 
-class TreeNode
+class BinarySearchTreeNode
 {
 public:
 	int key;
-	TreeNode *left;
-	TreeNode *right;
-	TreeNode *parent;
+	BinarySearchTreeNode *left;
+	BinarySearchTreeNode *right;
+	BinarySearchTreeNode *parent;
 public:
-	TreeNode(int _key = 0, TreeNode *_left = NULL, TreeNode *_right = NULL, TreeNode *_parent = NULL): key{_key}, left{_left}, right{_right}, parent{_parent} {}
-	TreeNode(const TreeNode &node): key{node.key}, left{node.left}, right{node.right}, parent{node.parent} {}
-	TreeNode &operator=(const TreeNode &node) {
+	BinarySearchTreeNode(int _key = 0, BinarySearchTreeNode *_left = NULL, BinarySearchTreeNode *_right = NULL, BinarySearchTreeNode *_parent = NULL): key{_key}, left{_left}, right{_right}, parent{_parent} {}
+	BinarySearchTreeNode(const BinarySearchTreeNode &node): key{node.key}, left{node.left}, right{node.right}, parent{node.parent} {}
+	BinarySearchTreeNode &operator=(const BinarySearchTreeNode &node) {
 		key = node.key;
 		left = node.left;
 		right = node.right;
@@ -20,12 +20,13 @@ public:
 		return *this;
 	}
 
-	~TreeNode() {}
+	~BinarySearchTreeNode() {}
 	void print() {
 		cout << key << " ";
 	}
 };
 
+template<class TreeNode>
 class BinarySearchTree
 {
 private:
@@ -73,51 +74,60 @@ private:
 	TreeNode *predecessor(TreeNode *node);
 };
 
-int BinarySearchTree::maximum() {
+template<class TreeNode>
+int BinarySearchTree<TreeNode>::maximum() {
 	if (root != NIL)
 		return maximum(root)->key;
 	else
 		return -1;
 }
 
-int BinarySearchTree::minimum() {
+template<class TreeNode>
+int BinarySearchTree<TreeNode>::minimum() {
 	if (root != NIL)
 		return minimum(root)->key;
 	else
 		return -1;
 }
 
-void BinarySearchTree::preorder() {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::preorder() {
 	preorder(root);
 	cout << endl;
 }
 
-void BinarySearchTree::inorder() {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::inorder() {
 	inorder(root);
 	cout << endl;
 }
 
-void BinarySearchTree::postorder() {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::postorder() {
 	postorder(root);
 	cout << endl;
 }
 
-bool BinarySearchTree::search(int key) {
+template<class TreeNode>
+bool BinarySearchTree<TreeNode>::search(int key) {
 	return search(root, key);
 }
 
-void BinarySearchTree::insert(int key) {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::insert(int key) {
 	if (root != NIL)
 		insert(root, key);
 	else
 		root = new TreeNode(key, NIL, NIL, NIL);
 }
 
-void BinarySearchTree::remove(int key) {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::remove(int key) {
 	remove(root, key);
 }
 
-void BinarySearchTree::makeEmpty(TreeNode *T) {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::makeEmpty(TreeNode *T) {
 	if (T != NIL) {
 		makeEmpty(T->left);
 		makeEmpty(T->right);
@@ -126,19 +136,22 @@ void BinarySearchTree::makeEmpty(TreeNode *T) {
 	}
 }
 
-TreeNode *BinarySearchTree::maximum(TreeNode *T) {
+template<class TreeNode>
+TreeNode *BinarySearchTree<TreeNode>::maximum(TreeNode *T) {
 	while (T != NIL && T->right != NIL)
 		T = T->right;
 	return T;
 }
 
-TreeNode *BinarySearchTree::minimum(TreeNode *T) {
+template<class TreeNode>
+TreeNode *BinarySearchTree<TreeNode>::minimum(TreeNode *T) {
 	while (T != NIL && T->left != NIL)
 		T = T->left;
 	return T;
 }
 
-void BinarySearchTree::preorder(TreeNode *T) {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::preorder(TreeNode *T) {
 	if (T != NIL) {
 		visit(T);
 		preorder(T->left);
@@ -146,7 +159,8 @@ void BinarySearchTree::preorder(TreeNode *T) {
 	}
 }
 
-void BinarySearchTree::inorder(TreeNode *T) {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::inorder(TreeNode *T) {
 	if (T != NIL) {
 		inorder(T->left);
 		visit(T);
@@ -154,7 +168,8 @@ void BinarySearchTree::inorder(TreeNode *T) {
 	}
 }
 
-void BinarySearchTree::postorder(TreeNode *T) {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::postorder(TreeNode *T) {
 	if (T != NIL) {
 		postorder(T->left);
 		postorder(T->right);
@@ -162,12 +177,14 @@ void BinarySearchTree::postorder(TreeNode *T) {
 	}
 }
 
-void BinarySearchTree::visit(TreeNode *T) {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::visit(TreeNode *T) {
 	if (T != NIL)
 		T->print();
 }
 
-bool BinarySearchTree::search(TreeNode *T, int key) {
+template<class TreeNode>
+bool BinarySearchTree<TreeNode>::search(TreeNode *T, int key) {
 	if (T != NIL) {
 		if (key == T->key)
 			return true;
@@ -180,7 +197,8 @@ bool BinarySearchTree::search(TreeNode *T, int key) {
 		return false;
 }
 
-void BinarySearchTree::insert(TreeNode *&T, int key) {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::insert(TreeNode *&T, int key) {
 	if (T != NIL) {
 		if (key < T->key) {
 			insert(T->left, key);
@@ -196,7 +214,8 @@ void BinarySearchTree::insert(TreeNode *&T, int key) {
 	}
 }
 
-void BinarySearchTree::remove(TreeNode *T, int key) {//cause we have parent member variable, so we don't need to use TreeNode * &T to store the info about the relationship bewtween *T and *T's parent(left child or right child)
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::remove(TreeNode *T, int key) {//cause we have parent member variable, so we don't need to use TreeNode * &T to store the info about the relationship bewtween *T and *T's parent(left child or right child)
 	if (T != NIL) {
 		if (key == T->key) {
 			if (T->left == NIL) {
@@ -225,7 +244,8 @@ void BinarySearchTree::remove(TreeNode *T, int key) {//cause we have parent memb
 	}
 }
 
-void BinarySearchTree::transplant(TreeNode *u, TreeNode *v) {
+template<class TreeNode>
+void BinarySearchTree<TreeNode>::transplant(TreeNode *u, TreeNode *v) {
 	if (u->parent == NIL)
 		root = v;
 	else if (u == u->parent->left)
@@ -237,14 +257,16 @@ void BinarySearchTree::transplant(TreeNode *u, TreeNode *v) {
 }
 
 
-TreeNode *BinarySearchTree::successor(TreeNode *node) {
+template<class TreeNode>
+TreeNode *BinarySearchTree<TreeNode>::successor(TreeNode *node) {
 	TreeNode *T = node->right;
 	while (T->left != NIL)
 		T = T->left;
 	return T;
 }
 
-TreeNode *BinarySearchTree::predecessor(TreeNode *node) {
+template<class TreeNode>
+TreeNode *BinarySearchTree<TreeNode>::predecessor(TreeNode *node) {
 	TreeNode *T = node->left;
 	while (T->right != NIL)
 		T = T->right;

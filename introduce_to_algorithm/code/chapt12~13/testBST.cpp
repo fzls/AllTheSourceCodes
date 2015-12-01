@@ -25,7 +25,7 @@ using namespace std;
 int main() {
 	freopen("test.in", "r", stdin);
 	freopen("test.out", "w", stdout);
-	BinarySearchTree bst;
+	BinarySearchTree<BinarySearchTreeNode> bst;
 	cout << "max: " << bst.maximum() << endl;
 	cout << "min: " << bst.minimum() << endl;
 	bst.preorder();
