@@ -1,0 +1,47 @@
+#include <stdio.h>
+#define MAX_CHAR 61
+int main(){
+	int first, second,  decode_2;
+   char decode_1[2], s1[MAX_CHAR], s2[MAX_CHAR], s3[MAX_CHAR], s4[MAX_CHAR];
+   scanf("%s%s%s%s",s1, s2, s3, s4);
+
+   for(first = 0, second = 0; s1[first] != 0 && s2[second] != 0; first++, second ++)
+      if(s1[first] >= 'A' && s1[first] <= 'G' && s1[first] == s2[second]){
+	         	decode_1[0] = s1[first];
+	         	break;
+	         	}
+	         	
+	for(first++, second++; s1[first] != 0 && s2[second] != 0; first++, second ++)
+      if(( s1[first] >= 'A' && s1[first] <= 'N' || s1[first] >= '0' && s1[first] <= '9') && s1[first] == s2[second]){
+	         	decode_1[1] = s1[first];
+	         	break;
+	         	}         	
+
+
+
+  for(first = 0, second = 0; s3[first] != 0 && s4[second] != 0; first++, second ++)
+         if( (s3[first] >= 'A' && s3[first] <= 'Z' || s3[first] >= 'a' && s3[first] <= 'z') && s3[first] == s4[second]){
+         	decode_2 = first;
+         	break;
+         	}
+
+   switch(decode_1[0]){
+      case 'A' : printf("MON ");break;
+      case 'B' : printf("TUE ");break;
+      case 'C' : printf("WED ");break;
+      case 'D' : printf("THU ");break;
+      case 'E' : printf("FRI ");break;
+      case 'F' : printf("SAT ");break;
+      case 'G' : printf("SUN ");break;
+      default: ;
+   }
+
+   if(decode_1[1] >= '0' && decode_1[1] <= '9')
+   	printf("%02d:", decode_1[1] - '0');
+   else if(decode_1[1] >= 'A' && decode_1[1] <= 'N')
+   	printf("%02d:", decode_1[1] - 'A' + 10);
+
+   printf("%02d\n", decode_2);
+   system("pause");
+
+}

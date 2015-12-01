@@ -1,0 +1,14 @@
+test for FOR version
+it tooks 1 clicks( 0.001 seconds)
+it tooks 1 clicks( 0.001 seconds)
+it tooks 61 clicks( 0.061 seconds)
+it tooks 231 clicks( 0.231 seconds)
+it tooks 1525 clicks( 1.525 seconds)
+it tooks 15269 clicks( 15.269 seconds)
+
+test for recursive version
+it tooks 0 clicks( 0 seconds)
+it tooks 0 clicks( 0 seconds)
+it tooks 71 clicks( 0.071 seconds)
+it tooks 210 clicks( 0.21 seconds)
+it tooks 1634 clicks( 1.634 seconds)

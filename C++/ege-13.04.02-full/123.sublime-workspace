@@ -1,0 +1,816 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"comm",
+				"comm-section	Comment - Full section comment"
+			],
+			[
+				"get",
+				"getWidth"
+			],
+			[
+				"ge",
+				"getWidth"
+			],
+			[
+				"lef",
+				"leftX"
+			],
+			[
+				"right",
+				"rightX"
+			],
+			[
+				"le",
+				"leftX"
+			],
+			[
+				"Rcta",
+				"MyRectangle"
+			],
+			[
+				"in",
+				"include	include"
+			],
+			[
+				"paus",
+				"pause_	(pause.sublime-snippet)"
+			],
+			[
+				"pau",
+				"pause_	(pause.sublime-snippet)"
+			],
+			[
+				"countnl",
+				"count_num_let"
+			],
+			[
+				"count",
+				"count_num"
+			],
+			[
+				"countl",
+				"count_let"
+			],
+			[
+				"count_",
+				"count_num_let"
+			],
+			[
+				"fla",
+				"flag_num"
+			],
+			[
+				"countnm",
+				"count_num"
+			],
+			[
+				"coun",
+				"countNum_Let"
+			],
+			[
+				"inse",
+				"insertMoney"
+			],
+			[
+				"show",
+				"showTotal	(TicketMachine.h)"
+			],
+			[
+				"tick",
+				"TicketMachine"
+			],
+			[
+				"ini",
+				"initialize_cpp	initialize_c++"
+			],
+			[
+				"ver",
+				"vector	std::vector"
+			],
+			[
+				"Tick",
+				"TicketMachine_H_"
+			],
+			[
+				"TICK",
+				"TicketMachine_H_"
+			],
+			[
+				"max",
+				"max_3"
+			],
+			[
+				"min",
+				"min_3"
+			],
+			[
+				"av",
+				"average_3"
+			],
+			[
+				"avg",
+				"average_1"
+			],
+			[
+				"ave",
+				"average_1"
+			],
+			[
+				"student",
+				"Student"
+			],
+			[
+				"len",
+				"lenth_2"
+			],
+			[
+				"index",
+				"index_2"
+			],
+			[
+				"lenth",
+				"lenth_1"
+			],
+			[
+				"inc",
+				"include	include"
+			],
+			[
+				"pritf",
+				"printf	printf …"
+			],
+			[
+				"com",
+				"comm-block	Comment - Block style comment"
+			],
+			[
+				"tr",
+				"TRUE"
+			],
+			[
+				"prinf",
+				"printf	printf …"
+			],
+			[
+				"pr",
+				"printf	printf …"
+			],
+			[
+				"print_",
+				"print_final"
+			],
+			[
+				"sqr",
+				"sqrt_"
+			],
+			[
+				"is",
+				"isprime"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/E/C++/1.sublime-project",
+			"settings":
+			{
+				"buffer_size": 441,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "1.sublime-project",
+			"settings":
+			{
+				"buffer_size": 441,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"bookshow",
+				"SublimeBookmarks: Show All Bookmarks "
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Git: Init"
+			],
+			[
+				"DIS",
+				"Package Control: Disable Package"
+			],
+			[
+				"isn",
+				"Snippet: std::begin($1), std::end($1)"
+			],
+			[
+				"subk",
+				"SublimeBookmarks: Show All Bookmarks "
+			],
+			[
+				"sbks",
+				"SublimeBookmarks: Show All Bookmarks "
+			],
+			[
+				"sbo",
+				"SublimeBookmarks: Add Bookmark"
+			],
+			[
+				"subb",
+				"SublimeBookmarks: Show All Bookmarks "
+			],
+			[
+				"book",
+				"Bookmarks: Toggle"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"en",
+				"Package Control: Enable Package"
+			],
+			[
+				"lis",
+				"Package Control: List Packages"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"sytax c",
+				"Set Syntax: Objective-C++"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"disable",
+				"SublimeCodeIntel: Disable Plugin"
+			],
+			[
+				"tosider",
+				"View: Toggle Side Bar"
+			],
+			[
+				"sidebar",
+				"View: Toggle Side Bar"
+			],
+			[
+				"run",
+				"Build: Run"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: is",
+				"Package Control: Install Package"
+			],
+			[
+				"scope",
+				"Cscope: Look up functions calling this function"
+			],
+			[
+				"cscope",
+				"Cscope: Look up symbol"
+			],
+			[
+				"c",
+				"CTags: Rebuild Tags"
+			],
+			[
+				"Cscope: ",
+				"Cscope: Look up symbol"
+			],
+			[
+				"cool",
+				"CoolFormat: Formatter Settings"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax",
+				"Set Syntax: C"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instak",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: printf …"
+			],
+			[
+				"Package Control: insa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 146.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/C++/ege-13.04.02-full/1.sublime-project",
+		"/E/C++/ege-13.04.02-full/For_c++.sublime-project",
+		"/E/C++/ege-13.04.02-full/demo/src/egecatharine.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/test_setviewport.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/MandelbrotSetBase.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egetypegame.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egetriangle.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egetetris.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egestar.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egesnake.cpp",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/E/C++/ege-13.04.02-full/demo/src/egerotateimage.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egenet.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egemousetest.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egemouseball.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egeball.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egelines.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egejulia.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egejulia.o",
+		"/E/C++/ege-13.04.02-full/man/netfriendsdemo/MazeLock/MazeLock.cpp",
+		"/E/C++/ege-13.04.02-full/man/netfriendsdemo/MazeLock/wysaid.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egefilter_ball.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/egeclock.cpp",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/DistractionFreeWindow/distraction_free_window.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/distraction_free_window.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/DistractionFreeWindow/Default.sublime-keymap",
+		"/E/C++/ege-13.04.02-full/demo/src/egeball2.cpp",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/E/C++/ege-13.04.02-full/demo/src/egearrow.cpp",
+		"/E/C++/ege-13.04.02-full/demo/src/ege5star.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t12.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t22.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t01.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t02.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t03.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t04.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t05.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t06.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t07.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t08.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t09.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t10.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t11.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t13.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t14.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t15.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t16.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t17.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t18.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t19.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t21.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t23.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t24.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t25.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t27.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t28.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t29.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t30.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t50.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t51.cpp",
+		"/E/C++/ege-13.04.02-full/man/tutorial/t26.cpp",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/Color Highlighter/Default.sublime-keymap",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/Gist/Gist.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/SublimeClang.sublime-settings",
+		"/E/C++/test.cpp",
+		"/C/MinGW/include/stddef.h",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/SublimeClang.sublime-settings",
+		"/C/MinGW/include/stdlib.h",
+		"/C/MinGW/include/winsock2.h",
+		"/C/MinGW/include/c++/3.2.3/backward/iostream.h",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/Default (Windows).sublime-keymap",
+		"/G/Downloads/SublimeLinter-for-ST2-master/SublimeLinter-for-ST2-master/README.md",
+		"/G/Downloads/SublimeLinter-for-ST2-master/SublimeLinter-for-ST2-master/SublimeLinter.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/C++.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/Sublime Bookmarks.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/SublimeBookmarks/Default.sublime-settings",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/G/Downloads/cpplint.py",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/README.md",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/changelog.txt",
+		"/E/C++/ege-13.04.02-full/For_c++.sublime-workspace",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/E/C++/ege-13.04.02-full/man/preview/vc6.jpg",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/E/C++/password.cpp",
+		"/E/C++/Unit04/password/password.cpp",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/c_pulsplus.sublime-build",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/C.sublime-build",
+		"/E/C++/For_c++.sublime-project",
+		"/E/C++/ege-13.04.02-full/README",
+		"/E/C++/ege-13.04.02-full/man/netfriendsdemo/MazeLock/wysaid.h",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/E/C++/ege-13.04.02-full/man/netfriendsdemo/wysaid_collisiondetect.cpp",
+		"/E/C++/ege-13.04.02-full/man/netfriendsdemo/littleballs.cpp",
+		"/E/C++/ege-13.04.02-full/man/netfriendsdemo/fractal_leaf.cpp",
+		"/C/Users/Silence/AppData/Local/Temp/OneNote/15.0/NT/0/fractal_leaf.cpp",
+		"/E/C++/ege-13.04.02-full/man/netfriendsdemo/doufuguolyl_barrage.cpp",
+		"/E/C++/ege-13.04.02-full/man/netfriendsdemo/MazeLock/test_maze1.txt",
+		"/E/C++/ege-13.04.02-full/man/netfriendsdemo/wysaid_collisiondetect.7z",
+		"/E/C++/ege-13.04.02-full/man/api/col/hsl.jpg",
+		"/E/C++/第四五六章作业/4_1/main.cpp",
+		"/E/C++/第四五六章作业/4_1/MyShape.h",
+		"/E/C++/第四五六章作业/4_1/MyTheme.sublime-project",
+		"/E/C++/Unit04/4_1/main.cpp",
+		"/E/C++/Unit02/TestAnimation1/TestAnimation1.cpp",
+		"/E/C++/ege-13.04.02-full/demo/ege5star.dev",
+		"/E/C++/Unit04/4_1.cpp",
+		"/E/C++/Unit04/AlohaWorld/MyRectangle.cpp",
+		"/E/C++/Unit04/AlohaWorld/Screen.cpp",
+		"/E/C++/Unit04/AlohaWorld/main.cpp",
+		"/E/C++/Unit03/3_1.cpp",
+		"/E/C++/Unit03/InlineDemo2/InlineDemo2.cpp",
+		"/E/C++/Unit03/AmbiguousOverloading/AmbiguousOverloading.cpp",
+		"/C/MinGW/include/c++/3.2.3/bits/ostream.tcc",
+		"/E/C++/Unit04/MyRectangle.h",
+		"/E/C++/Unit04/Screen.h",
+		"/E/C++/Unit04/AnonymousObject/AnonymousObject.cpp",
+		"/E/Object_oriented_c++/C_4/ticketmachine.cpp",
+		"/D/c/the 12th/(待续)circulr.c",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/pause.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/initialize_c++.sublime-snippet",
+		"/C/Users/Silence/AppData/Roaming/Sublime Text 2/Packages/User/initialize_c.sublime-snippet",
+		"/E/C++/Unit04/password/password.txt",
+		"/E/C++/Unit04/password/密码统计代码——by不良少年ykt1/gerneral_interface.cpp"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"f",
+			"chartarget",
+			"IsCrash",
+			"isCrash",
+			"resmouse",
+			"shift",
+			"ctrl+alt+1",
+			"fold",
+			"\\",
+			";\n",
+			"\\",
+			"Program",
+			"\":\"-\"}\n",
+			"/",
+			":/",
+			"m_map",
+			"g_cblocks",
+			"L",
+			")\n",
+			"else",
+			"cleardevice",
+			"imagefilter_blurring",
+			"Blurring",
+			"turn",
+			"Browser",
+			"browser",
+			".",
+			"this.",
+			"this",
+			"this.",
+			"close",
+			"project",
+			"package",
+			"k",
+			"k ",
+			"count_num",
+			";\n",
+			"	\n",
+			";\n",
+			"}\n",
+			"double",
+			"public static ",
+			"public static",
+			"ver",
+			"TicketMachine_H_",
+			"number",
+			"	 	 \n",
+			"keys",
+			"find_under_prev",
+			"command",
+			"keys",
+			"command",
+			"false",
+			"find_under",
+			"10",
+			" = ",
+			"max_1",
+			"0",
+			"min_1",
+			"0",
+			",",
+			", ",
+			"min_2",
+			",",
+			"S",
+			"---",
+			"lenth2",
+			"index2",
+			"index1",
+			"delete",
+			"strlen",
+			"strlen(s2)",
+			"\n	",
+			"0",
+			"j",
+			"\n",
+			"flag",
+			"$",
+			" [",
+			"]",
+			" [",
+			"[\"",
+			"},",
+			"\"command\":",
+			"{ \"keys\":",
+			"keys",
+			"{ \"keys\":",
+			"{ \"keys\": ",
+			"isperfect",
+			"include",
+			"输出样例：",
+			"printf",
+			"i",
+			"command",
+			"a",
+			"command",
+			"keys",
+			"ctrl",
+			"shift",
+			"command",
+			"find_under_prev",
+			"printf",
+			"\");\n",
+			"输出样例：",
+			"表示这个整数的每一位数字的汉语拼音，每一位数字的拼音之间以空格分隔，末尾没有空格。",
+			"case",
+			"if",
+			"while",
+			"main",
+			"include",
+			"stdio",
+			"表示这个整数的每一位数字的汉语拼音，每一位数字的拼音之间以空格分隔，末尾没有空格。",
+			"100000",
+			"yi",
+			"注意，每个字的拼音之间有一个空格，但是最后的字后面没有空格。当遇到负数时，在输出的开头加上“fu”，如",
+			"ctrl+p",
+			"break",
+			"\");\n",
+			");\n",
+			"0",
+			"(){\n",
+			"}\n",
+			"*/\n",
+			"solid",
+			"\"show_in_minimap\":",
+			"minimap",
+			"ctrl+p"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"print_final",
+			")\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/E/C++/1.sublime-project",
+					"settings":
+					{
+						"buffer_size": 441,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								92,
+								92
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Solarized (light).tmTheme",
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 400.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "1.sublime-project",
+					"settings":
+					{
+						"buffer_size": 441,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								441,
+								441
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Solarized (light).tmTheme",
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.clang":
+	{
+		"height": 130.0
+	},
+	"output.exec":
+	{
+		"height": 140.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 165.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"C_basic/week_4/test.c"
+			],
+			[
+				"pri",
+				"c/The former/pyramid.c.bak"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": false
+}

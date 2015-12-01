@@ -1,0 +1,17 @@
+test for better version
+0
+N is 2 run time is: 0 seconds)
+4
+N is 20 run time is: 0 seconds)
+23
+N is 200 run time is: 0 seconds)
+103
+N is 2000 run time is: 0 seconds)
+525
+N is 20000 run time is: 0.002 seconds)
+3107
+N is 200000 run time is: 0.028 seconds)
+20560
+N is 2000000 run time is: 0.409 seconds)
+145420
+N is 20000000 run time is: 9.879 seconds)

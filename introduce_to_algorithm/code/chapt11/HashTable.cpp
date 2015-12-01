@@ -4,7 +4,7 @@
 * @authors: 风之凌殇 <1054073896@qq.com>
 * @FILE NAME:	 HashTable.cpp
 * @version:
-* @Time: 		 2015-11-19 20:22:46
+* @Time: 		 2015-11-19 20:22:46~2015-11-19 22:59:02
 * @Description:  implement the hashtable (including hash function, collision strategy)
 * Hash Function:
 	division

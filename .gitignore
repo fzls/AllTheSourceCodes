@@ -1,3 +1,17 @@
+*.index
+*.markers
+*.dat
+*.tree
+*.resources
+*.prefs
+*.lanch
+*.xml
+*.tis
+*.tii
+*.gen
+*.prx
+*.fnm
+
 *.url
 *.pdf
 # Compiled Object files

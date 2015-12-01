@@ -1,0 +1,70 @@
+#include <stdio.h>
+int main(){
+   int n, count = 0, number, a1, a2, a3, a5, flag1, flag2, flag3, flag4, flag5, flag_a2 = 1;
+   float a4;
+   flag1 = flag2 = flag3 = flag4 = flag5 = 0;
+   a1 = a2 = a3 = a5 = 0; a4 = 0;
+   //never forget to assign the original value
+   scanf("%d",&n);
+   while(n--){
+   	scanf("%d",&number);
+   	switch(number % 5){
+   	   case 0: 
+   	   	if(!(number % 2)){
+   	   		flag1 = 1;
+   	   		a1 += number;
+   	   		}
+   	   	break;
+   	   case 1: 
+   	   	flag2 = 1;
+   	   	a2 += flag_a2 * number;
+   	   	flag_a2 = -flag_a2;
+   	   	break;
+   	   case 2: 
+   	   	flag3 = 1;
+   	   	a3++;
+   	   	break;
+   	   case 3: 
+   	   	flag4 = 1;
+   	   	a4 += number;
+   	   	count ++;
+   	   	break;
+   	   case 4: 
+   	   	flag5 = 1;
+   	   	if(number > a5)
+   	   		a5 = number;
+   	   	break;
+   	   
+   	   default:;
+   	    }
+   	} 
+   	
+  if(flag1)
+  	printf("%d ",a1);
+  else
+  	printf("N ");
+  
+  if(flag2)
+  	printf("%d ", a2);
+  else
+  	printf("N ");
+  	
+  	if(flag3)
+  	printf("%d ", a3);
+  else
+  	printf("N ");
+  	
+  	if(flag4)
+  	printf("%.1f ", a4 / count);
+  else
+  	printf("N ");
+  	
+  	if(flag5)
+  	printf("%d\n", a5);
+  else
+  	printf("N\n");		
+  	
+  	 	
+   
+   	
+}

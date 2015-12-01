@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1432545259 source:d:\c\homework\2312\main.cpp
+	<iostream.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
