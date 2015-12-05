@@ -17,15 +17,19 @@
 #include <random>
 #include <ctime>
 #include "BinarySearchTree.h"
+#include <typeinfo>
 
 using namespace std;
 
-
+//TODO
+//1、create a redBlackTreeNode<class dataType> class by inheriting the BinarySearchTreeNode<class dataType>
+//2、create a redBlackTree<class TreeNode> by inheriting the BinarySearchTree<class TreeNode> {namely to add the change the insert and delete mothod and add the corresponding fixup method}
+//3、instantialize the redBlackTree<class TreeNode> by using redBlackTreeNode<class dataType> as its TreeNode
 
 int main() {
 	freopen("test.in", "r", stdin);
 	freopen("test.out", "w", stdout);
-	BinarySearchTree<BinarySearchTreeNode> bst;
+	BinarySearchTree<BinarySearchTreeNode<int>> bst;
 	cout << "max: " << bst.maximum() << endl;
 	cout << "min: " << bst.minimum() << endl;
 	bst.preorder();

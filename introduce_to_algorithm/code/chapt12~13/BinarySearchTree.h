@@ -1,16 +1,19 @@
 #pragma once
 #include <iostream>
+#include <exception>
+
 using namespace std;
 
+template<typename dataType>
 class BinarySearchTreeNode
 {
 public:
-	int key;
+	dataType key;
 	BinarySearchTreeNode *left;
 	BinarySearchTreeNode *right;
 	BinarySearchTreeNode *parent;
 public:
-	BinarySearchTreeNode(int _key = 0, BinarySearchTreeNode *_left = NULL, BinarySearchTreeNode *_right = NULL, BinarySearchTreeNode *_parent = NULL): key{_key}, left{_left}, right{_right}, parent{_parent} {}
+	BinarySearchTreeNode(dataType _key = dataType{} , BinarySearchTreeNode *_left = NULL, BinarySearchTreeNode *_right = NULL, BinarySearchTreeNode *_parent = NULL): key{_key}, left{_left}, right{_right}, parent{_parent} {}
 	BinarySearchTreeNode(const BinarySearchTreeNode &node): key{node.key}, left{node.left}, right{node.right}, parent{node.parent} {}
 	BinarySearchTreeNode &operator=(const BinarySearchTreeNode &node) {
 		key = node.key;
@@ -29,14 +32,15 @@ public:
 template<class TreeNode>
 class BinarySearchTree
 {
-private:
+protected:
 	TreeNode *NIL;
 	TreeNode *root;
 public:
 	BinarySearchTree(): NIL{new TreeNode}, root{NIL} {
 		cout << "enter the number of nodes and the node to insert" << endl;
-		int num, key;
+		int num;
 		cin >> num;
+		decltype(TreeNode::key)  key;
 		while (num-- != 0) {
 			cin >> key;
 			insert(key);
@@ -48,16 +52,16 @@ public:
 		delete NIL;
 	}
 
-	int maximum();
-	int minimum();
+	decltype(TreeNode::key) maximum();
+	decltype(TreeNode::key) minimum();
 	void preorder();
 	void inorder();
 	void postorder();
-	bool search(int key);
-	void insert(int key);
-	void remove(int key);
+	bool search(decltype(TreeNode::key) key);
+	void insert(decltype(TreeNode::key) key);
+	void remove(decltype(TreeNode::key) key);
 
-private:
+protected:
 	void makeEmpty(TreeNode *T);
 	TreeNode *maximum(TreeNode *T);
 	TreeNode *minimum(TreeNode *T);
@@ -65,9 +69,9 @@ private:
 	void inorder(TreeNode *T);
 	void postorder(TreeNode *T);
 	void visit(TreeNode *T);
-	bool search(TreeNode *T, int key);
-	void insert(TreeNode *&T, int key);
-	void remove(TreeNode *T, int key);
+	bool search(TreeNode *T, decltype(TreeNode::key) key);
+	void insert(TreeNode *&T, decltype(TreeNode::key) key);
+	void remove(TreeNode *T, decltype(TreeNode::key) key);
 	void transplant(TreeNode *u, TreeNode *v);
 
 	TreeNode *successor(TreeNode *node);
@@ -75,19 +79,27 @@ private:
 };
 
 template<class TreeNode>
-int BinarySearchTree<TreeNode>::maximum() {
-	if (root != NIL)
-		return maximum(root)->key;
-	else
-		return -1;
+decltype(TreeNode::key) BinarySearchTree<TreeNode>::maximum() {
+	try {
+		if (root != NIL)
+			return maximum(root)->key;
+		else
+			throw logic_error("Tree is empty, can not find maximum\n");
+	} catch (const logic_error &e) {
+		cerr << e.what();
+	}
 }
 
 template<class TreeNode>
-int BinarySearchTree<TreeNode>::minimum() {
-	if (root != NIL)
-		return minimum(root)->key;
-	else
-		return -1;
+decltype(TreeNode::key) BinarySearchTree<TreeNode>::minimum() {
+	try {
+		if (root != NIL)
+			return minimum(root)->key;
+		else
+			throw logic_error("Tree is empty, can not find minimum\n");
+	} catch (const logic_error &e) {
+		cerr << e.what();
+	}
 }
 
 template<class TreeNode>
@@ -109,12 +121,12 @@ void BinarySearchTree<TreeNode>::postorder() {
 }
 
 template<class TreeNode>
-bool BinarySearchTree<TreeNode>::search(int key) {
+bool BinarySearchTree<TreeNode>::search(decltype(TreeNode::key) key) {
 	return search(root, key);
 }
 
 template<class TreeNode>
-void BinarySearchTree<TreeNode>::insert(int key) {
+void BinarySearchTree<TreeNode>::insert(decltype(TreeNode::key) key) {
 	if (root != NIL)
 		insert(root, key);
 	else
@@ -122,7 +134,7 @@ void BinarySearchTree<TreeNode>::insert(int key) {
 }
 
 template<class TreeNode>
-void BinarySearchTree<TreeNode>::remove(int key) {
+void BinarySearchTree<TreeNode>::remove(decltype(TreeNode::key) key) {
 	remove(root, key);
 }
 
@@ -184,7 +196,7 @@ void BinarySearchTree<TreeNode>::visit(TreeNode *T) {
 }
 
 template<class TreeNode>
-bool BinarySearchTree<TreeNode>::search(TreeNode *T, int key) {
+bool BinarySearchTree<TreeNode>::search(TreeNode *T, decltype(TreeNode::key) key) {
 	if (T != NIL) {
 		if (key == T->key)
 			return true;
@@ -198,7 +210,7 @@ bool BinarySearchTree<TreeNode>::search(TreeNode *T, int key) {
 }
 
 template<class TreeNode>
-void BinarySearchTree<TreeNode>::insert(TreeNode *&T, int key) {
+void BinarySearchTree<TreeNode>::insert(TreeNode *&T, decltype(TreeNode::key) key) {
 	if (T != NIL) {
 		if (key < T->key) {
 			insert(T->left, key);
@@ -215,7 +227,7 @@ void BinarySearchTree<TreeNode>::insert(TreeNode *&T, int key) {
 }
 
 template<class TreeNode>
-void BinarySearchTree<TreeNode>::remove(TreeNode *T, int key) {//cause we have parent member variable, so we don't need to use TreeNode * &T to store the info about the relationship bewtween *T and *T's parent(left child or right child)
+void BinarySearchTree<TreeNode>::remove(TreeNode *T, decltype(TreeNode::key) key) {//cause we have parent member variable, so we don't need to use TreeNode * &T to store the info about the relationship bewtween *T and *T's parent(left child or right child)
 	if (T != NIL) {
 		if (key == T->key) {
 			if (T->left == NIL) {
