@@ -6,6 +6,7 @@
 * @version:
 * @Time: 		 2015-12-05 10:05:11
 * @Description:  test RedBlackTree
+* 				need read more about inheritance
 *
 +----------------------------------------------------------
 */
@@ -23,8 +24,8 @@
 
 using namespace std;
 template<class T>
-void testConstructor(T &node) {
-	assert(node.key == 233);
+void testConstructor(T &node, int key = 233) {
+	assert(node.key == key);
 	assert(node.color == BLACK);
 	assert(node.left == NULL);
 	assert(node.right == NULL);
@@ -41,6 +42,8 @@ void testAssignment(T &node) {
 	testConstructor(node);
 }
 
+
+
 int main() {
 	// freopen("test.in", "r", stdin);
 	// freopen("test.out", "w", stdout);
@@ -53,8 +56,10 @@ int main() {
 	node3 = node;
 	testAssignment(node3);
 
-
-
+	RedBlackTree<RedBlackTreeNode<int>> tree1;
+	tree1.preorder();
+	tree1.inorder();
+	tree1.postorder();
 	cout << endl;
 	system("pause");
 	return 0;

@@ -47,7 +47,7 @@ public:
 		}
 	}
 
-	~BinarySearchTree() {
+	virtual ~BinarySearchTree() {
 		makeEmpty(root);
 		delete NIL;
 	}
@@ -58,8 +58,8 @@ public:
 	void inorder();
 	void postorder();
 	bool search(decltype(TreeNode::key) key);
-	void insert(decltype(TreeNode::key) key);
-	void remove(decltype(TreeNode::key) key);
+	void virtual insert(decltype(TreeNode::key) key);
+	void virtual remove(decltype(TreeNode::key) key);
 
 protected:
 	void makeEmpty(TreeNode *T);
@@ -70,8 +70,8 @@ protected:
 	void postorder(TreeNode *T);
 	void visit(TreeNode *T);
 	bool search(TreeNode *T, decltype(TreeNode::key) key);
-	void insert(TreeNode *&T, decltype(TreeNode::key) key);
-	void remove(TreeNode *T, decltype(TreeNode::key) key);
+	void virtual insert(TreeNode *&T, decltype(TreeNode::key) key);
+	void virtual remove(TreeNode *T, decltype(TreeNode::key) key);
 	void transplant(TreeNode *u, TreeNode *v);
 
 	TreeNode *successor(TreeNode *node);
@@ -127,10 +127,7 @@ bool BinarySearchTree<TreeNode>::search(decltype(TreeNode::key) key) {
 
 template<class TreeNode>
 void BinarySearchTree<TreeNode>::insert(decltype(TreeNode::key) key) {
-	if (root != NIL)
-		insert(root, key);
-	else
-		root = new TreeNode(key, NIL, NIL, NIL);
+	insert(root, key);
 }
 
 template<class TreeNode>

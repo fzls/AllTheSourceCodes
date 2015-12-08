@@ -2,7 +2,7 @@
 #define RED_BLACK_TREE_H
 
 #include "dsexceptions.h"
-#include <iostream> 
+#include <iostream>
 using namespace std;
 
 // Red-black tree class
@@ -25,7 +25,7 @@ using namespace std;
 template <typename Comparable>
 class RedBlackTree
 {
-  public:
+public:
     /**
      * Construct the tree.
      * negInf is a value less than or equal to all others.
@@ -34,7 +34,7 @@ class RedBlackTree
     {
         nullNode    = new RedBlackNode;
         nullNode->left = nullNode->right = nullNode;
-        
+
         header      = new RedBlackNode{ negInf };
         header->left = header->right = nullNode;
     }
@@ -43,14 +43,14 @@ class RedBlackTree
     {
         nullNode    = new RedBlackNode;
         nullNode->left = nullNode->right = nullNode;
-        
+
         header      = new RedBlackNode{ rhs.header->element };
         header->left = nullNode;
         header->right = clone( rhs.header->right );
     }
 
     RedBlackTree( RedBlackTree && rhs )
-      : nullNode{ rhs.nullNode }, header{ rhs.header }
+        : nullNode{ rhs.nullNode }, header{ rhs.header }
     {
         rhs.nullNode = nullptr;
         rhs.header = nullptr;
@@ -62,7 +62,7 @@ class RedBlackTree
         delete nullNode;
         delete header;
     }
-    
+
     /**
      * Deep copy.
      */
@@ -72,7 +72,7 @@ class RedBlackTree
         std::swap( *this, copy );
         return *this;
     }
-        
+
     /**
      * Move.
      */
@@ -80,18 +80,18 @@ class RedBlackTree
     {
         std::swap( header, rhs.header );
         std::swap( nullNode, rhs.nullNode );
-        
+
         return *this;
     }
 
     const Comparable & findMin( ) const
     {
-        if( isEmpty( ) )
+        if ( isEmpty( ) )
             throw UnderflowException{ };
 
         RedBlackNode *itr = header->right;
 
-        while( itr->left != nullNode )
+        while ( itr->left != nullNode )
             itr = itr->left;
 
         return itr->element;
@@ -99,12 +99,12 @@ class RedBlackTree
 
     const Comparable & findMax( ) const
     {
-        if( isEmpty( ) )
+        if ( isEmpty( ) )
             throw UnderflowException{ };
 
         RedBlackNode *itr = header->right;
 
-        while( itr->right != nullNode )
+        while ( itr->right != nullNode )
             itr = itr->right;
 
         return itr->element;
@@ -115,11 +115,11 @@ class RedBlackTree
         nullNode->element = x;
         RedBlackNode *curr = header->right;
 
-        for( ; ; )
+        for ( ; ; )
         {
-            if( x < curr->element )
+            if ( x < curr->element )
                 curr = curr->left;
-            else if( curr->element < x )
+            else if ( curr->element < x )
                 curr = curr->right;
             else
                 return curr != nullNode;
@@ -133,7 +133,7 @@ class RedBlackTree
 
     void printTree( ) const
     {
-        if( header->right == nullNode )
+        if ( header->right == nullNode )
             cout << "Empty tree" << endl;
         else
             printTree( header->right );
@@ -141,9 +141,9 @@ class RedBlackTree
 
     void makeEmpty( )
     {
-        if( header == nullptr )
+        if ( header == nullptr )
             return;
-        
+
         reclaimMemory( header->right );
         header->right = nullNode;
     }
@@ -156,23 +156,23 @@ class RedBlackTree
         current = parent = grand = header;
         nullNode->element = x;
 
-        while( current->element != x )
+        while ( current->element != x )
         {
             great = grand; grand = parent; parent = current;
             current = x < current->element ?  current->left : current->right;
 
-                // Check if two red children; fix if so
-            if( current->left->color == RED && current->right->color == RED )
+            // Check if two red children; fix if so
+            if ( current->left->color == RED && current->right->color == RED )
                 handleReorient( x );
         }
 
-            // Insertion fails if already present
-        if( current != nullNode )
+        // Insertion fails if already present
+        if ( current != nullNode )
             return;
         current = new RedBlackNode{ x, nullNode, nullNode };
 
-            // Attach to parent
-        if( x < parent->element )
+        // Attach to parent
+        if ( x < parent->element )
             parent->left = current;
         else
             parent->right = current;
@@ -182,12 +182,12 @@ class RedBlackTree
     void remove( const Comparable & x )
     {
         cout << "Sorry, remove unimplemented; " << x <<
-                " still present" << endl;
+             " still present" << endl;
     }
 
-  private:
+private:
     enum { RED, BLACK };
-    
+
     struct RedBlackNode
     {
         Comparable    element;
@@ -196,28 +196,28 @@ class RedBlackTree
         int           color;
 
         RedBlackNode( const Comparable & theElement = Comparable{ },
-                            RedBlackNode *lt = nullptr, RedBlackNode *rt = nullptr,
-                            int c = BLACK )
-          : element{ theElement }, left{ lt }, right{ rt }, color{ c } { }
-        
+                      RedBlackNode *lt = nullptr, RedBlackNode *rt = nullptr,
+                      int c = BLACK )
+            : element{ theElement }, left{ lt }, right{ rt }, color{ c } { }
+
         RedBlackNode( Comparable && theElement, RedBlackNode *lt = nullptr,
                       RedBlackNode *rt = nullptr, int c = BLACK )
-          : element{ std::move( theElement ) }, left{ lt }, right{ rt }, color{ c } { }
+            : element{ std::move( theElement ) }, left{ lt }, right{ rt }, color{ c } { }
     };
 
     RedBlackNode *header;   // The tree header (contains negInf)
     RedBlackNode *nullNode;
 
-        // Used in insert routine and its helpers (logically static)
+    // Used in insert routine and its helpers (logically static)
     RedBlackNode *current;
     RedBlackNode *parent;
     RedBlackNode *grand;
     RedBlackNode *great;
 
-        // Usual recursive stuff
+    // Usual recursive stuff
     void reclaimMemory( RedBlackNode *t )
     {
-        if( t != t->left )
+        if ( t != t->left )
         {
             reclaimMemory( t->left );
             reclaimMemory( t->right );
@@ -227,7 +227,7 @@ class RedBlackTree
 
     void printTree( RedBlackNode *t ) const
     {
-        if( t != t->left )
+        if ( t != t->left )
         {
             printTree( t->left );
             cout << t->element << endl;
@@ -237,29 +237,29 @@ class RedBlackTree
 
     RedBlackNode * clone( RedBlackNode * t ) const
     {
-        if( t == t->left )  // Cannot test against nullNode!!!
+        if ( t == t->left ) // Cannot test against nullNode!!!
             return nullNode;
         else
             return new RedBlackNode{ t->element, clone( t->left ),
                                      clone( t->right ), t->color };
     }
 
-        // Red-black tree manipulations
+    // Red-black tree manipulations
     /**
      * Internal routine that is called during an insertion if a node has two red
      * children. Performs flip and rotations. item is the item being inserted.
      */
     void handleReorient( const Comparable & item )
     {
-            // Do the color flip
+        // Do the color flip
         current->color = RED;
         current->left->color = BLACK;
         current->right->color = BLACK;
 
-        if( parent->color == RED )   // Have to rotate
+        if ( parent->color == RED )  // Have to rotate
         {
             grand->color = RED;
-            if( item < grand->element != item < parent->element )
+            if ( item < grand->element != item < parent->element )
                 parent = rotate( item, grand );  // Start dbl rotate
             current = rotate( item, great );
             current->color = BLACK;
@@ -277,18 +277,18 @@ class RedBlackTree
      */
     RedBlackNode * rotate( const Comparable & item, RedBlackNode *theParent )
     {
-        if( item < theParent->element )
+        if ( item < theParent->element )
         {
             item < theParent->left->element ?
-                rotateWithLeftChild( theParent->left )  :  // LL
-                rotateWithRightChild( theParent->left ) ;  // LR
+            rotateWithLeftChild( theParent->left )  :  // LL
+            rotateWithRightChild( theParent->left ) ;  // LR
             return theParent->left;
         }
         else
         {
             item < theParent->right->element ?
-                rotateWithLeftChild( theParent->right ) :  // RL
-                rotateWithRightChild( theParent->right );  // RR
+            rotateWithLeftChild( theParent->right ) :  // RL
+            rotateWithRightChild( theParent->right );  // RR
             return theParent->right;
         }
     }
