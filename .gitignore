@@ -148,3 +148,9 @@ docs/_build/
 
 # PyBuilder
 target/
+*.launch
+*.resources
+*.prefs
+*.xml
+*.gen
+*.log
