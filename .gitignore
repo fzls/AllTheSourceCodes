@@ -154,3 +154,6 @@ target/
 *.xml
 *.gen
 *.log
+
+.metadata/
+.recommenders/
