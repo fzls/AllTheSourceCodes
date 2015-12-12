@@ -2,6 +2,7 @@ package database;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -28,9 +29,11 @@ public class UpdateCollegeInfo {
         frame = new JFrame("UpdateCollegeInfo");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+
         frame.setVisible(true);
         tableView.setVisible(false);
+        afterUpdate.setVisible(false);
+        frame.pack();
 
         退出Button.addActionListener(new ActionListener() {
             @Override
@@ -58,7 +61,6 @@ public class UpdateCollegeInfo {
                     String Col_id = ID.getText();
                     String Col_name = name.getText();
                     String query = "UPDATE college  SET Col_id = '" + Col_id + "', Col_name = '" + Col_name + "' WHERE Col_id = '" + old_Col_id + "'";
-                    System.out.print("TEST");
                     st.executeUpdate(query);
 
                     ResultSet rs = st.executeQuery("SELECT * FROM college");
@@ -72,6 +74,8 @@ public class UpdateCollegeInfo {
                     st.close();
                     con.close();
                     tableView.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+                    afterUpdate.setPreferredSize(new Dimension(afterUpdate.getWidth()+40,tableView.getRowHeight()*tableView.getRowCount()+50));
+                    afterUpdate.setVisible(true);
                     tableView.setVisible(true);
                     frame.pack();
                 } catch (Exception ex) {
