@@ -12,27 +12,27 @@ import java.sql.Statement;
 import java.util.Vector;
 
 /**
- * Created by Silence on 2015/12/12.
+ * Created by Silence on 2015/12/13.
  */
-public class UpdateCollegeInfo {
-    private JTextField old_ID;
+public class RemoveCollege {
     private JTextField ID;
-    private JTextField name;
-    private JButton 更改Button;
+    private JButton 删除Button;
     private JButton 退出Button;
     private JTable tableView;
     private JPanel panel;
-    private JScrollPane afterUpdate;
+    private JScrollPane afterDeletion;
     private JFrame frame;
+    private int panelWidth;
+    private int panelHeight;
 
-    public UpdateCollegeInfo() {
-        frame = new JFrame("UpdateCollegeInfo");
+    public RemoveCollege() {
+        frame = new JFrame("RemoveCollege");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         frame.setVisible(true);
-        tableView.setVisible(false);
-        afterUpdate.setVisible(false);
+        tableView.setVisible(false);//hiding the unnecessary part before it is used, which makes the outlook more pretty
+        afterDeletion.setVisible(false);
+        panelWidth = afterDeletion.getWidth() + 40;
         frame.pack();
 
         退出Button.addActionListener(new ActionListener() {
@@ -42,10 +42,11 @@ public class UpdateCollegeInfo {
             }
         });
 
-        更改Button.addActionListener(new ActionListener() {
+        删除Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DefaultTableModel tableModel = new DefaultTableModel();
+                DefaultTableModel tableModel;
+                tableModel = new DefaultTableModel();
                 createTableModel(tableModel);
                 tableView.setModel(tableModel);
                 try {
@@ -57,11 +58,10 @@ public class UpdateCollegeInfo {
                 try {
                     Connection con = DriverManager.getConnection("jdbc:odbc:fzls", "sa", "test");
                     Statement st = con.createStatement();
-                    String old_Col_id = old_ID.getText();
                     String Col_id = ID.getText();
-                    String Col_name = name.getText();
-                    String query = "UPDATE college  SET Col_id = '" + Col_id + "', Col_name = '" + Col_name + "' WHERE Col_id = '" + old_Col_id + "'";
-                    st.executeUpdate(query);
+                    String query = "DELETE FROM college WHERE Col_id = '" + Col_id + "'";
+                    if (!Col_id.isEmpty())
+                        st.executeUpdate(query);
 
                     ResultSet rs = st.executeQuery("SELECT * FROM college");
                     while (rs.next()) {
@@ -73,26 +73,27 @@ public class UpdateCollegeInfo {
                     rs.close();
                     st.close();
                     con.close();
-                    tableView.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-                    afterUpdate.setPreferredSize(new Dimension(afterUpdate.getWidth()+40,tableView.getRowHeight()*tableView.getRowCount()+50));
-                    afterUpdate.setVisible(true);
+                    tableView.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);//adjust the panel according to the table's current height, and set them visible
+                    panelHeight = tableView.getRowHeight() * tableView.getRowCount() + 50;
+                    afterDeletion.setPreferredSize(new Dimension(panelWidth, panelHeight));
+                    afterDeletion.setVisible(true);
                     tableView.setVisible(true);
                     frame.pack();
+
                 } catch (Exception ex) {
                     ex.printStackTrace();
-                    JOptionPane.showMessageDialog(null, "failed to excute the SQL statement\n"+ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "failed to excute the SQL statement\n" + ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
             }
+
             private void createTableModel(DefaultTableModel JTableModel) {
                 JTableModel.addColumn("Col_id");
                 JTableModel.addColumn("Col_name");
             }
         });
     }
+
     public static void main(String[] args) {
-        UpdateCollegeInfo updateCollegeInfo = new UpdateCollegeInfo();
+        RemoveCollege removeCollege = new RemoveCollege();
     }
-    }
-
-
-
+}
