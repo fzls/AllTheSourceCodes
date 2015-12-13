@@ -12,23 +12,25 @@ import java.sql.Statement;
 import java.util.Vector;
 
 /**
- * Created by Silence on 2015/12/12.
+ * Created by Silence on 2015/12/13.
  */
-public class UpdateCollege {
-    private JTextField old_ID;
-    private JTextField ID;
-    private JTextField name;
+public class UpdateUsercode {
+    private JTextField old_u_id;
+    private JTextField u_id;
+    private JTextField u_name;
+    private JTextField password;
+    private JTextField privilege;
     private JButton 更改Button;
     private JButton 退出Button;
     private JTable tableView;
-    private JPanel panel;
     private JScrollPane afterUpdate;
+    private JPanel panel;
     private JFrame frame;
     private int panelWidth;
     private int panelHeight;
 
-    public UpdateCollege() {
-        frame = new JFrame("UpdateCollege");
+    public UpdateUsercode() {
+        frame = new JFrame("UpdateUsercode");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -37,13 +39,13 @@ public class UpdateCollege {
         panelWidth = afterUpdate.getWidth() + 40;
         frame.pack();
 
+
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
             }
         });
-
         更改Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,18 +61,22 @@ public class UpdateCollege {
                 try {
                     Connection con = DriverManager.getConnection("jdbc:odbc:fzls", "sa", "test");
                     Statement st = con.createStatement();
-                    String old_Col_id = old_ID.getText();
-                    String Col_id = ID.getText();
-                    String Col_name = name.getText();
-                    String query = "UPDATE college SET Col_id = '" + Col_id + "', Col_name = '" + Col_name + "' WHERE Col_id = '" + old_Col_id + "'";
-                    if (!old_Col_id.isEmpty() && !Col_id.isEmpty() && !Col_name.isEmpty())
+                    String old_U_id = old_u_id.getText();
+                    String U_id = u_id.getText();
+                    String U_name = u_name.getText();
+                    String Password = password.getText();
+                    String Privilege = privilege.getText();
+                    String query = "UPDATE usercode SET U_id = '" + U_id + "', U_name = '" + U_name + "', Password = '" + Password + "', Privilege = '" + Privilege + "' WHERE U_id = '" + old_U_id + "'";
+                    if (!old_U_id.isEmpty() && !U_id.isEmpty() && !U_name.isEmpty() && !Password.isEmpty() && !Privilege.isEmpty())
                         st.executeUpdate(query);
 
-                    ResultSet rs = st.executeQuery("SELECT * FROM college");
+                    ResultSet rs = st.executeQuery("SELECT * FROM usercode");
                     while (rs.next()) {
                         Vector<String> vcRows = new Vector<String>();
                         vcRows.addElement(rs.getString(1));
                         vcRows.addElement(rs.getString(2));
+                        vcRows.addElement(rs.getString(3));
+                        vcRows.addElement(rs.getString(4));
                         tableModel.addRow(vcRows);
                     }
                     rs.close();
@@ -90,16 +96,15 @@ public class UpdateCollege {
             }
 
             private void createTableModel(DefaultTableModel JTableModel) {
-                JTableModel.addColumn("Col_id");
-                JTableModel.addColumn("Col_name");
+                JTableModel.addColumn("U_id");
+                JTableModel.addColumn("U_name");
+                JTableModel.addColumn("Password");
+                JTableModel.addColumn("Privilege");
             }
         });
     }
 
     public static void main(String[] args) {
-        UpdateCollege updateCollege = new UpdateCollege();
+        UpdateUsercode updateUsercode = new UpdateUsercode();
     }
 }
-
-
-

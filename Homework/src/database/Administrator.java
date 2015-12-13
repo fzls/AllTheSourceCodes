@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by Silence on 2015/12/13.
+ * Created by 风之凌殇 on 2015/12/13.
  */
 public class Administrator {
     private JButton 更新Button;
@@ -25,7 +25,6 @@ public class Administrator {
         更新Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
                 UpdateModule updateModule = new UpdateModule();
             }
         });
@@ -34,7 +33,7 @@ public class Administrator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TODO
-//                AddModule addModule = new AddModule();
+                AddModule addModule = new AddModule();
             }
         });
 
@@ -43,7 +42,7 @@ public class Administrator {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TODO
-//                RemoveModule removeModule = new RemoveModule();
+                RemoveModule removeModule = new RemoveModule();
             }
         });
         退出Button.addActionListener(new ActionListener() {

@@ -12,12 +12,13 @@ import java.sql.Statement;
 import java.util.Vector;
 
 /**
- * Created by Silence on 2015/12/12.
+ * Created by Silence on 2015/12/13.
  */
-public class UpdateCollege {
+public class UpdateCourse {
     private JTextField old_ID;
     private JTextField ID;
     private JTextField name;
+    private JTextField credit;
     private JButton 更改Button;
     private JButton 退出Button;
     private JTable tableView;
@@ -27,8 +28,8 @@ public class UpdateCollege {
     private int panelWidth;
     private int panelHeight;
 
-    public UpdateCollege() {
-        frame = new JFrame("UpdateCollege");
+    public UpdateCourse() {
+        frame = new JFrame("UpdateCourse");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -43,7 +44,6 @@ public class UpdateCollege {
                 frame.setVisible(false);
             }
         });
-
         更改Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,18 +59,20 @@ public class UpdateCollege {
                 try {
                     Connection con = DriverManager.getConnection("jdbc:odbc:fzls", "sa", "test");
                     Statement st = con.createStatement();
-                    String old_Col_id = old_ID.getText();
-                    String Col_id = ID.getText();
-                    String Col_name = name.getText();
-                    String query = "UPDATE college SET Col_id = '" + Col_id + "', Col_name = '" + Col_name + "' WHERE Col_id = '" + old_Col_id + "'";
-                    if (!old_Col_id.isEmpty() && !Col_id.isEmpty() && !Col_name.isEmpty())
+                    String old_C_id = old_ID.getText();
+                    String C_id = ID.getText();
+                    String C_name = name.getText();
+                    String Credit = credit.getText();
+                    String query = "UPDATE course SET C_id = '" + C_id + "', C_name = '" + C_name + "', Credit = '" + Credit + "' WHERE C_id = '" + old_C_id + "'";
+                    if (!old_C_id.isEmpty() && !C_id.isEmpty() && !C_name.isEmpty() && !Credit.isEmpty())
                         st.executeUpdate(query);
 
-                    ResultSet rs = st.executeQuery("SELECT * FROM college");
+                    ResultSet rs = st.executeQuery("SELECT * FROM course");
                     while (rs.next()) {
-                        Vector<String> vcRows = new Vector<String>();
+                        Vector<java.io.Serializable> vcRows = new Vector<java.io.Serializable>();
                         vcRows.addElement(rs.getString(1));
                         vcRows.addElement(rs.getString(2));
+                        vcRows.addElement(rs.getInt(3));
                         tableModel.addRow(vcRows);
                     }
                     rs.close();
@@ -90,16 +92,14 @@ public class UpdateCollege {
             }
 
             private void createTableModel(DefaultTableModel JTableModel) {
-                JTableModel.addColumn("Col_id");
-                JTableModel.addColumn("Col_name");
+                JTableModel.addColumn("C_id");
+                JTableModel.addColumn("C_name");
+                JTableModel.addColumn("Credit");
             }
         });
     }
 
     public static void main(String[] args) {
-        UpdateCollege updateCollege = new UpdateCollege();
+        UpdateCourse updateCourse = new UpdateCourse();
     }
 }
-
-
-

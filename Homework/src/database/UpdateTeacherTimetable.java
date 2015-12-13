@@ -12,12 +12,18 @@ import java.sql.Statement;
 import java.util.Vector;
 
 /**
- * Created by Silence on 2015/12/12.
+ * Created by Silence on 2015/12/13.
  */
-public class UpdateCollege {
-    private JTextField old_ID;
-    private JTextField ID;
-    private JTextField name;
+public class UpdateTeacherTimetable {
+    private JTextField old_ayear;
+    private JTextField old_semester;
+    private JTextField old_t_id;
+    private JTextField old_c_id;
+    private JTextField semester;
+    private JTextField ayear;
+    private JTextField t_id;
+    private JTextField c_id;
+    private JTextField rating;
     private JButton 更改Button;
     private JButton 退出Button;
     private JTable tableView;
@@ -27,8 +33,8 @@ public class UpdateCollege {
     private int panelWidth;
     private int panelHeight;
 
-    public UpdateCollege() {
-        frame = new JFrame("UpdateCollege");
+    public UpdateTeacherTimetable() {
+        frame = new JFrame("UpdateTeacherTimetable");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -37,13 +43,13 @@ public class UpdateCollege {
         panelWidth = afterUpdate.getWidth() + 40;
         frame.pack();
 
+
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
             }
         });
-
         更改Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,18 +65,27 @@ public class UpdateCollege {
                 try {
                     Connection con = DriverManager.getConnection("jdbc:odbc:fzls", "sa", "test");
                     Statement st = con.createStatement();
-                    String old_Col_id = old_ID.getText();
-                    String Col_id = ID.getText();
-                    String Col_name = name.getText();
-                    String query = "UPDATE college SET Col_id = '" + Col_id + "', Col_name = '" + Col_name + "' WHERE Col_id = '" + old_Col_id + "'";
-                    if (!old_Col_id.isEmpty() && !Col_id.isEmpty() && !Col_name.isEmpty())
+                    String old_Ayear = old_ayear.getText();
+                    String old_Semester = old_semester.getText();
+                    String old_T_id = old_t_id.getText();
+                    String old_C_id = old_c_id.getText();
+                    String Ayear = ayear.getText();
+                    String Semester = semester.getText();
+                    String T_id = t_id.getText();
+                    String C_id = c_id.getText();
+                    String Rating = rating.getText();
+                    String query = "UPDATE tc SET Ayear = '" + Ayear + "', Semester = '" + Semester + "', T_id = '" + T_id + "', C_id = '" + C_id + "', Rating = '" + Rating + "' WHERE Ayear = '" + old_Ayear + "' AND Semester = '" + old_Semester + "' AND T_id = '" + old_T_id + "' AND C_id = '" + old_C_id + "'";
+                    if (!old_Ayear.isEmpty() && !old_Semester.isEmpty() && !old_T_id.isEmpty() && !old_C_id.isEmpty() && !Ayear.isEmpty() && !Semester.isEmpty() && !T_id.isEmpty() && !C_id.isEmpty() && !Rating.isEmpty())
                         st.executeUpdate(query);
 
-                    ResultSet rs = st.executeQuery("SELECT * FROM college");
+                    ResultSet rs = st.executeQuery("SELECT * FROM tc");
                     while (rs.next()) {
-                        Vector<String> vcRows = new Vector<String>();
+                        Vector<java.io.Serializable> vcRows = new Vector<java.io.Serializable>();
                         vcRows.addElement(rs.getString(1));
-                        vcRows.addElement(rs.getString(2));
+                        vcRows.addElement(rs.getInt(2));
+                        vcRows.addElement(rs.getString(3));
+                        vcRows.addElement(rs.getString(4));
+                        vcRows.addElement(rs.getString(5));
                         tableModel.addRow(vcRows);
                     }
                     rs.close();
@@ -90,16 +105,16 @@ public class UpdateCollege {
             }
 
             private void createTableModel(DefaultTableModel JTableModel) {
-                JTableModel.addColumn("Col_id");
-                JTableModel.addColumn("Col_name");
+                JTableModel.addColumn("Ayear");
+                JTableModel.addColumn("Semester");
+                JTableModel.addColumn("T_id");
+                JTableModel.addColumn("C_id");
+                JTableModel.addColumn("Rating");
             }
         });
     }
 
     public static void main(String[] args) {
-        UpdateCollege updateCollege = new UpdateCollege();
+        UpdateTeacherTimetable updateTeacherTimetable = new UpdateTeacherTimetable();
     }
 }
-
-
-

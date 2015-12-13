@@ -12,12 +12,20 @@ import java.sql.Statement;
 import java.util.Vector;
 
 /**
- * Created by Silence on 2015/12/12.
+ * Created by Silence on 2015/12/13.
  */
-public class UpdateCollege {
-    private JTextField old_ID;
-    private JTextField ID;
-    private JTextField name;
+public class UpdateTeacher {
+    private JTextField old_t_id;
+    private JTextField t_id;
+    private JTextField t_sex;
+    private JTextField t_name;
+    private JTextField t_prov;
+    private JTextField t_birth;
+    private JTextField t_region;
+    private JTextField col_id;
+    private JTextField sal;
+    private JTextField dept_id;
+    private JTextField prof;
     private JButton 更改Button;
     private JButton 退出Button;
     private JTable tableView;
@@ -27,8 +35,8 @@ public class UpdateCollege {
     private int panelWidth;
     private int panelHeight;
 
-    public UpdateCollege() {
-        frame = new JFrame("UpdateCollege");
+    public UpdateTeacher() {
+        frame = new JFrame("UpdateTeacher");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -36,14 +44,12 @@ public class UpdateCollege {
         afterUpdate.setVisible(false);
         panelWidth = afterUpdate.getWidth() + 40;
         frame.pack();
-
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
             }
         });
-
         更改Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,18 +65,34 @@ public class UpdateCollege {
                 try {
                     Connection con = DriverManager.getConnection("jdbc:odbc:fzls", "sa", "test");
                     Statement st = con.createStatement();
-                    String old_Col_id = old_ID.getText();
-                    String Col_id = ID.getText();
-                    String Col_name = name.getText();
-                    String query = "UPDATE college SET Col_id = '" + Col_id + "', Col_name = '" + Col_name + "' WHERE Col_id = '" + old_Col_id + "'";
-                    if (!old_Col_id.isEmpty() && !Col_id.isEmpty() && !Col_name.isEmpty())
+                    String old_T_id = old_t_id.getText();
+                    String T_id = t_id.getText();
+                    String T_name = t_name.getText();
+                    String T_sex = t_sex.getText();
+                    String T_birth = t_birth.getText();
+                    String T_prov = t_prov.getText();
+                    String T_region = t_region.getText();
+                    String Dept_id = dept_id.getText();
+                    String Col_id = col_id.getText();
+                    String Prof = prof.getText();
+                    String Sal = sal.getText();
+                    String query = "UPDATE teacher SET T_id = '" + T_id + "', T_name = '" + T_name + "', T_sex = '" + T_sex + "', T_birth = '" + T_birth + "', T_prov = '" + T_prov + "', T_region = '" + T_region + "', Dept_id = '" + Dept_id + "', Col_id = '" + Col_id + "', Prof = '" + Prof + "', Sal = '" + Sal + "' WHERE T_id = '" + old_T_id + "'";
+                    if (!T_id.isEmpty() && !T_name.isEmpty() && !T_sex.isEmpty() && !T_birth.isEmpty() && !T_prov.isEmpty() && !T_region.isEmpty() && !Dept_id.isEmpty() && !Col_id.isEmpty() && !Prof.isEmpty() && !Sal.isEmpty())
                         st.executeUpdate(query);
 
-                    ResultSet rs = st.executeQuery("SELECT * FROM college");
+                    ResultSet rs = st.executeQuery("SELECT * FROM teacher");
                     while (rs.next()) {
-                        Vector<String> vcRows = new Vector<String>();
+                        Vector<java.io.Serializable> vcRows = new Vector<java.io.Serializable>();
                         vcRows.addElement(rs.getString(1));
                         vcRows.addElement(rs.getString(2));
+                        vcRows.addElement(rs.getString(3));
+                        vcRows.addElement(rs.getDate(4));
+                        vcRows.addElement(rs.getString(5));
+                        vcRows.addElement(rs.getString(6));
+                        vcRows.addElement(rs.getString(7));
+                        vcRows.addElement(rs.getString(8));
+                        vcRows.addElement(rs.getString(9));
+                        vcRows.addElement(rs.getInt(10));
                         tableModel.addRow(vcRows);
                     }
                     rs.close();
@@ -90,16 +112,21 @@ public class UpdateCollege {
             }
 
             private void createTableModel(DefaultTableModel JTableModel) {
+                JTableModel.addColumn("T_id");
+                JTableModel.addColumn("T_name");
+                JTableModel.addColumn("T_sex");
+                JTableModel.addColumn("T_birth");
+                JTableModel.addColumn("T_prov");
+                JTableModel.addColumn("T_region");
+                JTableModel.addColumn("Dept_id");
                 JTableModel.addColumn("Col_id");
-                JTableModel.addColumn("Col_name");
+                JTableModel.addColumn("Prof");
+                JTableModel.addColumn("Sal");
             }
         });
     }
 
     public static void main(String[] args) {
-        UpdateCollege updateCollege = new UpdateCollege();
+        UpdateTeacher updateTeacher = new UpdateTeacher();
     }
 }
-
-
-

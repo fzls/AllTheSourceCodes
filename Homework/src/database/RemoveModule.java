@@ -7,21 +7,21 @@ import java.awt.event.ActionListener;
 /**
  * Created by Silence on 2015/12/13.
  */
-public class UpdateModule {
+public class RemoveModule {
     private JButton 学院信息Button;
     private JButton 系别信息Button;
     private JButton 课程信息Button;
     private JButton 学生信息Button;
+    private JButton 教师授课信息Button;
     private JButton 学生选课信息Button;
     private JButton 教师信息Button;
-    private JButton 教师授课信息Button;
     private JButton 用户信息Button;
     private JButton 退出Button;
     private JPanel panel;
     private JFrame frame;
 
-    public UpdateModule() {
-        frame = new JFrame("UpdateModule");
+    public RemoveModule() {
+        frame = new JFrame("RemoveModule");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
@@ -29,49 +29,56 @@ public class UpdateModule {
         学院信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateCollege updateCollege = new UpdateCollege();
+                RemoveCollege removeCollege = new RemoveCollege();
             }
         });
         系别信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateDepartment updateDepartment = new UpdateDepartment();
+                //TODO
+//                RemoveDepartment removeDepartment = new RemoveDepartment();
             }
         });
         课程信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateCourse updateCourse = new UpdateCourse();
+                //TODO
+//                RemoveCourse removeCourse = new RemoveCourse();
             }
         });
         学生信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateStudent updateStudent = new UpdateStudent();
+                //TODO
+//                RemoveStudent removeStudent = new RemoveStudent();
             }
         });
         学生选课信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateStudentTimetable updateStudentTimetable = new UpdateStudentTimetable();
+                //TODO
+//                RemoveStudentTimetable removeStudentTimetable = new RemoveStudentTimetable();
             }
         });
         教师信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateTeacher updateTeacher = new UpdateTeacher();
+                //TODO
+//                RemoveTeacher removeTeacher = new RemoveTeacher();
             }
         });
         教师授课信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateTeacherTimetable updateTeacherTimetable = new UpdateTeacherTimetable();
+                //TODO
+//                RemoveTeacherTimetable removeTeacherTimetable = new RemoveTeacherTimetable();
             }
         });
         用户信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UpdateUsercode updateUsercode = new UpdateUsercode();
+                //TODO
+//                RemoveUsercode removeUsercode = new RemoveUsercode();
             }
         });
         退出Button.addActionListener(new ActionListener() {
@@ -83,7 +90,7 @@ public class UpdateModule {
     }
 
     public static void main(String[] args) {
-        UpdateModule updateModule = new UpdateModule();
+        RemoveModule removeModule = new RemoveModule();
 
     }
 }
