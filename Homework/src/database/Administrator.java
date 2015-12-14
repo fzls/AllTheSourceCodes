@@ -8,6 +8,9 @@ import java.awt.event.ActionListener;
  * Created by 风之凌殇 on 2015/12/13.
  */
 public class Administrator {
+    public static final String USER = "sa";
+    public static final String PASSWORD = "test";
+    public static final String URL = "jdbc:odbc:fzls";
     private JButton 更新Button;
     private JButton 添加Button;
     private JButton 删除Button;
@@ -32,7 +35,6 @@ public class Administrator {
         添加Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
                 AddModule addModule = new AddModule();
             }
         });
@@ -41,7 +43,6 @@ public class Administrator {
         删除Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
                 RemoveModule removeModule = new RemoveModule();
             }
         });

@@ -1,5 +1,7 @@
 package database;
 
+import database.add.*;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,51 +38,44 @@ public class AddModule {
         系别信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
                 AddDepartment addDepartment = new AddDepartment();
             }
         });
         课程信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                AddCourse addCourse = new AddCourse();
+                AddCourse addCourse = new AddCourse();
             }
         });
         学生信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                AddStudent addStudent = new AddStudent();
+                AddStudent addStudent = new AddStudent();
             }
         });
         学生选课信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                AddStudentTimetable addStudentTimetable = new AddStudentTimetable();
+                AddStudentTimetable addStudentTimetable = new AddStudentTimetable();
             }
         });
         教师信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                AddTeacher addTeacher = new AddTeacher();
+                AddTeacher addTeacher = new AddTeacher();
             }
         });
         教师授课信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                AddTeacherTimetable addTeacherTimetable = new AddTeacherTimetable();
+                AddTeacherTimetable addTeacherTimetable = new AddTeacherTimetable();
             }
         });
 
         用户信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                AddUsercode addUsercode = new AddUsercode();
+                AddUsercode addUsercode = new AddUsercode();
             }
         });
         退出Button.addActionListener(new ActionListener() {

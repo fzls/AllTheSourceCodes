@@ -1,5 +1,7 @@
 package database;
 
+import database.remove.*;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,50 +37,43 @@ public class RemoveModule {
         系别信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                RemoveDepartment removeDepartment = new RemoveDepartment();
+                RemoveDepartment removeDepartment = new RemoveDepartment();
             }
         });
         课程信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                RemoveCourse removeCourse = new RemoveCourse();
+                RemoveCourse removeCourse = new RemoveCourse();
             }
         });
         学生信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                RemoveStudent removeStudent = new RemoveStudent();
+                RemoveStudent removeStudent = new RemoveStudent();
             }
         });
         学生选课信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                RemoveStudentTimetable removeStudentTimetable = new RemoveStudentTimetable();
+                RemoveStudentTimetable removeStudentTimetable = new RemoveStudentTimetable();
             }
         });
         教师信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                RemoveTeacher removeTeacher = new RemoveTeacher();
+                RemoveTeacher removeTeacher = new RemoveTeacher();
             }
         });
         教师授课信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                RemoveTeacherTimetable removeTeacherTimetable = new RemoveTeacherTimetable();
+                RemoveTeacherTimetable removeTeacherTimetable = new RemoveTeacherTimetable();
             }
         });
         用户信息Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO
-//                RemoveUsercode removeUsercode = new RemoveUsercode();
+                RemoveUsercode removeUsercode = new RemoveUsercode();
             }
         });
         退出Button.addActionListener(new ActionListener() {
