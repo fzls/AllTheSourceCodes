@@ -7,6 +7,8 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -40,7 +42,7 @@ public class RemoveStudent {
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();
+                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
             }
         });
 
@@ -67,7 +69,7 @@ public class RemoveStudent {
 
                     ResultSet rs = st.executeQuery("SELECT * FROM student");
                     while (rs.next()) {
-                        Vector<java.io.Serializable> vcRows = new Vector<java.io.Serializable>();
+                        Vector<Serializable> vcRows = new Vector<>();
                         vcRows.addElement(rs.getString(1));
                         vcRows.addElement(rs.getString(2));
                         vcRows.addElement(rs.getString(3));

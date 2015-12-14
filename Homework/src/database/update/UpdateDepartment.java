@@ -7,6 +7,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -43,7 +44,7 @@ public class UpdateDepartment {
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();
+                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
             }
         });
         更改Button.addActionListener(new ActionListener() {
@@ -72,7 +73,7 @@ public class UpdateDepartment {
 
                     ResultSet rs = st.executeQuery("SELECT * FROM department");
                     while (rs.next()) {
-                        Vector<String> vcRows = new Vector<String>();
+                        Vector<String> vcRows = new Vector<>();
                         vcRows.addElement(rs.getString(1));
                         vcRows.addElement(rs.getString(2));
                         vcRows.addElement(rs.getString(3));

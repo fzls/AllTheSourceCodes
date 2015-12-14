@@ -3,7 +3,8 @@ package database;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import java.awt.event.WindowEvent;
+import java.awt.event.WindowEvent;
+
 
 /**
  * Created by 风之凌殇 on 2015/12/13.
@@ -50,8 +51,7 @@ public class Administrator {
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();
-//                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING) );
+                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
             }
         });
     }
