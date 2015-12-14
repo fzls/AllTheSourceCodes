@@ -25,7 +25,7 @@ public class UpdateModule {
     public UpdateModule() {
         frame = new JFrame("UpdateModule");
         frame.setContentPane(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         学院信息Button.addActionListener(new ActionListener() {
@@ -79,7 +79,7 @@ public class UpdateModule {
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
+                frame.dispose();
             }
         });
     }

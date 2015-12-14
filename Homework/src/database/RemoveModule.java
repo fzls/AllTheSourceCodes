@@ -25,7 +25,7 @@ public class RemoveModule {
     public RemoveModule() {
         frame = new JFrame("RemoveModule");
         frame.setContentPane(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         学院信息Button.addActionListener(new ActionListener() {
@@ -79,7 +79,7 @@ public class RemoveModule {
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
+                frame.dispose();
             }
         });
     }

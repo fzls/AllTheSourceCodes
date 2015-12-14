@@ -34,7 +34,7 @@ public class AddStudentTimetable {
     public AddStudentTimetable() {
         frame = new JFrame("AddStudentTimetable");
         frame.setContentPane(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
         tableView.setVisible(false);
         afterInsert.setVisible(false);
@@ -45,7 +45,7 @@ public class AddStudentTimetable {
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
+                frame.dispose();
             }
         });
 

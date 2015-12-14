@@ -32,7 +32,7 @@ public class UpdateCollege {
     public UpdateCollege() {
         frame = new JFrame("UpdateCollege");
         frame.setContentPane(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
         tableView.setVisible(false);//hiding the unnecessary part before it is used, which makes the outlook more pretty
         afterUpdate.setVisible(false);
@@ -42,7 +42,7 @@ public class UpdateCollege {
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
+                frame.dispose();
             }
         });
 
