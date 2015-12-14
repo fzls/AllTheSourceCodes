@@ -81,7 +81,6 @@ public class AddTeacher {
                     String Sal = sal.getText();
 
                     String query = "INSERT INTO teacher VALUES ('" + T_id + "', '" + T_name + "', '" + T_sex + "', '" + T_birth + "', '" + T_prov + "', '" + T_region + "', '" + Dept_id + "', '" + Col_id + "', '" + Prof + "', '" + Sal + "')";
-                    System.out.println(query);
                     if (!T_id.isEmpty() && !T_name.isEmpty() && !T_sex.isEmpty() && !T_birth.isEmpty() && !T_prov.isEmpty() && !T_region.isEmpty() && !Dept_id.isEmpty() && !Col_id.isEmpty() && !Prof.isEmpty() && !Sal.isEmpty())
                         st.executeUpdate(query);
 
@@ -105,7 +104,7 @@ public class AddTeacher {
                     con.close();
                     tableView.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);//adjust the panel according to the table's current height, and set them visible
                     panelHeight = tableView.getRowHeight() * tableView.getRowCount() + 50;
-                    afterInsert.setPreferredSize(new Dimension(panelWidth, panelHeight));
+                    afterInsert.setPreferredSize(new Dimension((int) (panelWidth * 1.4), panelHeight));
                     afterInsert.setVisible(true);
                     tableView.setVisible(true);
                     frame.pack();

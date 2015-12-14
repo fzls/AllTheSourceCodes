@@ -79,7 +79,7 @@ public class RemoveUsercode {
                     con.close();
                     tableView.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);//adjust the panel according to the table's current height, and set them visible
                     panelHeight = tableView.getRowHeight() * tableView.getRowCount() + 50;
-                    afterDeletion.setPreferredSize(new Dimension(panelWidth, panelHeight));
+                    afterDeletion.setPreferredSize(new Dimension((int) (panelWidth * 1.2), panelHeight));
                     afterDeletion.setVisible(true);
                     tableView.setVisible(true);
                     frame.pack();

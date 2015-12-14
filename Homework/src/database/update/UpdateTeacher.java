@@ -102,7 +102,7 @@ public class UpdateTeacher {
                     con.close();
                     tableView.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);//adjust the panel according to the table's current height, and set them visible
                     panelHeight = tableView.getRowHeight() * tableView.getRowCount() + 50;
-                    afterUpdate.setPreferredSize(new Dimension((int) (panelWidth * 2.5), panelHeight));
+                    afterUpdate.setPreferredSize(new Dimension((int) (panelWidth * 1.3), panelHeight));
                     afterUpdate.setVisible(true);
                     tableView.setVisible(true);
                     frame.pack();

@@ -14,14 +14,14 @@
         </constraints>
         <properties>
           <font name="楷体" size="20" style="1"/>
-          <foreground color="-1"/>
+          <foreground color="-10510688"/>
           <hideActionText value="false"/>
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_126.png"/>
-          <text value=""/>
-          <toolTipText value="更新"/>
-          <verticalTextPosition value="0"/>
+          <text value="更新"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="ba6dd" class="javax.swing.JButton" binding="添加Button" default-binding="true">
@@ -30,12 +30,13 @@
         </constraints>
         <properties>
           <font name="楷体" size="20" style="1"/>
-          <foreground color="-16777216"/>
+          <foreground color="-10510688"/>
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_149.png"/>
-          <text value=""/>
-          <toolTipText value="添加"/>
+          <text value="添加"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="15861" class="javax.swing.JButton" binding="删除Button" default-binding="true">
@@ -43,10 +44,13 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
           <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_154.png"/>
-          <text value=""/>
-          <toolTipText value="删除"/>
+          <text value="删除"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="7a3d5" class="javax.swing.JButton" binding="退出Button" default-binding="true">
@@ -54,10 +58,14 @@
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
+          <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_122.png"/>
           <selected value="false"/>
-          <text value=""/>
-          <toolTipText value="退出"/>
+          <text value="退出"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
     </children>

@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="803" height="458"/>
+      <xy x="20" y="20" width="803" height="542"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -13,9 +13,14 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <enabled value="true"/>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
+          <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_147.png"/>
-          <text value=""/>
-          <toolTipText value="学院信息"/>
+          <text value="学院信息"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="89827" class="javax.swing.JButton" binding="系别信息Button" default-binding="true">
@@ -23,9 +28,13 @@
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
+          <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_138.png"/>
-          <text value=""/>
-          <toolTipText value="系别信息"/>
+          <text value="系别信息"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="d1786" class="javax.swing.JButton" binding="课程信息Button" default-binding="true">
@@ -33,9 +42,13 @@
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
+          <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_155.png"/>
-          <text value=""/>
-          <toolTipText value="课程信息"/>
+          <text value="课程信息"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="5f0c9" class="javax.swing.JButton" binding="学生信息Button" default-binding="true">
@@ -43,9 +56,13 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
+          <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_135.png"/>
-          <text value=""/>
-          <toolTipText value="学生信息"/>
+          <text value="学生信息"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="7f39b" class="javax.swing.JButton" binding="教师授课信息Button" default-binding="true">
@@ -53,9 +70,13 @@
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
+          <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_137.png"/>
-          <text value=""/>
-          <toolTipText value="教师授课信息"/>
+          <text value="教师授课信息"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="fcd31" class="javax.swing.JButton" binding="学生选课信息Button" default-binding="true">
@@ -63,9 +84,13 @@
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
+          <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_129.png"/>
-          <text value=""/>
-          <toolTipText value="学生选课信息"/>
+          <text value="学生选课信息"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="15e9a" class="javax.swing.JButton" binding="教师信息Button" default-binding="true">
@@ -73,9 +98,13 @@
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
+          <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_136.png"/>
-          <text value=""/>
-          <toolTipText value="教师信息"/>
+          <text value="教师信息"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="f3a3d" class="javax.swing.JButton" binding="用户信息Button" default-binding="true">
@@ -83,9 +112,13 @@
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
+          <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_150.png"/>
-          <text value=""/>
-          <toolTipText value="用户信息"/>
+          <text value="用户信息"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
       <component id="1bee9" class="javax.swing.JButton" binding="退出Button" default-binding="true">
@@ -93,9 +126,13 @@
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="楷体" size="20" style="1"/>
+          <foreground color="-10510688"/>
+          <horizontalTextPosition value="0"/>
           <icon value="myIcons/myIcons_164.png"/>
-          <text value=""/>
-          <toolTipText value="退出"/>
+          <text value="退出"/>
+          <toolTipText value=""/>
+          <verticalTextPosition value="3"/>
         </properties>
       </component>
     </children>
