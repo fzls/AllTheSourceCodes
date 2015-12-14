@@ -73,7 +73,7 @@
             </constraints>
             <properties>
               <icon value="actions/execute@2x.png"/>
-              <text value="更改"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="793f4" class="javax.swing.JButton" binding="退出Button" default-binding="true">
@@ -82,7 +82,7 @@
             </constraints>
             <properties>
               <icon value="actions/exit@2x.png"/>
-              <text value="退出"/>
+              <text value=""/>
             </properties>
           </component>
         </children>

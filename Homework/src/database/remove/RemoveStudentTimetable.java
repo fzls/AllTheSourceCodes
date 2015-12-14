@@ -33,7 +33,7 @@ public class RemoveStudentTimetable {
     public RemoveStudentTimetable() {
         frame = new JFrame("RemoveStudentTimetable");
         frame.setContentPane(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
         tableView.setVisible(false);//hiding the unnecessary part before it is used, which makes the outlook more pretty
         afterDeletion.setVisible(false);
@@ -43,7 +43,7 @@ public class RemoveStudentTimetable {
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
+                frame.dispose();
             }
         });
 

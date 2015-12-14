@@ -33,7 +33,7 @@ public class UpdateDepartment {
     public UpdateDepartment() {
         frame = new JFrame("UpdateDepartment");
         frame.setContentPane(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
         tableView.setVisible(false);
         afterUpdate.setVisible(false);
@@ -43,7 +43,7 @@ public class UpdateDepartment {
         退出Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
+                frame.dispose();
             }
         });
         更改Button.addActionListener(new ActionListener() {
